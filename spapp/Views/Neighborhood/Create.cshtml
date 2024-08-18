@@ -1,0 +1,73 @@
+﻿@model spapp.ModelViews.NeighborhoodModelView;
+
+@{
+}
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row">
+        <div class="col-md-10">
+            <a asp-controller="Neighborhood" asp-action="Index" class="action-url-btn btn" title="retour">
+                <span>
+                    <i class="bi bi-arrow-left-square"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center">
+            <div class="card shadow-sm">
+                <h5 class="text-center mb-4">Enregistrer un quartier</h5>
+                <form class="form-card p-4" method="post" asp-controller="Neighborhood" asp-action="Create">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Nom du quartier<span class="text-danger"> *</span></label>
+                            <input asp-for="Name" class=" form-control" type="text" placeholder="Informer le nom de la ville">
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.Name)</small></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Ville <span class="text-danger">*</span></label>
+                            <select asp-for="CityId" id="select-city-id" class="form-control" type="text" placeholder="Informer la ville">
+
+                                @if (Model.Cities is not null)
+                                {
+                                    <option selected>Selectionnez une ville</option>
+                                    foreach (CityModel city in Model.Cities)
+                                    {
+                                        <option value="@city.Id">@city.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.CityId)</small></span>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Commune <span class="text-danger">*</span></label>
+                            <select asp-for="MunicipalityId" id="select-municipality-id" class="form-control" type="text" placeholder="Informer">
+                            </select>
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.MunicipalityId)</small></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Total Habitant</label>
+                            <input asp-for="Population" class="form-control" type="number" placeholder="Informer le total d'habitant">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Latitude la ville</label>
+                            <input asp-for="Latitude" class="form-control" type="number" placeholder="Informer la latitude">
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Longitude de la ville</label>
+                            <input asp-for="Longitude" class="form-control" type="number" placeholder="Informer la longitude">
+                        </div>
+                    </div>
+                    <div class="row justify-content-end p-4">
+                        <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>sss
+</div>

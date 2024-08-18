@@ -1,0 +1,132 @@
+﻿@model List<CityModel>
+@{
+    ViewData["Title"] = "Ville";
+}
+<div class="w-100">
+    <div class="row">
+        <div class="col-md-10 m-auto">
+            @if (TempData["SuccessMessage"] is not null)
+            {
+                <div class="alert alert_success">
+                    <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
+                    <span class="text-white">
+                        @TempData["SuccessMessage"]
+                     </span>
+                 </div>
+            }
+            @if (TempData["EroorMessage"] is not null)
+            {
+                <div class="alert alert_error">
+                    <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
+                    <span class="text-white">
+                        @TempData["EroorMessage"]
+                    </span>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 m-auto mb-3">
+            <a asp-controller="City" asp-action="Create" class="nav-link">
+                Enregister une ville
+            </a>
+        </div>
+        <div class="col-md-10 m-auto">
+            <table class="table dt-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Ville</th>
+                        <th>Region</th>
+                        <th>District</th>
+                        <th>Habitant</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if(Model is not null)
+                    {
+                        @foreach (CityModel city in Model)
+                        {
+                            <tr>
+                                <td>@city.Id</td>
+                                <td>@city.Name</td>
+                                <td>@city.Region</td>
+                                <td>@city.District</td>
+                                <td>@city.Population</td>
+                                <td class="d-flex gap-1">
+                                    <button class="btn edit-city" data-city-id="@city.Id" data-bs-toggle="modal" data-bs-target="#editCityModal">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn text-danger" id="delete-city" data-city-id="@city.Id">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="modal fade" id="editCityModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h2 class="modal-title fs-6">Actualisez les informations d'une ville</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-card p-4" id="editCityForm">
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Nom de la ville<span class="text-danger"> *</span></label>
+                                    <input id="Name" class=" form-control" type="text" placeholder="Informer le nom de la ville">
+                                    <span class="text-danger" id="error-name-city"><small></small></span>
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Superficie</label>
+                                    <input id="Area" class="form-control" type="number" placeholder="Informer la superficie de la ville">
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Région <span class="text-danger">*</span></label>
+                                    <input id="Region" class="form-control" type="text" placeholder="Informer la region de la ville" onblur="validate(3)">
+                                    <span class="text-danger" id="error-region-city"><small></small></span>
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Distict</label>
+                                    <input id="District" class="form-control" type="text" placeholder="Informer le district">
+     
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Total Habitant</label>
+                                    <input id="Population" class="form-control" type="number" placeholder="Informer le total d'habitant">
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Latitude la ville</label>
+                                    <input id="Latitude" class="form-control" type="number" placeholder="Informer la latitude">
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Longitude de la ville</label>
+                                    <input id="Longitude" class="form-control" type="number" placeholder="Informer la longitude">
+                                </div>
+                            </div>
+                            <div class="row justify-content-end p-4">
+                                <button type="submit" class="btn btn-block form-btn-submit text-white">Actualiser</button>
+                            </div>
+                        </form>
+                    </div>                 
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿@model CityModel
+@{
+}
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row">
+        <div class="col-md-10">
+            <a asp-controller="City" asp-action="Index" class="action-url-btn btn" title="retour">
+                <span>
+                    <i class="bi bi-arrow-left-square"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center">
+            <div class="card shadow-sm">
+                <h5 class="text-center mb-4">Enregistrer une ville</h5>
+                <form class="form-card p-4" method="post" asp-controller="City" asp-action="Create">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Nom de la ville<span class="text-danger"> *</span></label>
+                            <input asp-for="Name" class=" form-control" type="text" placeholder="Informer le nom de la ville">
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.Name)</small></span>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Superficie</label>
+                            <input asp-for="Area" class="form-control" type="number" placeholder="Informer la superficie de la ville">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Région <span class="text-danger">*</span></label>
+                            <input asp-for="Region" class="form-control" type="text" placeholder="Informer la region de la ville" onblur="validate(3)">
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.Region)</small></span>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Distict</label>
+                            <input asp-for="District" class="form-control" type="text" placeholder="Informer le district">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Total Habitant</label>
+                            <input asp-for="Population" class="form-control" type="number" placeholder="Informer le total d'habitant">
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Latitude la ville</label>
+                            <input asp-for="Latitude" class="form-control" type="number" placeholder="Informer la latitude">
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Longitude de la ville</label>
+                            <input asp-for="Longitude" class="form-control" type="number" placeholder="Informer la longitude">
+                        </div>
+                    </div>
+                    <div class="row justify-content-end p-4">
+                        <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
