@@ -2,6 +2,8 @@ using spapp.Main.Repositories.Agent;
 using spapp.Main.Repositories.AgentGroup;
 using spapp.Main.Repositories.AgentRank;
 using spapp.Main.Repositories.City;
+using spapp.Main.Repositories.ComplainType;
+using spapp.Main.Repositories.ComplainTypeCategory;
 using spapp.Main.Repositories.Municipality;
 using spapp.Main.Repositories.Neighborhood;
 using spapp.SpappContext;
@@ -18,6 +20,8 @@ builder.Services.AddScoped<INeighborhoodRepository, NeighborhoodRepository>();
 builder.Services.AddScoped<IAgentRankRepository, AgentRankRepository>();
 builder.Services.AddScoped<IAgentGroupRepository,  AgentGroupRepository>();
 builder.Services.AddScoped<IAgentRepository,  AgentRepository>();
+builder.Services.AddScoped<IComplainTypeCategoryRepository, ComplainTypeCategoryRepository>();
+builder.Services.AddScoped<IComplainTypeRepository, ComplainTypeRepository>();
 
 builder.Services.AddCors(options =>
 {
