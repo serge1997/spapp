@@ -29,50 +29,44 @@ namespace spapp.Main.Repositories.ComplainTypeCategory
             return model;
         }
 
-        public async Task<List<ComplainTypeCategoryResource>> GetAllAsync()
+        public async Task<List<ComplainTypeCategoryModel>> GetAllAsync()
         {
             List<ComplainTypeCategoryModel> response = await _spappContextDb
                 .ComplainTypesCategories.ToListAsync();
 
-            return new ComplainTypeCategoryResponse().AsModelListResponse(response);
+            return response;
         }
 
-        public async Task<ComplainTypeCategoryResource> FindAsync(int Id)
+        public async Task<ComplainTypeCategoryModel> FindAsync(int Id)
         {
             ComplainTypeCategoryModel finded = await _spappContextDb
                 .ComplainTypesCategories.FirstOrDefaultAsync(type => type.Id == Id);
 
-            return new ComplainTypeCategoryResponse().AsModelResponse(finded);
+            return finded;
         }
 
-        public async Task<ComplainTypeCategoryResource> UpdateAsync(ComplainTypeCategoryRequest request)
+        public async Task<ComplainTypeCategoryModel> UpdateAsync(ComplainTypeCategoryRequest request)
         {
-            ComplainTypeCategoryResource model = await FindAsync(request.Id);
 
-            _spappContextDb.ComplainTypesCategories
-                .Update(
-                    new ComplainTypeCategoryModel()
-                    {
-                        Id = request.Id,
-                        Name = request.Name,
-                        Description = request.Description,
-                        Updated_at = DateTime.Now,
-                        IsActive = request.IsActive,
+            ComplainTypeCategoryModel model = await FindAsync(request.Id);
 
-                    });
+            model.Name = request.Name;
+            model.Description = request.Description;
+            model.Updated_at = DateTime.Now;
+            model.IsActive = request.IsActive;
+
+            _spappContextDb.ComplainTypesCategories.Update(model);
 
             await _spappContextDb.SaveChangesAsync();
 
             return model;
         }
 
-        public async Task<ComplainTypeCategoryResource> DeleteAsync(int Id)
+        public async Task<ComplainTypeCategoryModel> DeleteAsync(int Id)
         {
-            ComplainTypeCategoryResource model = await FindAsync(Id);
+            ComplainTypeCategoryModel model = await FindAsync(Id);
 
-            _spappContextDb.ComplainTypesCategories
-                .Where(type => type.Id == model.Id)
-                .ExecuteDelete();
+            _spappContextDb.ComplainTypesCategories.Remove(model);
 
             await _spappContextDb.SaveChangesAsync();
 

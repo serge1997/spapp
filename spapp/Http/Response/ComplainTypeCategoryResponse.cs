@@ -19,8 +19,9 @@ namespace spapp.Http.Response
                 type.Id, 
                 type.Name, 
                 type.Description == null ? "Non informé" : type.Description, 
-                type.IsActive == true ? "Active" : "Desctivé", 
-                type.Created_at.ToString("dd/MM/yyyy HH:mm"));
+                type.IsActive == true ? "Active" : "Desactivé", 
+                type.Created_at.ToString("dd/MM/yyyy HH:mm")
+               );
         }
     }
 }

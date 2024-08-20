@@ -9,12 +9,12 @@ namespace spapp.Main.Repositories.ComplainTypeCategory
 
         Task<ComplainTypeCategoryModel> CreateAsync(ComplainTypeCategoryRequest model);
 
-        Task<List<ComplainTypeCategoryResource>> GetAllAsync();
+        Task<List<ComplainTypeCategoryModel>> GetAllAsync();
 
-        Task<ComplainTypeCategoryResource> FindAsync(int Id);
-        Task<ComplainTypeCategoryResource> UpdateAsync(ComplainTypeCategoryRequest request);
+        Task<ComplainTypeCategoryModel> FindAsync(int Id);
+        Task<ComplainTypeCategoryModel> UpdateAsync(ComplainTypeCategoryRequest request);
 
-        Task<ComplainTypeCategoryResource> DeleteAsync(int Id);
+        Task<ComplainTypeCategoryModel> DeleteAsync(int Id);
 
     }
 }

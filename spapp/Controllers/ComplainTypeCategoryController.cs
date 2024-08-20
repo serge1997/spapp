@@ -2,6 +2,7 @@
 using spapp.Http.Requests;
 using spapp.Http.Response;
 using spapp.Main.Repositories.ComplainTypeCategory;
+using spapp.Models;
 
 namespace spapp.Controllers
 {
@@ -15,10 +16,10 @@ namespace spapp.Controllers
         {
             try
             {
-                List<ComplainTypeCategoryResource> response = await _complainTypeCategoryRepository
+                List<ComplainTypeCategoryModel> response = await _complainTypeCategoryRepository
                     .GetAllAsync();
 
-                return View(response);
+                return View(new ComplainTypeCategoryResponse().AsModelListResponse(response));
             }
             catch(Exception ex)
             {
@@ -62,10 +63,10 @@ namespace spapp.Controllers
         {
             try
             {
-                ComplainTypeCategoryResource finded = await _complainTypeCategoryRepository
+                ComplainTypeCategoryModel finded = await _complainTypeCategoryRepository
                     .FindAsync(Id);
 
-                return Json(Results.Ok(finded));
+                return Json(Results.Ok(new ComplainTypeCategoryResponse().AsModelResponse(finded)));
             }
             catch(Exception ex)
             {
@@ -87,6 +88,21 @@ namespace spapp.Controllers
             catch (Exception ex)
             {
                 return Json(Results.NotFound(ex));
+            }
+        }
+
+        [HttpPut]
+        [Route("/api/complaint-type-category")]
+        public async Task<JsonResult> Update([FromBody] ComplainTypeCategoryRequest request)
+        {
+            try
+            {
+                await _complainTypeCategoryRepository.UpdateAsync(request); 
+                return Json(Results.Ok("Categorie de type actualisée"));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.NoContent());
             }
         }
     }

@@ -12,7 +12,10 @@
                 $('#Description').val(ComplainTypeCategory.description);
                 if (ComplainTypeCategory.isActive == "Active") {
                     $('#IsActive').prop('checked', true);
+                } else {
+                    $('#IsActive').prop('checked', false);
                 }
+                $('#editComplainTypeCategoryModal').modal("show");
             })
             .catch(error => {
                 console.log(error);
@@ -36,9 +39,24 @@
 
     $('#editComplainTypeCategoryForm').submit(function (e) {
         e.preventDefault()
-        if ($('#IsActive').is(':checked')) {
-            console.log($('#IsActive').val());
+        let data = {
+            Id: ComplainTypeCategory.id,
+            Name: $('#Name').val(),
+            Description: $('#Description').val()
         }
+        $('#IsActive').is(':checked') ? data.IsActive = true : data.IsActive = false;
+        console.log(data)
+        axios.put('/api/complaint-type-category', data)
+            .then(async response => {
+                toast(await response.data.value, "success");
+                setTimeout(() => {
+                    location.reload()
+                }, 300);
+            })
+            .catch(error => {
+                toast("une erreur é survenue", "success");
+            })
+        
     })
 
     function toast(message, icon = null) {
