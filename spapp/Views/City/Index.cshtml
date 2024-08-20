@@ -14,12 +14,12 @@
                      </span>
                  </div>
             }
-            @if (TempData["EroorMessage"] is not null)
+            @if (TempData["ErrorMessage"] is not null)
             {
                 <div class="alert alert_error">
                     <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
                     <span class="text-white">
-                        @TempData["EroorMessage"]
+                        @TempData["ErrorMessage"]
                     </span>
                 </div>
             }

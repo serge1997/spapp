@@ -136,3 +136,4 @@ C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.pdb
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.genruntimeconfig.cache
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\ref\spapp.dll
 C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.sourcelink.json

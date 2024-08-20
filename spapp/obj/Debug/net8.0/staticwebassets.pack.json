@@ -21,6 +21,14 @@
       "PackagePath": "staticwebassets\\js\\city.js"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type-category.js",
+      "PackagePath": "staticwebassets\\js\\complain-type-category.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
+      "PackagePath": "staticwebassets\\js\\complain-type.js"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js",
       "PackagePath": "staticwebassets\\js\\municipality.js"
     },

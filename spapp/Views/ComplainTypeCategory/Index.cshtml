@@ -1,5 +1,112 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<spapp.Http.Response.ComplainTypeCategoryResource>
 @{
+    ViewData["Title"] = "Categorie des type de plaintes";
 }
+<div class="w-100">
+    <div class="row">
+        <div class="col-md-10 m-auto">
+            @if (TempData["SuccessMessage"] is not null)
+            {
+                <div class="alert alert_success">
+                    <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
+                    <span class="text-white">
+                        @TempData["SuccessMessage"]
+                    </span>
+                </div>
+            }
+            @if (TempData["ErrorMessage"] is not null)
+            {
+                <div class="alert alert_error">
+                    <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
+                    <span class="text-white">
+                        @TempData["ErrorMessage"]
+                    </span>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 m-auto mb-3">
+            <a asp-controller="ComplainTypeCategory" asp-action="Create" class="nav-link">
+                Enregister une categorie des type de plaintes
+            </a>
+        </div>
+        <div class="col-md-10 m-auto">
+            <table class="table dt-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Categorie</th>
+                        <th>Descrition</th>
+                        <th>Active</th> 
+                        <th>Enregistré le</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model is not null)
+                    {
+                        @foreach (spapp.Http.Response.ComplainTypeCategoryResource type in Model)
+                        {
+                            <tr>
+                                <td>@type.Id</td>
+                                <td>@type.Name</td>
+                                <td>@type.Description</td>
+                                <td>@type.IsActive</td>
+                                <td>@type.Created_at</td>
+                                <td class="d-flex gap-1">
+                                    <button class="btn edit-ComplainTypeCategory" data-ComplainTypeCategory-id="@type.Id" data-bs-toggle="modal" data-bs-target="#editCityModal">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn text-danger delete-ComplainTypeCategory" data-ComplainTypeCategory-id="@type.Id">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="modal fade" id="editCityModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h2 class="modal-title fs-6">Actualisez les informations d'une ville</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-card p-4" id="editComplainTypeCategoryForm">
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Nom de la categorie<span class="text-danger"> *</span></label>
+                                    <input id="Name" class=" form-control" type="text" placeholder="Informer le nom de la ville">
+                                    <span class="text-danger"><small></small></span>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Descrition <span class="text-danger">*</span></label>
+                                    <textarea id="Description" class="form-control" type="text" placeholder="Informer la region de la ville"></textarea>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left p-2">
+                                <div class="form-check form-switch col-md-2 d-flex align-items-center gap-2">
+                                    <input class="form-check-input" type="checkbox" id="IsActive">
+                                    <label class="form-check-label form-control-label">activer ?</label>
+                                </div>
+                            </div>
+                            <div class="row justify-content-end p-4">
+                                <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

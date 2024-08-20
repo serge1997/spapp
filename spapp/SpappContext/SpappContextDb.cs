@@ -15,6 +15,7 @@ namespace spapp.SpappContext
         public DbSet<NeighborhoodModel> Neighborhoods { get; set; }
         public DbSet<AgentGroupModel> AgentGroups { get; set; }
         public DbSet<AgentRankModel> AgentRanks { get; set; }
+        public DbSet<ComplainTypeCategoryModel> ComplainTypesCategories { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_configuration.GetValue<string>("Database:ConnectionString"));
@@ -27,6 +28,7 @@ namespace spapp.SpappContext
             modelBuilder.ApplyConfiguration(new NeighborhoodModelMap());
             modelBuilder.ApplyConfiguration(new AgentGroupModelMap());
             modelBuilder.ApplyConfiguration(new AgentRankModelMap());
+            modelBuilder.ApplyConfiguration(new ComplainTypeCategoryModelMap());
 
             base.OnModelCreating(modelBuilder);
         }

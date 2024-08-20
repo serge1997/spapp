@@ -1,16 +1,20 @@
-﻿using spapp.Models;
+﻿using spapp.Http.Requests;
+using spapp.Http.Response;
+using spapp.Models;
 
 namespace spapp.Main.Repositories.ComplainTypeCategory
 {
     public interface IComplainTypeCategoryRepository
     {
 
-        Task<ComplainTypeCategoryModel> CreateAsync(ComplainTypeCategoryModel model);
+        Task<ComplainTypeCategoryModel> CreateAsync(ComplainTypeCategoryRequest model);
 
-        Task<ComplainTypeCategoryModel> FindAsync(int Id);
-        Task<ComplainTypeCategoryModel> UpdateAsync(ComplainTypeCategoryModel model);
+        Task<List<ComplainTypeCategoryResource>> GetAllAsync();
 
-        Task<ComplainTypeCategoryModel> DeleteAsync(ComplainTypeCategoryModel model);
+        Task<ComplainTypeCategoryResource> FindAsync(int Id);
+        Task<ComplainTypeCategoryResource> UpdateAsync(ComplainTypeCategoryRequest request);
+
+        Task<ComplainTypeCategoryResource> DeleteAsync(int Id);
 
     }
 }

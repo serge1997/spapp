@@ -1,5 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model spapp.Http.Requests.ComplainTypeCategoryRequest
 @{
 }
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row">
+        <div class="col-md-10">
+            <a asp-controller="ComplainTypeCategory" asp-action="Index" class="action-url-btn btn" title="retour">
+                <span>
+                    <i class="bi bi-arrow-left-square"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center">
+            <div class="card shadow-sm p-3">
+                <h5 class="text-center mb-4">Enregistrer une categorie de type de crime ou infration á la loi</h5>
+                <form class="form-card p-4" asp-controller="ComplainTypeCategory" asp-action="Create" method="post">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Nom de la categorie<span class="text-danger"> *</span></label>
+                            <input asp-for="Name" class=" form-control" type="text" placeholder="Informer le nom de la ville">
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(type => type.Name)</small></span>
+                        </div>                       
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Descrition <span class="text-danger">*</span></label>
+                            <textarea asp-for="Description" class="form-control" type="text" placeholder="Informer la region de la ville"></textarea>                            
+                        </div>                        
+                    </div>                   
+                    <div class="row justify-content-between text-left p-2">
+                        <div class="form-check form-switch col-md-2 d-flex align-items-center gap-2">
+                            <input class="form-check-input" type="checkbox" id="IsActive">
+                            <label asp-for="IsActive" checked class="form-check-label form-control-label">activer ?</label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end p-4">
+                        <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
