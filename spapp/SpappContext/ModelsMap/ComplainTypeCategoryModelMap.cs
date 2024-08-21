@@ -10,7 +10,7 @@ namespace spapp.SpappContext.ModelsMap
         public void Configure(EntityTypeBuilder<ComplainTypeCategoryModel> builder)
         {
             builder.HasKey(category => category.Id);
-            //builder.HasMany(category => category.ComplainTypes);
+            builder.HasMany(category => category.ComplainTypes);
         }
     }
 }

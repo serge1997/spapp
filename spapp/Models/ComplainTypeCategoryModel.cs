@@ -13,6 +13,6 @@ namespace spapp.Models
         public bool IsActive { get; set; } = true;
         public DateTime Created_at {get; set;}
         public DateTime? Updated_at {get; set;}
-        //public virtual List<ComplainTypeModel> ComplainTypes { get; set;}
+        public virtual List<ComplainTypeModel> ComplainTypes { get; set;}
     }
 }

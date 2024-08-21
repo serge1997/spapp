@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using spapp.SpappContext;
 
@@ -11,9 +12,11 @@ using spapp.SpappContext;
 namespace spapp.Migrations
 {
     [DbContext(typeof(SpappContextDb))]
-    partial class SpappContextDbModelSnapshot : ModelSnapshot
+    [Migration("20240821021650_CreateComplainTypesTable")]
+    partial class CreateComplainTypesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -170,7 +173,7 @@ namespace spapp.Migrations
                     b.Property<int>("Priority")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("Updated_at")
+                    b.Property<DateTime>("Updated_at")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

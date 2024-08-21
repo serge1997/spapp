@@ -1,5 +1,73 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model spapp.ModelViews.ComplainTypeModelView;
+
 @{
 }
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row">
+        <div class="col-md-10">
+            <a asp-controller="Neighborhood" asp-action="Index" class="action-url-btn btn" title="retour">
+                <span>
+                    <i class="bi bi-arrow-left-square"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center">
+            <div class="card shadow-sm">
+                <h5 class="text-center mb-4 p-3">Enregistrer un type de plainte</h5>
+                <form class="form-card p-4" method="post" asp-controller="Neighborhood" asp-action="Create">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Nom du type plainte<span class="text-danger"> *</span></label>
+                            <input asp-for="Name" class=" form-control" type="text" placeholder="Informer le nom de type plainte">
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.Name)</small></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Categorie de type de plainte<span class="text-danger">*</span></label>
+                            <select asp-for="ComplaintTypeCategoryId" class="form-control" type="text" placeholder="Informer la ville">
+
+                                @if (Model.ComplainTypeCategories is not null)
+                                {
+                                    <option selected>Selectionnez une categorie</option>
+                                    foreach (ComplainTypeCategoryModel category in Model.ComplainTypeCategories)
+                                    {
+                                        <option value="@category.Id">@category.Name</option>
+                                    }
+                                }
+                            </select>
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.ComplaintTypeCategoryId)</small></span>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Prioritée <span class="text-danger">*</span></label>
+                            <select asp-for="Priority" class="form-control" type="text" placeholder="Informer">
+                                <option selected>Selectionnez une priorité</option>
+                                <option value="@PriorityEnum.Hight">@PriorityEnum.Hight.PriorityFullName()</option>
+                                <option value="@PriorityEnum.Medium">@PriorityEnum.Medium.PriorityFullName()</option>
+                                <option value="@PriorityEnum.Low">@PriorityEnum.Low.PriorityFullName()</option>
+                            </select>
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.Priority)</small></span>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Descrition</label>
+                            <textarea asp-for="Description" class="form-control" type="text" placeholder="Informez une description"></textarea>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Code penal / Contenu</label>
+                            <textarea asp-for="PenalCode" class="form-control" type="text" placeholder="Informez une description"></textarea>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end p-4">
+                        <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

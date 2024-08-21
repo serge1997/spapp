@@ -32,6 +32,7 @@ C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\Microsoft.IdentityModel
 C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -119,6 +120,7 @@ C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.csproj.CoreCompil
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.RazorAssemblyInfo.cache
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.RazorAssemblyInfo.cs
+C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.sourcelink.json
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\staticwebassets\msbuild.spapp.Microsoft.AspNetCore.StaticWebAssets.props
@@ -135,5 +137,3 @@ C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\refint\spapp.dll
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.pdb
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.genruntimeconfig.cache
 C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\ref\spapp.dll
-C:\Users\serge\source\repos\spapp\spapp\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\serge\source\repos\spapp\spapp\obj\Debug\net8.0\spapp.sourcelink.json

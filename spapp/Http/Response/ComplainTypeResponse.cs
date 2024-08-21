@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Primitives;
+using spapp.Helpers;
 using spapp.Models;
 
 namespace spapp.Http.Response
@@ -6,7 +7,7 @@ namespace spapp.Http.Response
     public class ComplainTypeResponse
     {
 
-        public record ComplainTypeResource(int Id, string Name, string? Description, string Created_at, string? Updated_at, string Priority);
+        public record ComplainTypeResource(int Id, string Name, string? Description, string Created_at, DateTime? Updated_at, string Priority);
 
 
         public List<ComplainTypeResource> AsModelResponseList(List<ComplainTypeModel> types)
@@ -20,8 +21,8 @@ namespace spapp.Http.Response
                 type.Id, type.Name, 
                 type.Description, 
                 type.Created_at.ToString("dd/MM/yyyy HH:mm"),
-                type.Updated_at != null ? type.Updated_at.ToString("dd/MM/yyyy HH:mm") : "", 
-                ""
+                type.Updated_at, 
+                type.Priority.PriorityFullName()
                );
         }
     }

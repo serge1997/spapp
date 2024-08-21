@@ -3,24 +3,52 @@
   "WorkspaceRootPath": "C:\\Users\\serge\\source\\repos\\spapp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\complaintype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\complaintype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\response\\complaintyperesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\response\\complaintyperesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\response\\complaintypecategoryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\response\\complaintypecategoryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\migrations\\20240821021650_createcomplaintypestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\migrations\\20240821021650_createcomplaintypestable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\migrations\\spappcontextdbmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\migrations\\spappcontextdbmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\models\\complaintypemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\models\\complaintypemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\spappcontext\\spappcontextdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\spappcontext\\spappcontextdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\modelviews\\complaintypemodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\modelviews\\complaintypemodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\requests\\complaintyperequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\requests\\complaintyperequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\complaintype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\complaintype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\complaintypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\controllers\\complaintypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\complaintype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\complaintype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\response\\complaintypecategoryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\response\\complaintypecategoryresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +58,154 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SpappContextDbModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Migrations\\SpappContextDbModelSnapshot.cs",
+              "RelativeDocumentMoniker": "spapp\\Migrations\\SpappContextDbModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Migrations\\SpappContextDbModelSnapshot.cs",
+              "RelativeToolTip": "spapp\\Migrations\\SpappContextDbModelSnapshot.cs",
+              "ViewState": "AQIAAJsAAAAAAAAAAAAAAKwAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T02:18:53.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20240821021650_CreateComplainTypesTable.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Migrations\\20240821021650_CreateComplainTypesTable.cs",
+              "RelativeDocumentMoniker": "spapp\\Migrations\\20240821021650_CreateComplainTypesTable.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Migrations\\20240821021650_CreateComplainTypesTable.cs",
+              "RelativeToolTip": "spapp\\Migrations\\20240821021650_CreateComplainTypesTable.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAqwBsAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T02:16:51.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SpappContextDb.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\SpappContext\\SpappContextDb.cs",
+              "RelativeDocumentMoniker": "spapp\\SpappContext\\SpappContextDb.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\SpappContext\\SpappContextDb.cs",
+              "RelativeToolTip": "spapp\\SpappContext\\SpappContextDb.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAkwCAAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T02:11:07.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\ComplainType\\Create.cshtml",
+              "RelativeDocumentMoniker": "spapp\\Views\\ComplainType\\Create.cshtml",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\ComplainType\\Create.cshtml",
+              "RelativeToolTip": "spapp\\Views\\ComplainType\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADcAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-21T01:44:24.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Program.cs",
+              "RelativeDocumentMoniker": "spapp\\Program.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Program.cs",
+              "RelativeToolTip": "spapp\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T01:39:26.928Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\ComplainType\\Index.cshtml",
+              "RelativeDocumentMoniker": "spapp\\Views\\ComplainType\\Index.cshtml",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\ComplainType\\Index.cshtml",
+              "RelativeToolTip": "spapp\\Views\\ComplainType\\Index.cshtml",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAGYAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-21T01:37:52.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ComplainTypeModelView.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\ModelViews\\ComplainTypeModelView.cs",
+              "RelativeDocumentMoniker": "spapp\\ModelViews\\ComplainTypeModelView.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\ModelViews\\ComplainTypeModelView.cs",
+              "RelativeToolTip": "spapp\\ModelViews\\ComplainTypeModelView.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T01:16:50.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ComplainTypeModel.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\ComplainTypeModel.cs",
+              "RelativeDocumentMoniker": "spapp\\Models\\ComplainTypeModel.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\ComplainTypeModel.cs",
+              "RelativeToolTip": "spapp\\Models\\ComplainTypeModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T00:57:35.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ComplainTypeResponse.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\ComplainTypeResponse.cs",
+              "RelativeDocumentMoniker": "spapp\\Http\\Response\\ComplainTypeResponse.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\ComplainTypeResponse.cs",
+              "RelativeToolTip": "spapp\\Http\\Response\\ComplainTypeResponse.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAkAAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T21:22:08.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ComplainTypeRequest.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Requests\\ComplainTypeRequest.cs",
+              "RelativeDocumentMoniker": "spapp\\Http\\Requests\\ComplainTypeRequest.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Requests\\ComplainTypeRequest.cs",
+              "RelativeToolTip": "spapp\\Http\\Requests\\ComplainTypeRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAB5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T21:21:46.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ComplainTypeController.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeController.cs",
+              "RelativeDocumentMoniker": "spapp\\Controllers\\ComplainTypeController.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeController.cs",
+              "RelativeToolTip": "spapp\\Controllers\\ComplainTypeController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-20T21:19:58.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "ComplainTypeCategoryResponse.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\ComplainTypeCategoryResponse.cs",
               "RelativeDocumentMoniker": "spapp\\Http\\Response\\ComplainTypeCategoryResponse.cs",
@@ -42,60 +213,7 @@
               "RelativeToolTip": "spapp\\Http\\Response\\ComplainTypeCategoryResponse.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAYwBYAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:27:21.233Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ComplainTypeResponse.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\ComplainTypeResponse.cs",
-              "RelativeDocumentMoniker": "spapp\\Http\\Response\\ComplainTypeResponse.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\ComplainTypeResponse.cs",
-              "RelativeToolTip": "spapp\\Http\\Response\\ComplainTypeResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABCAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:22:08.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ComplainTypeRequest.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Requests\\ComplainTypeRequest.cs",
-              "RelativeDocumentMoniker": "spapp\\Http\\Requests\\ComplainTypeRequest.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Requests\\ComplainTypeRequest.cs",
-              "RelativeToolTip": "spapp\\Http\\Requests\\ComplainTypeRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:21:46.413Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ComplainTypeController.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeController.cs",
-              "RelativeDocumentMoniker": "spapp\\Controllers\\ComplainTypeController.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeController.cs",
-              "RelativeToolTip": "spapp\\Controllers\\ComplainTypeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T21:19:58.756Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\ComplainType\\Index.cshtml",
-              "RelativeDocumentMoniker": "spapp\\Views\\ComplainType\\Index.cshtml",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\ComplainType\\Index.cshtml",
-              "RelativeToolTip": "spapp\\Views\\ComplainType\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-20T21:19:07.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-20T21:27:21.233Z"
             }
           ]
         }
