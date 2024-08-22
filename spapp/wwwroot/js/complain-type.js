@@ -3,6 +3,12 @@
     var complaintypeCategory;
     var selectComplainCategory = $('#ComplainTypeCategoryId');
 
+    $('#ComplaintTypeCategoryId').filterMultiSelect({
+        placeholderText: "Aucun élement selecionné",
+    });
+    $('#Priority').filterMultiSelect({
+        placeholderText: "Aucun élement selecionné",
+    });
     listAllComplainTypeCategory();
     $('#submit-complain-type-create').click(function (e) {
 

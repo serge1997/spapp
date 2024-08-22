@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\spapp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\menu\\sm-core-css.css",
+      "PackagePath": "staticwebassets\\css\\menu\\sm-core-css.css"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\menu\\sm-simple.css",
+      "PackagePath": "staticwebassets\\css\\menu\\sm-simple.css"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\multiselect\\filter_multi_select.css",
+      "PackagePath": "staticwebassets\\css\\multiselect\\filter_multi_select.css"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -27,6 +39,26 @@
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
       "PackagePath": "staticwebassets\\js\\complain-type.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\menu\\jquery.smartmenus.bootstrap-4.min.js",
+      "PackagePath": "staticwebassets\\js\\menu\\jquery.smartmenus.bootstrap-4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\menu\\jquery.smartmenus.bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\menu\\jquery.smartmenus.bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\menu\\jquery.smartmenus.keyboard.min.js",
+      "PackagePath": "staticwebassets\\js\\menu\\jquery.smartmenus.keyboard.min.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\menu\\jquery.smartmenus.min.js",
+      "PackagePath": "staticwebassets\\js\\menu\\jquery.smartmenus.min.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\multiselect\\filter-multi-select-bundle.min.js",
+      "PackagePath": "staticwebassets\\js\\multiselect\\filter-multi-select-bundle.min.js"
     },
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js",

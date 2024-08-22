@@ -3,48 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\serge\\source\\repos\\spapp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\complaintype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\complaintype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\municipality.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\municipality\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\municipality\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\complain-type.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\enums\\priorityenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\enums\\priorityenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\apispapp.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\app\\apispapp.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\complaintypecategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\controllers\\complaintypecategorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\complaintypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\controllers\\complaintypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\neighborhoodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\controllers\\neighborhoodcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\repositories\\complaintype\\complaintyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\repositories\\complaintype\\complaintyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\response\\complaintyperesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\response\\complaintyperesponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\models\\complaintypemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\models\\complaintypemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\modelviews\\complaintypemodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\modelviews\\complaintypemodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,57 +30,59 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PriorityEnum.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Enums\\PriorityEnum.cs",
-              "RelativeDocumentMoniker": "spapp\\Enums\\PriorityEnum.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Enums\\PriorityEnum.cs",
-              "RelativeToolTip": "spapp\\Enums\\PriorityEnum.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T02:50:17.874Z",
+              "Title": "complain-type.js",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
+              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\complain-type.js",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
+              "RelativeToolTip": "spapp\\wwwroot\\js\\complain-type.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-22T17:57:19.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "municipality.js",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js",
+              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\municipality.js",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js",
+              "RelativeToolTip": "spapp\\wwwroot\\js\\municipality.js",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAAAGIAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-22T17:57:07.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Municipality\\Create.cshtml",
+              "RelativeDocumentMoniker": "spapp\\Views\\Municipality\\Create.cshtml",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Municipality\\Create.cshtml",
+              "RelativeToolTip": "spapp\\Views\\Municipality\\Create.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAABsAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-22T17:56:44.143Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ComplainTypeCategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeCategoryController.cs",
-              "RelativeDocumentMoniker": "spapp\\Controllers\\ComplainTypeCategoryController.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeCategoryController.cs",
-              "RelativeToolTip": "spapp\\Controllers\\ComplainTypeCategoryController.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAAArwG0AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T02:19:03.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NeighborhoodController.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\NeighborhoodController.cs",
-              "RelativeDocumentMoniker": "spapp\\Controllers\\NeighborhoodController.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\NeighborhoodController.cs",
-              "RelativeToolTip": "spapp\\Controllers\\NeighborhoodController.cs",
-              "ViewState": "AQIAAEEAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T02:06:53.373Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "ComplainTypeController.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeController.cs",
               "RelativeDocumentMoniker": "spapp\\Controllers\\ComplainTypeController.cs",
               "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeController.cs",
               "RelativeToolTip": "spapp\\Controllers\\ComplainTypeController.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAAAFgAAAB9AAAA",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAuwFgAAAB9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T01:57:47.497Z"
+              "WhenOpened": "2024-08-22T01:57:47.497Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -114,84 +92,10 @@
               "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\app\\Apispapp.js",
               "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\Apispapp.js",
               "RelativeToolTip": "spapp\\wwwroot\\js\\app\\Apispapp.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAEAAAArAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-08-22T01:44:37.649Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "complain-type.js",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
-              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\complain-type.js",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
-              "RelativeToolTip": "spapp\\wwwroot\\js\\complain-type.js",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAACIAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-22T01:41:31.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ComplainTypeResponse.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\ComplainTypeResponse.cs",
-              "RelativeDocumentMoniker": "spapp\\Http\\Response\\ComplainTypeResponse.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\ComplainTypeResponse.cs",
-              "RelativeToolTip": "spapp\\Http\\Response\\ComplainTypeResponse.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAAB8AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T00:44:57.636Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\ComplainType\\Index.cshtml",
-              "RelativeDocumentMoniker": "spapp\\Views\\ComplainType\\Index.cshtml",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\ComplainType\\Index.cshtml",
-              "RelativeToolTip": "spapp\\Views\\ComplainType\\Index.cshtml",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAAAGgAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-22T00:27:54.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ComplainTypeRepository.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\ComplainType\\ComplainTypeRepository.cs",
-              "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\ComplainType\\ComplainTypeRepository.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\ComplainType\\ComplainTypeRepository.cs",
-              "RelativeToolTip": "spapp\\Main\\Repositories\\ComplainType\\ComplainTypeRepository.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAACwAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T00:08:48.882Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ComplainTypeModelView.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\ModelViews\\ComplainTypeModelView.cs",
-              "RelativeDocumentMoniker": "spapp\\ModelViews\\ComplainTypeModelView.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\ModelViews\\ComplainTypeModelView.cs",
-              "RelativeToolTip": "spapp\\ModelViews\\ComplainTypeModelView.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAABAAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T01:16:50.229Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ComplainTypeModel.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\ComplainTypeModel.cs",
-              "RelativeDocumentMoniker": "spapp\\Models\\ComplainTypeModel.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\ComplainTypeModel.cs",
-              "RelativeToolTip": "spapp\\Models\\ComplainTypeModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAoAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-21T00:57:35.744Z"
             }
           ]
         }

@@ -1,5 +1,8 @@
 ﻿$(document).ready(function () {
     var municipality;
+
+    
+
     $('body #form-create-municipality').submit(function (e) {
         if ($('#name-municipality').val() == "" || $('#municipality-cityId') == "") {
             e.preventDefault();
@@ -90,4 +93,8 @@
             text: message
         });;
     }
+
+    $('#municipality-cityId').filterMultiSelect({
+        placeholderText: "Aucun élement selecionné",
+    });
 })

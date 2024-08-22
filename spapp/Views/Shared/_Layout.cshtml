@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/spapp.styles.css" asp-append-version="true" />
     <link href="https://cdn.datatables.net/v/dt/dt-2.0.8/datatables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/multiselect/filter_multi_select.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/menu/sm-core-css.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/menu/sm-simple.css" asp-append-version="true" />
 </head>
 <body>
     <header class="col-md-10 m-auto d-flex gap-3">
@@ -41,49 +44,49 @@
                 <div class="w-100 mb-3 d-flex justify-content-end" id="sidebar-header">
                     <button class="btn text-white d-none" id="sidebar-close"><i class="bi bi-x-circle"></i></button>
                 </div>
-                <ul class="list-group text-capitalize">
+                <ul class="text-capitalize sm sm-vertical sm-simple p-2 w-100" id="main-menu">
                     <li class="list-group-item border-0">
-                        <a class="d-flex gap-3 nav-link p-0 bg-none" href="#adminstration-submenu" data-bs-toggle="collapse">
+                        <a class="d-flex gap-3 nav-link p-1 bg-none" href="#adminstration-submenu" data-bs-toggle="collapse">
                             <i class="bi bi-gear"></i>
                             Administration
                         </a>
                         <ul class="collapse nav flex-column ms-1" id="adminstration-submenu">
-                            <li class="w-100">
+                            <li class="w-100 p-2">
                                 <a asp-controller="City" asp-action="Index" class="nav-link px-0">
                                     <span class="d-none d-sm-inline menu-list-item">
                                         Villes
                                     </span>
                                 </a>
                             </li>
-                            <li class="w-100">
+                            <li class="w-100 p-2">
                                 <a asp-controller="Municipality" asp-action="Index" class="nav-link px-0">
                                     <span class="d-none d-sm-inline menu-list-item">
                                         Communes
                                     </span>
                                 </a>
                             </li>
-                            <li class="w-100">
+                            <li class="w-100 p-2">
                                 <a asp-controller="Neighborhood" asp-action="Index" class="nav-link px-0">
                                     <span class="d-none d-sm-inline menu-list-item">
                                         Quartiers
                                     </span>
                                 </a>
                             </li>
-                            <li class="w-100">
+                            <li class="w-100 p-2">
                                 <a asp-controller="Neighborhood" asp-action="Index" class="nav-link px-0">
                                     <span class="d-none d-sm-inline menu-list-item">
                                         Agents
                                     </span>
                                 </a>
                             </li>  
-                            <li class="w-100">
+                            <li class="w-100 p-2">
                                 <a asp-controller="ComplainTypeCategory" asp-action="Index" class="nav-link px-0">
                                     <span class="d-none d-sm-inline menu-list-item">
                                         Categorie des types de plainte
                                     </span>
                                 </a>
                             </li>
-                            <li class="w-100">
+                            <li class="w-100 p-2">
                                 <a asp-controller="ComplainType" asp-action="Index" class="nav-link px-0">
                                     <span class="d-none d-sm-inline menu-list-item">
                                         Type de plainte
@@ -110,6 +113,11 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/app/Apispapp.js"></script>
+    <script src="~/js/multiselect/filter-multi-select-bundle.min.js"></script>
+    <script src="~/js/menu/jquery.smartmenus.min.js"></script>
+    <script src="~/js/menu/jquery.smartmenus.bootstrap-4.min.js"></script>
+    <script src="~/js/menu/jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="~/js/menu/jquery.smartmenus.keyboard.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/js/city.js"></script>
     <script src="~/js/municipality.js"></script>
