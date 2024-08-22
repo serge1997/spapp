@@ -105,5 +105,22 @@ namespace spapp.Controllers
                 return Json(Results.NoContent());
             }
         }
+
+        [HttpGet]
+        [Route("/api/complaint-type-category")]
+        public async Task<JsonResult> GeAllApi()
+        {
+            try
+            {
+                List<ComplainTypeCategoryModel> result = await _complainTypeCategoryRepository
+                    .GetAllAsync();
+
+                return Json(Results.Ok(result));
+            }
+            catch( Exception ex)
+            {
+                return Json(Results.StatusCode(500));
+            }
+        }
     }
 }
