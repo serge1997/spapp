@@ -1,4 +1,4 @@
-﻿@model List<spapp.Http.Response.ComplainTypeCategoryResource>
+﻿@model List<ComplainTypeResource>
 @{
     ViewData["Title"] = "Type de plaintes";
 }
@@ -49,21 +49,21 @@
                 <tbody>
                     @if (Model is not null)
                     {
-                        @foreach (spapp.Http.Response.ComplainTypeCategoryResource type in Model)
+                        @foreach (ComplainTypeResource type in Model)
                         {
                             <tr>
                                 <td>@type.Id</td>
                                 <td>@type.Name</td>
                                 <td>@type.Description</td>
+                                <td>@type.Category</td>
+                                <td>@type.Priority</td>
                                 <td>@type.IsActive</td>
-                                <td>@type.Created_at</td>
-                                <td>@type.IsActive</td>
-                                <td>@type.Created_at</td>
+                                <td>@type.PenalCode</td>                                                             
                                 <td class="d-flex gap-1">
-                                    <button class="btn edit-ComplainTypeCategory" data-ComplainTypeCategory-id="@type.Id" data-bs-toggle="modal" data-bs-target="#editCityModal">
+                                    <button class="btn edit-ComplainType" data-ComplainType-id="@type.Id" data-bs-toggle="modal" data-bs-target="#editComplainTypeModal">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
-                                    <button class="btn text-danger delete-ComplainTypeCategory" data-ComplainTypeCategory-id="@type.Id">
+                                    <button class="btn text-danger delete-ComplainType" data-ComplainType-id="@type.Id">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </td>
@@ -75,7 +75,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="modal fade" id="editComplainTypeCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editComplainTypeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0">
@@ -83,28 +83,43 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="form-card p-4" id="editComplainTypeCategoryForm">
+                        <form class="form-card p-4" id="editComplainTypeForm">
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
-                                    <label class="form-control-label">Nom de la categorie<span class="text-danger"> *</span></label>
-                                    <input id="Name" class=" form-control" type="text" placeholder="Informer le nom de la ville">
-                                    <span class="text-danger"><small></small></span>
+                                    <label class="form-control-label">Nom du type plainte<span class="text-danger"> *</span></label>
+                                    <input id="Name" class=" form-control" type="text" placeholder="Informer le nom de type plainte">
+                                    <span class="text-danger" id="Name-error"></span>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Categorie de type de plainte<span class="text-danger">*</span></label>
+                                    <select id="ComplainTypeCategoryId" id="ComplaintTypeCategoryId" class="form-control" type="text">                                       
+                                    </select>
+                                    <span class="text-danger" id="ComplaintTypeCategoryId-error"></span>
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Prioritée <span class="text-danger">*</span></label>
+                                    <select id="Priority" class="form-control" type="text" placeholder="Informer">
+                                       
+                                    </select>
+                                    <span class="text-danger" id="Priority-error"></small></span>
                                 </div>
                             </div>
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
-                                    <label class="form-control-label">Descrition <span class="text-danger">*</span></label>
-                                    <textarea id="Description" class="form-control" type="text" placeholder="Informer la region de la ville"></textarea>
+                                    <label class="form-control-label">Descrition</label>
+                                    <textarea id="Description" class="form-control" type="text" placeholder="Informez une description"></textarea>
                                 </div>
                             </div>
-                            <div class="row justify-content-between text-left p-2">
-                                <div class="form-check form-switch col-md-2 d-flex align-items-center gap-2">
-                                    <input class="form-check-input" type="checkbox" id="IsActive">
-                                    <label class="form-check-label form-control-label">activer ?</label>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Code penal / Contenu</label>
+                                    <textarea id="PenalCode" class="form-control" type="text" placeholder="Informez une description"></textarea>
                                 </div>
                             </div>
                             <div class="row justify-content-end p-4">
-                                <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                                <button type="submit" id="submit-complain-type-create" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
                             </div>
                         </form>
                     </div>

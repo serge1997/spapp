@@ -4,12 +4,19 @@ using spapp.Models;
 
 namespace spapp.Http.Response
 {
+    public record ComplainTypeResource(
+        int Id, 
+        string Name, 
+        string? Description,
+        string Category,
+        string IsActive, 
+        string? PenalCode, 
+        string Priority,
+        string Created_at
+        );
+
     public class ComplainTypeResponse
     {
-
-        public record ComplainTypeResource(int Id, string Name, string? Description, string Created_at, DateTime? Updated_at, string Priority);
-
-
         public List<ComplainTypeResource> AsModelResponseList(List<ComplainTypeModel> types)
         {
             return types.Select(t => AsModelResponse(t)).ToList();
@@ -18,11 +25,14 @@ namespace spapp.Http.Response
         public ComplainTypeResource AsModelResponse(ComplainTypeModel type)
         {
             return new ComplainTypeResource(
-                type.Id, type.Name, 
-                type.Description, 
-                type.Created_at.ToString("dd/MM/yyyy HH:mm"),
-                type.Updated_at, 
-                type.Priority.PriorityFullName()
+                type.Id, 
+                type.Name,
+                type.Description,
+                type.ComplainTypeCategory.Name,                          
+                type.IsActive == true ? "Active" : "Desactivé",
+                type.PenalCode, 
+                type.Priority.PriorityFullName(),
+                 type.Created_at.ToString("dd/MM/yyyy HH:mm")
                );
         }
     }

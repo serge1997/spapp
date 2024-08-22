@@ -12,8 +12,8 @@ using spapp.SpappContext;
 namespace spapp.Migrations
 {
     [DbContext(typeof(SpappContextDb))]
-    [Migration("20240817174204_CreateTablesMunicipality")]
-    partial class CreateTablesMunicipality
+    [Migration("20240822013014_Initialize")]
+    partial class Initialize
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,50 @@ namespace spapp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("spapp.Models.AgentGroupModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ShortName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AgentGroups");
+                });
+
+            modelBuilder.Entity("spapp.Models.AgentRankModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AgentRanks");
+                });
 
             modelBuilder.Entity("spapp.Models.CityModel", b =>
                 {
@@ -65,6 +109,75 @@ namespace spapp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Cities");
+                });
+
+            modelBuilder.Entity("spapp.Models.ComplainTypeCategoryModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ComplainTypesCategories");
+                });
+
+            modelBuilder.Entity("spapp.Models.ComplainTypeModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("ComplainTypeCategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PenalCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Priority")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ComplainTypeCategoryId");
+
+                    b.ToTable("ComplainTypes");
                 });
 
             modelBuilder.Entity("spapp.Models.MunicipalityModel", b =>
@@ -146,6 +259,17 @@ namespace spapp.Migrations
                     b.ToTable("Neighborhoods");
                 });
 
+            modelBuilder.Entity("spapp.Models.ComplainTypeModel", b =>
+                {
+                    b.HasOne("spapp.Models.ComplainTypeCategoryModel", "ComplainTypeCategory")
+                        .WithMany("ComplainTypes")
+                        .HasForeignKey("ComplainTypeCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ComplainTypeCategory");
+                });
+
             modelBuilder.Entity("spapp.Models.MunicipalityModel", b =>
                 {
                     b.HasOne("spapp.Models.CityModel", "City")
@@ -181,6 +305,11 @@ namespace spapp.Migrations
                     b.Navigation("Municipalitys");
 
                     b.Navigation("Neighborhoods");
+                });
+
+            modelBuilder.Entity("spapp.Models.ComplainTypeCategoryModel", b =>
+                {
+                    b.Navigation("ComplainTypes");
                 });
 
             modelBuilder.Entity("spapp.Models.MunicipalityModel", b =>

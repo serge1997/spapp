@@ -1,4 +1,4 @@
-﻿@model spapp.ModelViews.ComplainTypeModelView;
+﻿@model ComplainTypeModelView;
 @{
     ViewData["Title"] = "Créer Type de plaintes";
 }
@@ -20,35 +20,34 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Nom du type plainte<span class="text-danger"> *</span></label>
-                            <input asp-for="Name" class=" form-control" type="text" placeholder="Informer le nom de type plainte">
-                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.Name)</small></span>
+                            <input asp-for="Name" id="Name" class=" form-control" type="text" placeholder="Informer le nom de type plainte">
+                            <span class="text-danger" id="Name-error"></span>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Categorie de type de plainte<span class="text-danger">*</span></label>
-                            <select asp-for="ComplaintTypeCategoryId" class="form-control" type="text" placeholder="Informer la ville">
-
+                            <select asp-for="ComplainTypeCategoryId" id="ComplaintTypeCategoryId" class="form-control" type="text">
                                 @if (Model.ComplainTypeCategories is not null)
                                 {
-                                    <option selected>Selectionnez une categorie</option>
+                                    <option selected value="">Selectionnez une categorie</option>
                                     foreach (ComplainTypeCategoryModel category in Model.ComplainTypeCategories)
                                     {
                                         <option value="@category.Id">@category.Name</option>
                                     }
                                 }
                             </select>
-                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.ComplaintTypeCategoryId)</small></span>
+                            <span class="text-danger" id="ComplaintTypeCategoryId-error"></span>
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Prioritée <span class="text-danger">*</span></label>
-                            <select asp-for="Priority" class="form-control" type="text" placeholder="Informer">
-                                <option selected>Selectionnez une priorité</option>
+                            <select asp-for="Priority" id="Priority" class="form-control" type="text" placeholder="Informer">
+                                <option selected value="">Selectionnez une priorité</option>
                                 <option value="@PriorityEnum.Hight">@PriorityEnum.Hight.PriorityFullName()</option>
                                 <option value="@PriorityEnum.Medium">@PriorityEnum.Medium.PriorityFullName()</option>
                                 <option value="@PriorityEnum.Low">@PriorityEnum.Low.PriorityFullName()</option>
                             </select>
-                            <span class="text-danger"><small>@Html.ValidationMessageFor(city => city.Priority)</small></span>
+                            <span class="text-danger" id="Priority-error"></small></span>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
@@ -64,7 +63,7 @@
                         </div>
                     </div>
                     <div class="row justify-content-end p-4">
-                        <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                        <button type="submit" id="submit-complain-type-create" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
                     </div>
                 </form>
             </div>

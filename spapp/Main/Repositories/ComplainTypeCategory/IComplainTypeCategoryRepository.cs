@@ -15,6 +15,7 @@ namespace spapp.Main.Repositories.ComplainTypeCategory
         Task<ComplainTypeCategoryModel> UpdateAsync(ComplainTypeCategoryRequest request);
 
         Task<ComplainTypeCategoryModel> DeleteAsync(int Id);
+        
 
     }
 }

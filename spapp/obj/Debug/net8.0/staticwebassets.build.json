@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UTJyA5nR64UOoAZK53b2C7m3HZwvloRzsupuTLfa+0s=",
+  "Hash": "X+7TCpp6JIusPYx5m6JDX3JODQQEgEuNkIJ4TsruBZw=",
   "Source": "spapp",
   "BasePath": "_content/spapp",
   "Mode": "Default",
@@ -93,12 +93,12 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\Api.js",
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\Apispapp.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
       "BasePath": "_content/spapp",
-      "RelativePath": "js/app/Api.js",
+      "RelativePath": "js/app/Apispapp.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,7 +109,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\app\\Api.js"
+      "OriginalItemSpec": "wwwroot\\js\\app\\Apispapp.js"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\city.js",

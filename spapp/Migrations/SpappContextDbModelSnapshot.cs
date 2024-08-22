@@ -148,9 +148,6 @@ namespace spapp.Migrations
                     b.Property<int>("ComplainTypeCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ComplaintTypeCategoryId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("Created_at")
                         .HasColumnType("datetime2");
 

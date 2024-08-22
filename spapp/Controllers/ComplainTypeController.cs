@@ -3,6 +3,10 @@ using spapp.Http.Requests;
 using spapp.Main.Repositories.ComplainType;
 using spapp.Main.Repositories.ComplainTypeCategory;
 using spapp.ModelViews;
+using spapp.Models;
+using spapp.Http.Response;
+using System.Text.Json;
+using spapp.Http.Services;
 
 namespace spapp.Controllers
 {
@@ -13,9 +17,18 @@ namespace spapp.Controllers
 
         [HttpGet]
         [Route("complain-type")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            try
+            {
+               List<ComplainTypeModel> results = await _complainTypeRepository.GellAllAsync();
+
+                return View(new ComplainTypeResponse().AsModelResponseList(results));
+            }
+            catch(Exception ex)
+            {
+                return View(ex.Message);
+            }
         }
 
         [HttpGet]
@@ -25,15 +38,15 @@ namespace spapp.Controllers
             try
             {              
                
-                  ComplainTypeModelView complainTypeModelView = new();
-                  await complainTypeModelView.SetComplainTypeCategory(_complainTypeCategory);
+                  ComplainTypeModelView complainTypeModelView = await _complainTypeRepository
+                    .SetCompolainTypeModelView(_complainTypeCategory);
 
                   return View(complainTypeModelView);           
 
             }
             catch(Exception ex)
             {
-                return View(ex);
+                return View(nameof(Index)); ;
             }
         }
 
@@ -43,20 +56,41 @@ namespace spapp.Controllers
         {
             try
             {
+                
                 if (ModelState.IsValid)
                 {
                     await _complainTypeRepository.CreateAsync(complainTypeModelView);
                     TempData["SuccessMessage"] = "Type de plainte crée avec succès";
 
-                    return View(nameof(Index));
+                    return RedirectToAction(nameof(Index));
                 }
 
-                return View();
+                ComplainTypeModelView modelView = await _complainTypeRepository
+                    .SetCompolainTypeModelView(_complainTypeCategory);
+                return View(modelView);
 
             }
             catch (Exception ex)
             {
-                return View(ex);
+                TempData["ErrorMessage"] = $"une erreure survenue: {ex.ToString()}";
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/complain-type/{Id}")]
+        public async Task<JsonResult> Find(int Id)
+        {
+            try
+            {
+                ComplainTypeModel finded = await _complainTypeRepository
+                    .FindAsync(Id);
+
+                return Json(Results.Ok(JsonSerializer.Serialize(finded, EntitiesRelatedJsonSerializer.RelatedToSerialize())));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.NotFound("Aucune donnée rencontrée"));
             }
         }
 

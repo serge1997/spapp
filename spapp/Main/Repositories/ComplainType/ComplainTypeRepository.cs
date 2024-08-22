@@ -5,12 +5,20 @@ using spapp.ModelViews;
 using spapp.SpappContext;
 using spapp.Helpers;
 using Azure.Core;
+using spapp.Main.Repositories.ComplainTypeCategory;
 
 namespace spapp.Main.Repositories.ComplainType
 {
     public class ComplainTypeRepository(SpappContextDb spappContextDb) : IComplainTypeRepository
     {
         private SpappContextDb _spappContextDb = spappContextDb;
+
+        public async Task<List<ComplainTypeModel>> GellAllAsync()
+        {
+            return await _spappContextDb.ComplainTypes
+                .Include(type => type.ComplainTypeCategory)
+                .ToListAsync();
+        }
 
         public async Task<ComplainTypeModel> CreateAsync(ComplainTypeModelView complainTypeModelView)
         {
@@ -20,7 +28,7 @@ namespace spapp.Main.Repositories.ComplainType
                 Description = complainTypeModelView.Description,
                 Priority = complainTypeModelView.Priority,
                 Created_at = DateTime.Now,
-                ComplaintTypeCategoryId = complainTypeModelView.ComplaintTypeCategoryId,
+                ComplainTypeCategoryId = complainTypeModelView.ComplainTypeCategoryId,
                 PenalCode = complainTypeModelView.PenalCode,
             };
 
@@ -32,7 +40,9 @@ namespace spapp.Main.Repositories.ComplainType
 
         public async Task<ComplainTypeModel> FindAsync(int Id)
         {
-            return await _spappContextDb.ComplainTypes.FirstOrDefaultAsync(type => type.Id == Id);
+            return await _spappContextDb.ComplainTypes
+                .Include(type => type.ComplainTypeCategory)
+                .FirstOrDefaultAsync(type => type.Id == Id);
         }
 
         public async Task<ComplainTypeModel> UpdateAsync(ComplainTypeRequest request)
@@ -62,6 +72,11 @@ namespace spapp.Main.Repositories.ComplainType
             return model;
         }
 
-        
+        public async Task<ComplainTypeModelView> SetCompolainTypeModelView(IComplainTypeCategoryRepository complainTypeCategoryRepository)
+        {
+            ComplainTypeModelView instance = new();
+            await instance.SetComplainTypeCategory(complainTypeCategoryRepository);
+            return instance;
+        }
     }
 }
