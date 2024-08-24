@@ -1,6 +1,6 @@
 ﻿@model List<ComplainTypeResource>
 @{
-    ViewData["Title"] = "Type de plaintes";
+    ViewData["Title"] = "Vehicule";
 }
 <div class="w-100">
     <div class="row">
@@ -29,7 +29,7 @@
     <div class="row">
         <div class="col-md-10 m-auto mb-3">
             <a asp-controller="ComplainType" asp-action="Create" class="nav-link">
-                Enregister une type de plainte
+                Enregister un nouveau vehicule de patrouille
             </a>
         </div>
         <div class="col-md-10 m-auto">
@@ -58,9 +58,9 @@
                                 <td>@type.Category</td>
                                 <td>@type.Priority</td>
                                 <td>@type.IsActive</td>
-                                <td>@type.PenalCode</td>                                                             
+                                <td>@type.PenalCode</td>
                                 <td class="d-flex gap-1">
-                                    <button class="btn edit-complain-type" data-ComplainType-id="@type.Id" data-bs-toggle="modal" data-bs-target="#editComplainTypeModal">
+                                    <button class="btn edit-ComplainType" data-ComplainType-id="@type.Id" data-bs-toggle="modal" data-bs-target="#editComplainTypeModal">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
                                     <button class="btn text-danger delete-ComplainType" data-ComplainType-id="@type.Id">
@@ -79,29 +79,28 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0">
-                        <h2 class="modal-title fs-6">Actualisez les informations d'une type de plainte</h2>
-                        <button type="button" id="btn-close-complaint-editModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <h2 class="modal-title fs-6">Actualisez les informations d'un vehicule</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form class="form-card p-4" id="editComplainTypeForm">
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                                     <label class="form-control-label">Nom du type plainte<span class="text-danger"> *</span></label>
-                                    <input id="Name-edit" class=" form-control" type="text" placeholder="Informer le nom de type plainte">
+                                    <input id="Name" class=" form-control" type="text" placeholder="Informer le nom de type plainte">
                                     <span class="text-danger" id="Name-error"></span>
                                 </div>
                             </div>
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                                     <label class="form-control-label">Categorie de type de plainte<span class="text-danger">*</span></label>
-                                    <select id="ComplainTypeCategoryId-edit" name="ComplainTypeCategoryId-edit" class="form-control single-select" type="text">
+                                    <select id="ComplainTypeCategoryId" id="ComplaintTypeCategoryId" class="form-control" type="text">
                                     </select>
-                                   
-                                    <span class="text-danger" id="ComplainTypeCategoryId-error"></span>
+                                    <span class="text-danger" id="ComplaintTypeCategoryId-error"></span>
                                 </div>
                                 <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                                     <label class="form-control-label">Prioritée <span class="text-danger">*</span></label>
-                                    <select id="Priority-edit" name="Priority-edit" class="form-control" type="text" placeholder="Informer">
+                                    <select id="Priority" class="form-control" type="text" placeholder="Informer">
                                         <option value="1">Elevé</option>
                                         <option value="2">Normal</option>
                                         <option value="3">Bas</option>
@@ -118,7 +117,7 @@
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                                     <label class="form-control-label">Code penal / Contenu</label>
-                                    <textarea id="PenalCode-edit" class="form-control" type="text" placeholder="Informez une description"></textarea>
+                                    <textarea id="PenalCode" class="form-control" type="text" placeholder="Informez une description"></textarea>
                                 </div>
                             </div>
                             <div class="row justify-content-end p-4">
@@ -132,7 +131,3 @@
 
     </div>
 </div>
-
-@section Scripts{
-    <script src="~/js/complain-type/index.js"></script>
-}

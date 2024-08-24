@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\multiselect\\filter_multi_select.css"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\multiselect\\select2.min.css",
+      "PackagePath": "staticwebassets\\css\\multiselect\\select2.min.css"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -29,6 +33,10 @@
       "PackagePath": "staticwebassets\\js\\app\\Apispapp.js"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\Toast.js",
+      "PackagePath": "staticwebassets\\js\\app\\Toast.js"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\city.js",
       "PackagePath": "staticwebassets\\js\\city.js"
     },
@@ -39,6 +47,10 @@
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
       "PackagePath": "staticwebassets\\js\\complain-type.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type\\index.js",
+      "PackagePath": "staticwebassets\\js\\complain-type\\index.js"
     },
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\menu\\jquery.smartmenus.bootstrap-4.min.js",
@@ -59,6 +71,10 @@
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\multiselect\\filter-multi-select-bundle.min.js",
       "PackagePath": "staticwebassets\\js\\multiselect\\filter-multi-select-bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\multiselect\\select2.min.js",
+      "PackagePath": "staticwebassets\\js\\multiselect\\select2.min.js"
     },
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js",

@@ -31,7 +31,7 @@
 
                                 @if (Model.Cities is not null)
                                 {
-                                    <option selected>Selectionnez une ville</option>
+                                   
                                     foreach (CityModel city in Model.Cities)
                                     {
                                         <option value="@city.Id">@city.Name</option>
@@ -71,3 +71,7 @@
         </div>
     </div>sss
 </div>
+
+@section Scripts {
+    <script src="~/js/neighborhood.js"></script>
+}

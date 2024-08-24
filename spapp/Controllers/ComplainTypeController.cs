@@ -110,5 +110,21 @@ namespace spapp.Controllers
                 return Json(Results.StatusCode(404), ex.Message);
             }
         }
+
+        [HttpDelete]
+        [Route("/api/complain-type/{Id}")]
+        public async Task<JsonResult> Delete(int Id)
+        {
+            try
+            {
+                await _complainTypeRepository.DeleteAsync(Id);
+
+                return Json(Results.Ok("Type de complainte supprimée avec succés"));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.StatusCode(500));
+            }
+        }
     }
 }

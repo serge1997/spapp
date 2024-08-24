@@ -57,7 +57,10 @@ namespace spapp.Main.Repositories.ComplainType
                 model.Updated_at = DateTime.Now;
                 model.IsActive = request.IsActive;
                 model.PenalCode = request.PenalCode;
+                model.ComplainTypeCategoryId = request.ComplainTypeCategoryId;
 
+                _spappContextDb.ComplainTypes.Update(model);
+                await _spappContextDb.SaveChangesAsync();
                 return model;
             }
             throw new ArgumentException($"Le parametre {request.Id} fournit n'existe pas dans le système");

@@ -13,6 +13,10 @@
     post(url, data) {
         return axios.post(`${this.#baseURL}${url}`, data);
     }
+
+    delete(url) {
+        return axios.delete(`${this.#baseURL}${url}`);
+    }
 }
 
 const ApiSpapp = new ApiSpApp();

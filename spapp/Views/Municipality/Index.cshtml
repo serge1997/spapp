@@ -102,7 +102,7 @@
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                                     <label class="form-control-label">Ville</label>
-                                    <select id="cityId" class="form-select" disabled></select>
+                                    <select id="cityId" name="cityId" class="form-select" disabled></select>
                                 </div>                                
                             </div>
                             <div class="row justify-content-end p-4">
@@ -116,3 +116,7 @@
 
     </div>
 </div>
+
+@section scripts {
+    <script src="~/js/municipality.js"></script>
+}

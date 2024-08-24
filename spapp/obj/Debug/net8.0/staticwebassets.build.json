@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bP0N5HYFI33gIFmOgiXWlA74qZuMDWbq+Gq1Om2OPTE=",
+  "Hash": "1KoujZcJXnYp0avFLxzMiTCxArN+oDRy5u1DZoxEwQA=",
   "Source": "spapp",
   "BasePath": "_content/spapp",
   "Mode": "Default",
@@ -112,6 +112,25 @@
       "OriginalItemSpec": "wwwroot\\css\\multiselect\\filter_multi_select.css"
     },
     {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\multiselect\\select2.min.css",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "css/multiselect/select2.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\multiselect\\select2.min.css"
+    },
+    {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\site.css",
       "SourceId": "spapp",
       "SourceType": "Discovered",
@@ -169,6 +188,25 @@
       "OriginalItemSpec": "wwwroot\\js\\app\\Apispapp.js"
     },
     {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\Toast.js",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/app/Toast.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\app\\Toast.js"
+    },
+    {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\city.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
@@ -205,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\complain-type.js"
+    },
+    {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type\\index.js",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/complain-type/index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\complain-type\\index.js"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type-category.js",
@@ -319,6 +376,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\multiselect\\filter-multi-select-bundle.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\multiselect\\select2.min.js",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/multiselect/select2.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\multiselect\\select2.min.js"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js",

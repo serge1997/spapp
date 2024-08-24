@@ -56,3 +56,7 @@ button.close {
     background-color: #f9fafb;
     border-radius: 12px;
 }
+
+.select2-dropdown.increasezindex {
+    z-index: 99999;
+}
