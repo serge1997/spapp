@@ -27,9 +27,9 @@
                                     {
                                         <option value="@brand.Id">@brand.Name</option>
                                     }
-                                }
-                                <span class="text-danger"><small>@Html.ValidationMessageFor(mun => mun.VehicleBrandId)</small></span>
+                                }                              
                             </select>
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(mun => mun.VehicleBrandId)</small></span>
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Model<span class="text-danger"> *</span></label>
@@ -40,19 +40,19 @@
 
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
-                            <label class="form-control-label">Plaque d'imatriculation'</label>
-                            <input asp-for="LicensePlate" class="form-control" type="text" placeholder="Informer le total d'habitant">
+                            <label class="form-control-label">Plaque d'imatriculation</label>
+                            <input asp-for="LicensePlate" class="form-control" type="text" placeholder="Informer la plque d'imatriculation'">
                             <span class="text-danger"><small>@Html.ValidationMessageFor(error => error.LicensePlate)</small></span>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Kilometrage</label>
-                            <input asp-for="KM" class="form-control" type="number" placeholder="Informer la latitude">
+                            <input asp-for="KM" class="form-control" type="number" placeholder="Informer le kilometrage">
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Année</label>
-                            <input asp-for="Year" class="form-control" type="number" placeholder="Informer la longitude">
+                            <input asp-for="Year" class="form-control" type="number" placeholder="l'annez de fabrication'">
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">

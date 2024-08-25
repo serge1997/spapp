@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using spapp.Http.Requests;
 using spapp.Http.Response;
 using spapp.Main.Repositories.VehicleBrand;
 using spapp.Models;
@@ -36,11 +37,44 @@ namespace spapp.Main.Repositories.Vehicle
                 .ToListAsync();
         }
 
+        public async Task<VehicleModel> FindVehicle(int Id)
+        {
+            return await _spappContextDb.Vehicles
+                .Include(vehicle => vehicle.VehicleBrandModel)
+                .FirstOrDefaultAsync(vehicle => vehicle.Id == Id);
+        }
+
+        public async Task<VehicleModel> UpdateAsync(VehicleRequest request)
+        {
+            VehicleModel model = await FindVehicle(request.Id);
+            model.Model = request.Model;
+            model.LicensePlate = request.LicensePlate;
+            model.VehicleBrandId = request.VehicleBrandId;
+            model.Updated_at = DateTime.Now;
+            model.Year = request.Year;
+            model.KM = request.KM;
+            model.Remark = request.Remark;
+
+            _spappContextDb.Vehicles.Update(model);
+            await _spappContextDb.SaveChangesAsync();
+
+            return model;
+        }
+
         public async Task<VehicleModelView> SetVehicleModelView(IVehicleBrandRepository vehicleBrandRepository)
         {
             VehicleModelView instance = new();
             await instance.SetVehicleBrands(vehicleBrandRepository);
             return instance;
+        }
+
+        public async Task<VehicleModel> DeleteAsync(int Id)
+        {
+            VehicleModel model = await FindVehicle(Id);
+            _spappContextDb.Remove(model);
+            await _spappContextDb.SaveChangesAsync();
+
+            return model;
         }
     }
 }

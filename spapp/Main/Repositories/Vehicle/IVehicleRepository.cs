@@ -2,6 +2,7 @@
 using spapp.Main.Repositories.VehicleBrand;
 using spapp.Models;
 using spapp.ModelViews;
+using spapp.Http.Requests;
 
 namespace spapp.Main.Repositories.Vehicle
 {
@@ -10,6 +11,9 @@ namespace spapp.Main.Repositories.Vehicle
 
         Task<VehicleModel> CreateAsync(VehicleModelView model);
         Task<List<VehicleModel>> GetAllAsync();
+        Task<VehicleModel> FindVehicle(int Id);
+        Task<VehicleModel> UpdateAsync(VehicleRequest request);
         Task<VehicleModelView> SetVehicleModelView(IVehicleBrandRepository vehicleBrandRepository);
+        Task<VehicleModel> DeleteAsync(int Id);
     }
 }

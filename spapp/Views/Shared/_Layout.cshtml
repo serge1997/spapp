@@ -46,8 +46,44 @@
                     <button class="btn text-white d-none" id="sidebar-close"><i class="bi bi-x-circle"></i></button>
                 </div>
                 <ul class="text-capitalize sm sm-vertical sm-simple p-2 w-100" id="main-menu">
+                    <li class="list-group-item border-0 mb-2">
+                        <a class="d-flex align-items-center gap-3 nav-link p-1 bg-none" href="#adminstration-submenu" data-bs-toggle="collapse">
+                            <i class="bi bi-megaphone"></i>
+                            Plainte
+                        </a>
+                        <ul class="collapse nav flex-column ms-1" id="adminstration-submenu">
+                            <li class="w-100 p-2">
+                                <a asp-controller="City" asp-action="Index" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline menu-list-item">
+                                        Plaintes en cours
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="w-100 p-2">
+                                <a asp-controller="City" asp-action="Index" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline menu-list-item">
+                                        Plaintes externes
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="w-100 p-2">
+                                <a asp-controller="City" asp-action="Index" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline menu-list-item">
+                                        Plaintes finalisées
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="w-100 p-2">
+                                <a asp-controller="City" asp-action="Index" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline menu-list-item">
+                                        Patrouilles en cours
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="list-group-item border-0">
-                        <a class="d-flex gap-3 nav-link p-1 bg-none" href="#adminstration-submenu" data-bs-toggle="collapse">
+                        <a class="d-flex align-items-center gap-3 nav-link p-1 bg-none" href="#adminstration-submenu" data-bs-toggle="collapse">
                             <i class="bi bi-gear"></i>
                             Administration
                         </a>
@@ -98,6 +134,13 @@
                                 <a asp-controller="Vehicle" asp-action="Index" class="nav-link px-0">
                                     <span class="d-none d-sm-inline menu-list-item">
                                         Véhicule de patrouille
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="w-100 p-2">
+                                <a asp-controller="Vehicle" asp-action="Index" class="nav-link px-0">
+                                    <span class="d-none d-sm-inline menu-list-item">
+                                        Patrouille
                                     </span>
                                 </a>
                             </li>

@@ -49,21 +49,21 @@
                 <tbody>
                     @if (Model is not null)
                     {
-                        @foreach (VehicleResource type in Model)
+                        @foreach (VehicleResource vehicle in Model)
                         {
                             <tr>
-                                <td>@type.Id</td>
-                                <td>@type.LicensePlate</td>
-                                <td>@type.Brand</td>
-                                <td>@type.Model</td>
-                                <td>@type.KM</td>
-                                <td>@type.Year</td>
-                                <td>@type.Created_at</td>
+                                <td>@vehicle.Id</td>
+                                <td>@vehicle.LicensePlate</td>
+                                <td>@vehicle.Brand</td>
+                                <td>@vehicle.Model</td>
+                                <td>@vehicle.KM</td>
+                                <td>@vehicle.Year</td>
+                                <td>@vehicle.Created_at</td>
                                 <td class="d-flex gap-1">
-                                    <button class="btn edit-ComplainType" data-ComplainType-id="@type.Id" data-bs-toggle="modal" data-bs-target="#editComplainTypeModal">
+                                    <button class="btn edit-vehicle" data-vehicle-id="@vehicle.Id" data-bs-toggle="modal" data-bs-target="#editVehicleModal">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
-                                    <button class="btn text-danger delete-ComplainType" data-ComplainType-id="@type.Id">
+                                    <button class="btn text-danger delete-vehicle" data-vehicle-id="@vehicle.Id">
                                         <i class="bi bi-trash"></i>
                                     </button>
                                 </td>
@@ -75,7 +75,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="modal fade" id="editComplainTypeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editVehicleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0">
@@ -83,45 +83,45 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form class="form-card p-4" id="editComplainTypeForm">
+                        <form class="form-card p-4" id="editVehicleForm">
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Marque</label>
+                                    <select id="VehicleBrandId" class="form-select">                                                               
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Model<span class="text-danger"> *</span></label>
+                                    <input id="Model" id="model" class=" form-control" type="text" placeholder="Informer le model du vehicule">
+                                    <span class="text-danger" id="model-error"><small></span>
+                                </div>
+                            </div>
+
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
-                                    <label class="form-control-label">Nom du type plainte<span class="text-danger"> *</span></label>
-                                    <input id="Name" class=" form-control" type="text" placeholder="Informer le nom de type plainte">
-                                    <span class="text-danger" id="Name-error"></span>
+                                    <label class="form-control-label">Plaque d'imatriculation</label>
+                                    <input id="LicensePlate" class="form-control" type="text" placeholder="Informer la plaque d'imatriculation'">
+                                    <span class="text-danger" id="LicensePlate-error"></span>
                                 </div>
                             </div>
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
-                                    <label class="form-control-label">Categorie de type de plainte<span class="text-danger">*</span></label>
-                                    <select id="ComplainTypeCategoryId" id="ComplaintTypeCategoryId" class="form-control" type="text">
-                                    </select>
-                                    <span class="text-danger" id="ComplaintTypeCategoryId-error"></span>
+                                    <label class="form-control-label">Kilometrage</label>
+                                    <input id="KM" class="form-control" type="number" placeholder="Informer le kilometrage">
                                 </div>
                                 <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
-                                    <label class="form-control-label">Prioritée <span class="text-danger">*</span></label>
-                                    <select id="Priority" class="form-control" type="text" placeholder="Informer">
-                                        <option value="1">Elevé</option>
-                                        <option value="2">Normal</option>
-                                        <option value="3">Bas</option>
-                                    </select>
-                                    <span class="text-danger" id="Priority-error"></small></span>
+                                    <label class="form-control-label">Année</label>
+                                    <input id="Year" class="form-control" type="number" placeholder="Informer l'année de fabrication'">
                                 </div>
                             </div>
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
-                                    <label class="form-control-label">Descrition</label>
-                                    <textarea id="Description" class="form-control" type="text" placeholder="Informez une description"></textarea>
-                                </div>
-                            </div>
-                            <div class="row justify-content-between text-left">
-                                <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
-                                    <label class="form-control-label">Code penal / Contenu</label>
-                                    <textarea id="PenalCode" class="form-control" type="text" placeholder="Informez une description"></textarea>
+                                    <label class="form-control-label">Remarque ou observation</label>
+                                    <textarea id="Remark" class="form-control" type="number" placeholder="une remarque sur l'état du vehicule'"></textarea>
                                 </div>
                             </div>
                             <div class="row justify-content-end p-4">
-                                <button type="submit" id="submit-complain-type-create" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                                <button type="submit" class="btn btn-block form-btn-submit text-white">Actualiser</button>
                             </div>
                         </form>
                     </div>
@@ -131,3 +131,7 @@
 
     </div>
 </div>
+
+@section Scripts{
+    <script src="~/js/vehicle/index.js"></script>
+}

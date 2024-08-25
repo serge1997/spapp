@@ -5,6 +5,7 @@ using spapp.Models;
 using spapp.ModelViews;
 using spapp.Http.Response;
 using spapp.Http.Requests;
+using spapp.Http.Services;
 
 namespace spapp.Controllers
 {
@@ -27,6 +28,22 @@ namespace spapp.Controllers
             {
                 TempData["ErrorMssage"] = $"erreur pour lister les vehicules de patrouille: ${ex.Message}";
                 return View();
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/vehicle/{Id}")]
+        public async Task<JsonResult> Find(int Id)
+        {
+            try
+            {
+                VehicleModel finded = await _vehicleRepository.FindVehicle(Id);
+
+                return Json(new VehicleResponse().AsModelResponse(finded), EntitiesRelatedJsonSerializer.RelatedToSerialize());
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.NotFound(ex.Message));
             }
         }
 
@@ -68,6 +85,41 @@ namespace spapp.Controllers
                 TempData["ErrorMessage"] = $"une erreure est survenue: {ex.ToString()}";
                 return View(nameof(Index)); ;
             }
+        }
+
+        [HttpPut]
+        [Route("/api/vehicle")]
+        public async Task<IActionResult> Update([FromBody]VehicleRequest request)
+        {
+            try
+            {
+                string message = "Vehicule actualisée avec succès";
+                await _vehicleRepository.UpdateAsync(request);
+
+                return Json(Results.Ok(message));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.StatusCode(500));
+            }
+        }
+
+        [HttpDelete]
+        [Route("/api/vehicle/{Id}")]
+        public async Task<JsonResult> Delete(int Id)
+        {
+            try
+            {
+                string message = "Vehicule supprimé avec succès";
+                await _vehicleRepository.DeleteAsync(Id);
+
+                return Json(Results.Ok(message));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.StatusCode(500), ex.Message);
+            }
+
         }
     }
 }
