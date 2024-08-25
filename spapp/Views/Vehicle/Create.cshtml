@@ -1,4 +1,4 @@
-﻿@model spapp.ModelViews.MunicipalityModelView
+﻿@model VehicleModelView
 @{
     ViewData["Title"] = "Enregistrer un vehicule";
 }
@@ -16,44 +16,50 @@
         <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center">
             <div class="card shadow-sm">
                 <h5 class="text-center mb-4 p-2">Enregistrer un veicule de patrouille</h5>
-                <form class="form-card p-4" id="form-create-municipality" method="post" asp-controller="Municipality" asp-action="Create">
-                    <div class="row justify-content-between text-left">
+                <form class="form-card p-4" id="form-create-vehicle" method="post" asp-controller="Vehicle" asp-action="Create">
+                    <div class="row justify-content-between text-left">                     
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
-                            <label class="form-control-label">Nom de la Commune<span class="text-danger"> *</span></label>
-                            <input asp-for="Name" id="name-municipality" class=" form-control" type="text" placeholder="Informer le nom de la commune">
-                            <span class="text-danger"><small>@Html.ValidationMessageFor(mun => mun.Name)</small></span>
-                        </div>
-                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
-                            <label class="form-control-label">Ville</label>
-                            <select id="municipality-cityId" asp-for="CityId" class="form-select">
-
-                                @if (Model.Cities is not null)
+                            <label class="form-control-label">Marque</label>
+                            <select id="VehicleBrandId" asp-for="VehicleBrandId" class="form-select">
+                                @if (Model.VehicleBrands is not null)
                                 {
-                                    foreach (CityModel city in Model.Cities)
+                                    foreach (VehicleBrandModel brand in Model.VehicleBrands)
                                     {
-                                        <option value="@city.Id">@city.Name</option>
+                                        <option value="@brand.Id">@brand.Name</option>
                                     }
                                 }
-                                <span class="text-danger"><small>@Html.ValidationMessageFor(mun => mun.CityId)</small></span>
+                                <span class="text-danger"><small>@Html.ValidationMessageFor(mun => mun.VehicleBrandId)</small></span>
                             </select>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Model<span class="text-danger"> *</span></label>
+                            <input asp-for="Model" id="name-municipality" class=" form-control" type="text" placeholder="Informer le model du vehicule">
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(error => error.Model)</small></span>
                         </div>
                     </div>
 
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
-                            <label class="form-control-label">Total Habitant</label>
-                            <input asp-for="Population" class="form-control" type="number" placeholder="Informer le total d'habitant">
+                            <label class="form-control-label">Plaque d'imatriculation'</label>
+                            <input asp-for="LicensePlate" class="form-control" type="text" placeholder="Informer le total d'habitant">
+                            <span class="text-danger"><small>@Html.ValidationMessageFor(error => error.LicensePlate)</small></span>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
-                            <label class="form-control-label">Latitude la commune</label>
-                            <input asp-for="Latitude" class="form-control" type="number" placeholder="Informer la latitude">
+                            <label class="form-control-label">Kilometrage</label>
+                            <input asp-for="KM" class="form-control" type="number" placeholder="Informer la latitude">
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
-                            <label class="form-control-label">Longitude de la commune</label>
-                            <input asp-for="Longitude" class="form-control" type="number" placeholder="Informer la longitude">
+                            <label class="form-control-label">Année</label>
+                            <input asp-for="Year" class="form-control" type="number" placeholder="Informer la longitude">
                         </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Remarque ou observation</label>
+                            <textarea asp-for="Remark" class="form-control" type="number" placeholder="une remarque sur l'état du vehicule'"></textarea>
+                        </div>                      
                     </div>
                     <div class="row justify-content-end p-4">
                         <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
@@ -63,3 +69,7 @@
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="~/js/vehicle/create.js"></script>
+}

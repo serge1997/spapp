@@ -1,4 +1,4 @@
-﻿@model List<ComplainTypeResource>
+﻿@model List<VehicleResource>
 @{
     ViewData["Title"] = "Vehicule";
 }
@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         <div class="col-md-10 m-auto mb-3">
-            <a asp-controller="ComplainType" asp-action="Create" class="nav-link">
+            <a asp-controller="Vehicle" asp-action="Create" class="nav-link">
                 Enregister un nouveau vehicule de patrouille
             </a>
         </div>
@@ -37,28 +37,28 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nom</th>
-                        <th>Descrition</th>
-                        <th>Categorie</th>
-                        <th>Priorité</th>
-                        <th>Active</th>
-                        <th>Code penal</th>
+                        <th>Plaque</th>
+                        <th>Marque</th>
+                        <th>Model</th>
+                        <th>KM</th>
+                        <th>Année</th>
+                        <th>Enregistré le</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     @if (Model is not null)
                     {
-                        @foreach (ComplainTypeResource type in Model)
+                        @foreach (VehicleResource type in Model)
                         {
                             <tr>
                                 <td>@type.Id</td>
-                                <td>@type.Name</td>
-                                <td>@type.Description</td>
-                                <td>@type.Category</td>
-                                <td>@type.Priority</td>
-                                <td>@type.IsActive</td>
-                                <td>@type.PenalCode</td>
+                                <td>@type.LicensePlate</td>
+                                <td>@type.Brand</td>
+                                <td>@type.Model</td>
+                                <td>@type.KM</td>
+                                <td>@type.Year</td>
+                                <td>@type.Created_at</td>
                                 <td class="d-flex gap-1">
                                     <button class="btn edit-ComplainType" data-ComplainType-id="@type.Id" data-bs-toggle="modal" data-bs-target="#editComplainTypeModal">
                                         <i class="bi bi-pencil-square"></i>

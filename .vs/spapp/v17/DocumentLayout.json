@@ -1,12 +1,224 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\serge\\source\\repos\\spapp\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\modelviews\\vehiclemodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\modelviews\\vehiclemodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\repositories\\vehiclebrand\\vehiclebrandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\repositories\\vehiclebrand\\vehiclebrandrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\repositories\\vehicle\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\repositories\\vehicle\\vehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\complaintypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\controllers\\complaintypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\vehicle\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\vehicle\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\vehicle\\create.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\vehicle\\create.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\repositories\\vehicle\\ivehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\repositories\\vehicle\\ivehiclerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\repositories\\municipality\\municipalityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\repositories\\municipality\\municipalityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\models\\vehiclemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\models\\vehiclemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VehicleBrandRepository.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\VehicleBrand\\VehicleBrandRepository.cs",
+              "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\VehicleBrand\\VehicleBrandRepository.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\VehicleBrand\\VehicleBrandRepository.cs",
+              "RelativeToolTip": "spapp\\Main\\Repositories\\VehicleBrand\\VehicleBrandRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:47:03.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ComplainTypeController.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeController.cs",
+              "RelativeDocumentMoniker": "spapp\\Controllers\\ComplainTypeController.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\ComplainTypeController.cs",
+              "RelativeToolTip": "spapp\\Controllers\\ComplainTypeController.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAACsAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:46:00.322Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Program.cs",
+              "RelativeDocumentMoniker": "spapp\\Program.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Program.cs",
+              "RelativeToolTip": "spapp\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:38:05.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "create.js",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\vehicle\\create.js",
+              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\vehicle\\create.js",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\vehicle\\create.js",
+              "RelativeToolTip": "spapp\\wwwroot\\js\\vehicle\\create.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAYAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-24T19:35:16.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "spapp\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "spapp\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T19:34:00.468Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VehicleController.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\VehicleController.cs",
+              "RelativeDocumentMoniker": "spapp\\Controllers\\VehicleController.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\VehicleController.cs",
+              "RelativeToolTip": "spapp\\Controllers\\VehicleController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAqwBwAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:25:11.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VehicleModelView.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\ModelViews\\VehicleModelView.cs",
+              "RelativeDocumentMoniker": "spapp\\ModelViews\\VehicleModelView.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\ModelViews\\VehicleModelView.cs",
+              "RelativeToolTip": "spapp\\ModelViews\\VehicleModelView.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAA8wBAAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:21:35.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MunicipalityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\Municipality\\MunicipalityRepository.cs",
+              "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\Municipality\\MunicipalityRepository.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\Municipality\\MunicipalityRepository.cs",
+              "RelativeToolTip": "spapp\\Main\\Repositories\\Municipality\\MunicipalityRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:20:25.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VehicleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\Vehicle\\VehicleRepository.cs",
+              "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\Vehicle\\VehicleRepository.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\Vehicle\\VehicleRepository.cs",
+              "RelativeToolTip": "spapp\\Main\\Repositories\\Vehicle\\VehicleRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:19:12.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IVehicleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\Vehicle\\IVehicleRepository.cs",
+              "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\Vehicle\\IVehicleRepository.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\Vehicle\\IVehicleRepository.cs",
+              "RelativeToolTip": "spapp\\Main\\Repositories\\Vehicle\\IVehicleRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:18:41.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VehicleModel.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\VehicleModel.cs",
+              "RelativeDocumentMoniker": "spapp\\Models\\VehicleModel.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\VehicleModel.cs",
+              "RelativeToolTip": "spapp\\Models\\VehicleModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T19:00:28.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Vehicle\\Create.cshtml",
+              "RelativeDocumentMoniker": "spapp\\Views\\Vehicle\\Create.cshtml",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Vehicle\\Create.cshtml",
+              "RelativeToolTip": "spapp\\Views\\Vehicle\\Create.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABYAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-24T18:55:22.808Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

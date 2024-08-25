@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\js\\city.js"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\city\\index.js",
+      "PackagePath": "staticwebassets\\js\\city\\index.js"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type-category.js",
       "PackagePath": "staticwebassets\\js\\complain-type-category.js"
     },
@@ -87,6 +91,14 @@
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\vehicle\\create.js",
+      "PackagePath": "staticwebassets\\js\\vehicle\\create.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\vehicle\\index.js",
+      "PackagePath": "staticwebassets\\js\\vehicle\\index.js"
     },
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\lib\\bootstrap\\LICENSE",

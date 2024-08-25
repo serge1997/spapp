@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using spapp.SpappContext;
 
@@ -11,9 +12,11 @@ using spapp.SpappContext;
 namespace spapp.Migrations
 {
     [DbContext(typeof(SpappContextDb))]
-    partial class SpappContextDbModelSnapshot : ModelSnapshot
+    [Migration("20240825160252_CreateVehicleTable")]
+    partial class CreateVehicleTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -273,6 +276,54 @@ namespace spapp.Migrations
                     b.ToTable("VehicleBrands");
                 });
 
+            modelBuilder.Entity("spapp.Models.VehicleModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Brand")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("KM")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("LicensePlate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("VehicleBrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("VehicleBrandModelId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VehicleBrandModelId");
+
+                    b.ToTable("Vehicles");
+                });
+
             modelBuilder.Entity("spapp.Models.ComplainTypeModel", b =>
                 {
                     b.HasOne("spapp.Models.ComplainTypeCategoryModel", "ComplainTypeCategory")
@@ -314,6 +365,17 @@ namespace spapp.Migrations
                     b.Navigation("Municipality");
                 });
 
+            modelBuilder.Entity("spapp.Models.VehicleModel", b =>
+                {
+                    b.HasOne("spapp.Models.VehicleBrandModel", "VehicleBrandModel")
+                        .WithMany("Vehicles")
+                        .HasForeignKey("VehicleBrandModelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("VehicleBrandModel");
+                });
+
             modelBuilder.Entity("spapp.Models.CityModel", b =>
                 {
                     b.Navigation("Municipalitys");
@@ -329,6 +391,11 @@ namespace spapp.Migrations
             modelBuilder.Entity("spapp.Models.MunicipalityModel", b =>
                 {
                     b.Navigation("Neighborhoods");
+                });
+
+            modelBuilder.Entity("spapp.Models.VehicleBrandModel", b =>
+                {
+                    b.Navigation("Vehicles");
                 });
 #pragma warning restore 612, 618
         }
