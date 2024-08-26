@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ZzpqfTRbm6LO20rcgMf1irw+WsoOA8u2B88TkNv54bU=",
+  "Hash": "pKXjPboF1IFJio5dNS10Wk++asUdNHRUlPUWxGdhuFY=",
   "Source": "spapp",
   "BasePath": "_content/spapp",
   "Mode": "Default",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\city\\index.js"
+    },
+    {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain\\create.js",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/complain/create.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\complain\\create.js"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",

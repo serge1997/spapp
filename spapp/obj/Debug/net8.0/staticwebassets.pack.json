@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets\\js\\complain-type\\index.js"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain\\create.js",
+      "PackagePath": "staticwebassets\\js\\complain\\create.js"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\menu\\jquery.smartmenus.bootstrap-4.min.js",
       "PackagePath": "staticwebassets\\js\\menu\\jquery.smartmenus.bootstrap-4.min.js"
     },

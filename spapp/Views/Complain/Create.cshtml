@@ -1,0 +1,65 @@
+﻿@model VehicleModelView
+@{
+    ViewData["Title"] = "Enregistrer une nouvelle complainte";
+}
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row">
+        <div class="col-md-10">
+            <a asp-controller="Complain" asp-action="Index" class="action-url-btn btn" title="retour">
+                <span>
+                    <i class="bi bi-arrow-left-square"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-3 border d-flex align-items-center shadow-sm" id="form-create-tab">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-victim-btn">1</button>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-complain-btn">2</button>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-address-btn">3</button>
+            </div>
+        </div>
+        <form class="row">
+            <div class="row" id="form-victim-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-person"></i>
+                    <h4 class="modal-title">Victime info</h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom du plaidoyant</label>
+                        <input type="text" class="form-control" placeholder="Nom"/>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Num. de telephone</label>
+                        <input type="text" class="form-control" placeholder="numero telephone" />
+                    </div>
+                </div>
+            </div>
+            <div class="row d-none d-flex align-items-center gap-2" id="form-complain-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone"></i>
+                    <h4 class="modal-title">Plainte info</h4>
+                </div>
+
+               
+            </div>
+            <div class="row d-none d-flex align-items-center gap-2" id="form-address-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-house"></i>
+                    <h4 class="modal-title">Address</h4>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/complain/create.js"></script>
+}
