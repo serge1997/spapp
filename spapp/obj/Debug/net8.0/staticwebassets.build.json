@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Mz1kncu2OsT7I3YuetiBoW83hHq2cjZXKp6ydWieWFY=",
+  "Hash": "XEKTqNW9DZohL2pD7QrEjR6TBLlWSQ58y8c1FqL5VGk=",
   "Source": "spapp",
   "BasePath": "_content/spapp",
   "Mode": "Default",
@@ -454,6 +454,25 @@
       "OriginalItemSpec": "wwwroot\\js\\municipality\\index.js"
     },
     {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood\\create.js",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/neighborhood/create.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\neighborhood\\create.js"
+    },
+    {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood\\index.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
@@ -471,6 +490,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\neighborhood\\index.js"
+    },
+    {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\create.js",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/patrol/create.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\patrol\\create.js"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\site.js",

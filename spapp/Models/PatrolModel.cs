@@ -1,6 +1,6 @@
 ﻿namespace spapp.Models
 {
-    public class Patrol
+    public class PatrolModel
     {
         public int Id { get; set; }
         public int DriverId { get; set; }

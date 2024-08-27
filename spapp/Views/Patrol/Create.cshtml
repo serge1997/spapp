@@ -1,0 +1,79 @@
+﻿@{
+}
+
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center">
+            <div class="card shadow-sm">
+                <h5 class="text-center mb-4">Enregistrer une patrouille</h5>
+                <form class="form-card p-4" method="post" asp-controller="City" asp-action="Create">
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Attribuer un nom a cette patrouille<span class="text-danger"> *</span></label>
+                            <input class=" form-control" type="text" placeholder="Informer le nom">
+                            <span class="text-danger"><small></small></span>
+                        </div>                       
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Conducteur <span class="text-danger">*</span></label>
+                            <select id="driver-select" class="form-control">
+                                <option value="1">Agent A</option>
+                                <option value="1">Agent W</option>
+                                <option value="1">Agent X</option>
+                            </select>
+                            <span class="text-danger"><small></small></span>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Membre(s) <span class="text-danger">*</span></label>
+                            <select id="patrol-members" name="patrol-members[]" multiple class="form-control">
+                                <option value="1">Agent 3</option>
+                                <option value="1">Agent 12</option>
+                                <option value="1">Agent 16</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Vehicule <span class="text-danger">*</span></label>
+                            <select id="patrol-vehicle" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Comunes de patrouille <span class="text-danger">*</span></label>
+                            <select id="patrol-municipality" name="patrol-municipality[]" multiple class="form-control">
+                            </select>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Quartiers <span class="text-danger">*</span></label>
+                            <select id="patrol-neighborhood" name="patrol-neighborhood[]" multiple class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Zone spécifique de patrouille <span class="text-danger">*</span></label>
+                            <select id="patrol-specifique-zone" name="patrol-specifique-zone[]" multiple class="form-control">
+                            </select>
+                        </div>                        
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                            <label class="form-control-label">Observation <span class="text-danger">*</span></label>
+                            <textarea class="form-control" placeholder="observation"></textarea>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end p-4">
+                        <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/patrol/create.js"></script>
+}

@@ -15,6 +15,6 @@ namespace spapp.Models
         public virtual ComplainTypeModel ComplaintType { get; set; }
         public virtual ComplaintOriginModel ComplaintOriginModel { get; set; }
         public virtual AgentModel? Agent { get; set; }
-        public virtual List<Patrol>? Patrols { get; set; }
+        public virtual List<PatrolModel>? Patrols { get; set; }
     }
 }
