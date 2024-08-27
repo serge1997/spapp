@@ -1,0 +1,104 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using spapp.Http.Response;
+using spapp.Http.Services;
+using spapp.Main.Repositories.Municipality;
+using spapp.Main.Repositories.Neighborhood;
+using spapp.Main.Repositories.NeighborhoodSector;
+using spapp.Models;
+using spapp.ModelViews;
+
+namespace spapp.Controllers
+{
+
+    public class NeighborhoodSectorController(
+        IMunicipalityRepository municipalityRepository,
+        INeighborhoodRepository neighborhoodRepository,
+        INeighborhoodSectorRepository neighborhoodSectorRepository
+        ) : Controller
+    {
+        private readonly IMunicipalityRepository _municipalityRepository = municipalityRepository;
+        private readonly INeighborhoodRepository _neighborhoodRepository = neighborhoodRepository;
+        private readonly INeighborhoodSectorRepository _neighborhoodSectorRepository = neighborhoodSectorRepository;
+
+        [HttpGet]
+        [Route("/neighborhood-sector")]
+        public async Task<IActionResult> Index()
+        {
+            try
+            {
+                List<NeighborhoodSectorModel> results = await _neighborhoodSectorRepository
+                    .GetAllAsync();
+
+                return View(NeighborhoodSectorResponse.AsModelListResponse(results));
+            }
+            catch(Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Impossible de lister les secteurs: {ex.Message}";
+                return View();
+            }
+        }
+
+        [HttpGet]
+        [Route("/neighborhood-sector/create")]
+        public async Task<IActionResult> Create()
+        {
+            try
+            {
+                NeighborhoodSectorModelView instance = await _neighborhoodSectorRepository
+                    .SetNeighborhoodSectorModelView(_municipalityRepository, _neighborhoodRepository);
+
+                return View(instance);
+
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"une erreure est survenue: {ex.Message}";
+                return View();
+            }
+        }
+
+        [HttpPost]
+        [Route("/neighborhood-sector/create")]
+        public async Task<IActionResult> Create(NeighborhoodSectorModelView model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    TempData["SuccessMessage"] = $"Secteur enregistré avec succès {model.MunicipalityId}";
+                    await _neighborhoodSectorRepository.CreateAsync(model);
+                    
+                    return RedirectToAction(nameof(Index));
+                }
+
+                NeighborhoodSectorModelView instance = await _neighborhoodSectorRepository
+                    .SetNeighborhoodSectorModelView(_municipalityRepository, _neighborhoodRepository);
+
+                return View(instance);
+            }
+            catch(Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Une erreure est survenue (create sector) {model.NeighborhoodId}: {ex.ToString()}";
+                //return Content(ex.ToString());
+                return RedirectToAction(nameof(Index));
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/neighborhood-sector/{Id}")]
+        public async Task<JsonResult> Find(int Id)
+        {
+            try
+            {
+                NeighborhoodSectorModel result = await _neighborhoodSectorRepository
+                    .Find(Id);
+
+                return Json(result, EntitiesRelatedJsonSerializer.RelatedToSerialize());
+            }
+            catch( Exception ex )
+            {
+                return Json(Results.NotFound());
+            }
+        }
+    }
+}

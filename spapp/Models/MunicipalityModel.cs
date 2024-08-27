@@ -17,6 +17,7 @@ namespace spapp.Models
         public DateTime Created_at { get; set; }
         public DateTime? Updated_at { get; set; }
         public CityModel City { get; set; }
-        public virtual List<NeighborhoodModel>? Neighborhoods { get; set; }
+        public List<NeighborhoodModel>? Neighborhoods { get; set; }
+        public List<NeighborhoodSectorModel>? NeighborhoodSectors { get; set; }
     }
 }

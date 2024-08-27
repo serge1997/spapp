@@ -1,0 +1,143 @@
+﻿@model List<NeighborhoodSectorResource>
+@{
+    ViewData["Title"] = "Secteurs";
+}
+<div class="w-100">
+    <div class="row">
+        <div class="col-md-10 m-auto">
+            @if (TempData["SuccessMessage"] is not null)
+            {
+                <div class="alert alert_success">
+                    <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
+                    <span class="text-white">
+                        @TempData["SuccessMessage"]
+                    </span>
+                </div>
+            }
+            @if (TempData["ErrorMessage"] is not null)
+            {
+                <div class="alert alert_error">
+                    <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
+                    <span class="text-white">
+                        @TempData["ErrorMessage"]
+                    </span>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 m-auto mb-3">
+            <a asp-controller="NeighborhoodSector" asp-action="Create" class="nav-link">
+                Enregister un secteur
+            </a>
+        </div>
+        <div class="col-md-10 m-auto">
+            <table class="table dt-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Secteur</th>
+                        <th>Commune</th>
+                        <th>Quartier</th>
+                        <th>Ville</th>
+                        <th>Risque</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @if (Model is not null)
+                    {
+                        foreach (NeighborhoodSectorResource sector in Model)
+                        {
+                            <tr>
+                                <td>@sector.Id</td>
+                                <td>@sector.Name</td>
+                                <td>@sector.Municipality</td>
+                                <td>@sector.Neighborhood</td>
+                                <td>@sector.City</td>
+                                <td>@sector.IsRiskArea</td>
+                                <td class="d-flex gap-1">
+                                    <button class="btn edit-sector" data-sector-id="@sector.Id" data-bs-toggle="modal" data-bs-target="#editNeighborhoodSectorModal">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn text-danger delete-sector" data-sector-id="@sector.Id">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+           </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="modal fade" id="editNeighborhoodSectorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header border-0">
+                        <h2 class="modal-title fs-6">Actualisez les informations d'un secteur</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-card p-4" id="form-create" method="post" asp-controller="NeighborhoodSector" asp-action="Create">
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Nome du secteur<span class="text-danger"> *</span></label>
+                                    <input id="Name" class=" form-control" type="text" placeholder="Informer le nom">
+                                    <span class="text-danger"><small></small></span>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Commune <span class="text-danger">*</span></label>
+                                    <select id="MunicipalityId" id="municipality-select" class="form-control single-select2-spapp">
+                                    </select>
+                                    <span class="text-danger"><small></small></span>
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Quartier <span class="text-danger">*</span></label>
+                                    <select id="NeighborhoodId" id="neighborhood-select" class="form-control single-select2-spapp">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Observation <span class="text-danger">*</span></label>
+                                    <textarea id="Observation" class="form-control" placeholder="observation"></textarea>
+                                </div>
+                            </div>                           
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Latitude la ville</label>
+                                    <input id="Latitude" class="form-control" type="number" placeholder="Informer la latitude">
+                                </div>
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <label class="form-control-label">Longitude de la ville</label>
+                                    <input id="Longitude" class="form-control" type="number" placeholder="Informer la longitude">
+                                </div>
+                            </div>
+                            <div class="row justify-content-between text-left">
+                                <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
+                                    <div class="form-check form-switch col-md-6 d-flex align-items-center gap-2">
+                                        <input id="IsRiskArea" class="form-check-input" type="checkbox" id="IsActive">
+                                        <label class="form-check-label form-control-label">Est ce une zone a risque ?</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-end p-4">
+                                <button type="submit" class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/neighborhood-sector/index.js"></script>
+}

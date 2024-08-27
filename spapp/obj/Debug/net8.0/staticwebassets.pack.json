@@ -89,6 +89,14 @@
       "PackagePath": "staticwebassets\\js\\municipality\\index.js"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood-sector\\create.js",
+      "PackagePath": "staticwebassets\\js\\neighborhood-sector\\create.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood-sector\\index.js",
+      "PackagePath": "staticwebassets\\js\\neighborhood-sector\\index.js"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood\\create.js",
       "PackagePath": "staticwebassets\\js\\neighborhood\\create.js"
     },

@@ -17,7 +17,7 @@ namespace spapp.Main.Repositories.Neighborhood
                MunicipalityId = model.MunicipalityId,
                Latitude = model.Latitude,
                Longitude = model.Longitude,
-               Updated_at = DateTime.Now,
+               Created_at = DateTime.Now,
            };
 
            _spappContextDb.Neighborhoods.Add(instance);
@@ -59,6 +59,11 @@ namespace spapp.Main.Repositories.Neighborhood
             return model;
         }
 
+        public async Task<List<NeighborhoodModel>> GetAllByMunicipality(int Municipality)
+        {
+            return await _spappContextDb.Neighborhoods
+                .Where(nei => nei.MunicipalityId == Municipality).ToListAsync();
+        }
         public async Task<NeighborhoodModel> DeleteAsync(int Id)
         {
             NeighborhoodModel finded = await FindNeighborhoodByIdAsync(Id);

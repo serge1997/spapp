@@ -6,6 +6,7 @@ using spapp.ModelViews;
 using spapp.Http.Services;
 using spapp.Models;
 using System.Text.Json;
+using spapp.Http.Response;
 
 namespace spapp.Controllers
 {
@@ -119,6 +120,40 @@ namespace spapp.Controllers
             catch(Exception ex)
             {
                 return Json(Results.UnprocessableEntity(ex.Message));
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/neighborhood-by-municipality/{Id}")]
+        public async Task<JsonResult> GetByMunicipality(int Id)
+        {
+            try
+            {
+                List<NeighborhoodModel> results = await _neighborhoodRepository
+                    .GetAllByMunicipality(Id);
+
+                return Json(Results.Ok(results));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.NotFound());
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/neighborhood")]
+        public async Task<JsonResult> GetAllApi()
+        {
+            try
+            {
+                List<NeighborhoodModel> results = await _neighborhoodRepository
+                    .GetAllAsyncNeighborhood();
+
+                return Json(Results.Ok(NeighborhoodResponse.AsModelListResponse(results)));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.StatusCode(500));
             }
         }
         

@@ -6,6 +6,7 @@ using spapp.Main.Repositories.ComplainType;
 using spapp.Main.Repositories.ComplainTypeCategory;
 using spapp.Main.Repositories.Municipality;
 using spapp.Main.Repositories.Neighborhood;
+using spapp.Main.Repositories.NeighborhoodSector;
 using spapp.Main.Repositories.Vehicle;
 using spapp.Main.Repositories.VehicleBrand;
 using spapp.SpappContext;
@@ -26,6 +27,7 @@ builder.Services.AddScoped<IComplainTypeCategoryRepository, ComplainTypeCategory
 builder.Services.AddScoped<IComplainTypeRepository, ComplainTypeRepository>();
 builder.Services.AddScoped<IVehicleBrandRepository, VehicleBrandRepository>();
 builder.Services.AddScoped<IVehicleRepository,  VehicleRepository>();
+builder.Services.AddScoped<INeighborhoodSectorRepository, NeighborhoodSectorRepository>();
 
 builder.Services.AddCors(options =>
 {

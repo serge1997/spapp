@@ -19,6 +19,7 @@ namespace spapp.SpappContext
         public DbSet<ComplainTypeModel> ComplainTypes { set; get; }
         public DbSet<VehicleBrandModel> VehicleBrands { get; set; }
         public DbSet<VehicleModel> Vehicles { get; set; }
+        public DbSet<NeighborhoodSectorModel> NeighborhoodSectors { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_configuration.GetValue<string>("Database:ConnectionString"));
@@ -35,6 +36,7 @@ namespace spapp.SpappContext
             modelBuilder.ApplyConfiguration(new ComplainTypeModelMap());
             modelBuilder.ApplyConfiguration(new VehicleBrandModelMap());
             modelBuilder.ApplyConfiguration(new VehicleModelMap());
+            modelBuilder.ApplyConfiguration(new NeighborhoodSectorModelMap());
 
             base.OnModelCreating(modelBuilder);
         }

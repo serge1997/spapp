@@ -256,6 +256,51 @@ namespace spapp.Migrations
                     b.ToTable("Neighborhoods");
                 });
 
+            modelBuilder.Entity("spapp.Models.NeighborhoodSectorModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRiskArea")
+                        .HasColumnType("bit");
+
+                    b.Property<double?>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("Longitude")
+                        .HasColumnType("float");
+
+                    b.Property<int>("MunicipalityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("NeighborhoodId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Observation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MunicipalityId");
+
+                    b.HasIndex("NeighborhoodId");
+
+                    b.ToTable("NeighborhoodSectors");
+                });
+
             modelBuilder.Entity("spapp.Models.VehicleBrandModel", b =>
                 {
                     b.Property<int>("Id")
@@ -271,6 +316,47 @@ namespace spapp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("VehicleBrands");
+                });
+
+            modelBuilder.Entity("spapp.Models.VehicleModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("KM")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("LicensePlate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Model")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remark")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("VehicleBrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VehicleBrandId");
+
+                    b.ToTable("Vehicles");
                 });
 
             modelBuilder.Entity("spapp.Models.ComplainTypeModel", b =>
@@ -314,6 +400,36 @@ namespace spapp.Migrations
                     b.Navigation("Municipality");
                 });
 
+            modelBuilder.Entity("spapp.Models.NeighborhoodSectorModel", b =>
+                {
+                    b.HasOne("spapp.Models.MunicipalityModel", "Municipality")
+                        .WithMany("NeighborhoodSectors")
+                        .HasForeignKey("MunicipalityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("spapp.Models.NeighborhoodModel", "Neighborhood")
+                        .WithMany("NeighborhoodSectors")
+                        .HasForeignKey("NeighborhoodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Municipality");
+
+                    b.Navigation("Neighborhood");
+                });
+
+            modelBuilder.Entity("spapp.Models.VehicleModel", b =>
+                {
+                    b.HasOne("spapp.Models.VehicleBrandModel", "VehicleBrandModel")
+                        .WithMany("Vehicles")
+                        .HasForeignKey("VehicleBrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("VehicleBrandModel");
+                });
+
             modelBuilder.Entity("spapp.Models.CityModel", b =>
                 {
                     b.Navigation("Municipalitys");
@@ -328,7 +444,19 @@ namespace spapp.Migrations
 
             modelBuilder.Entity("spapp.Models.MunicipalityModel", b =>
                 {
+                    b.Navigation("NeighborhoodSectors");
+
                     b.Navigation("Neighborhoods");
+                });
+
+            modelBuilder.Entity("spapp.Models.NeighborhoodModel", b =>
+                {
+                    b.Navigation("NeighborhoodSectors");
+                });
+
+            modelBuilder.Entity("spapp.Models.VehicleBrandModel", b =>
+                {
+                    b.Navigation("Vehicles");
                 });
 #pragma warning restore 612, 618
         }

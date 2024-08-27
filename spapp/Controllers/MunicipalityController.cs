@@ -155,5 +155,22 @@ namespace spapp.Controllers
                 return Json(Results.NotFound(ex));
             }
         }
+
+        [HttpGet]
+        [Route("/api/municipality")]
+        public async Task<JsonResult> GetAllApi()
+        {
+            try
+            {
+                List<MunicipalityModel> municipalities = await _municipalityRepository
+                    .GetAllMunicipalityAsync();
+                return Json(Results.Ok(municipalities));
+
+            }
+            catch (Exception ex)
+            {
+                return Json(Results.StatusCode(500));
+            }
+        }
     }
 }
