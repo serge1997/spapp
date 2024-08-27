@@ -67,7 +67,9 @@ namespace spapp.Controllers
             {
                 if (!ModelState.IsValid)
                 {
-                    return View(nameof(Create));
+                    MunicipalityModelView data = await _municipalityRepository
+                        .SetMunicipalityModelView(_cityRepository);
+                    return View(data);
                 }
                 await _municipalityRepository.CreateAsync(municipalityModelView);
                 TempData["SuccessMessage"] = $"enregistrée avec succées {municipalityModelView.CityId}";

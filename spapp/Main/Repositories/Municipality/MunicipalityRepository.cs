@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using spapp.Main.Repositories.City;
 using spapp.Models;
 using spapp.ModelViews;
 using spapp.SpappContext;
@@ -73,6 +74,15 @@ namespace spapp.Main.Repositories.Municipality
                  .Where(m => m.CityId == Id)
                  .ToListAsync();
 
+        }
+
+        public async Task<MunicipalityModelView> SetMunicipalityModelView(ICityRepository cityRepository)
+        {
+            MunicipalityModelView instance = new();
+            instance.Cities = await cityRepository.GetAllCitiesAsync();
+
+            return instance;
+            
         }
     }
 }

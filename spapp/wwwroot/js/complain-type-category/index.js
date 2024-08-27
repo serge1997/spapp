@@ -5,7 +5,7 @@
     $('.edit-ComplainTypeCategory').click(function () {
         ComplainTypeCategory = null;
         let id = $(this).attr('data-ComplainTypeCategory-id');
-        axios.get(`/api/complaint-type-category/${id}`)
+        ApiSpapp.get(`complaint-type-category/${id}`)
             .then(async response => {
                 ComplainTypeCategory = await response.data.value;
                 $('#Name').val(ComplainTypeCategory.name);
@@ -24,7 +24,7 @@
 
     $('.delete-ComplainTypeCategory').click(function () {
         let id = $(this).attr('data-ComplainTypeCategory-id');
-        axios.delete(`/api/complaint-type-category/${id}`)
+        ApiSpapp.delete(`complaint-type-category/${id}`)
             .then(async response => {
                 toast(await response.data.value, "success");
                 setTimeout(() => {
@@ -46,35 +46,16 @@
         }
         $('#IsActive').is(':checked') ? data.IsActive = true : data.IsActive = false;
         console.log(data)
-        axios.put('/api/complaint-type-category', data)
+        ApiSpapp.put('complaint-type-category', data)
             .then(async response => {
-                toast(await response.data.value, "success");
+                toastSpApi.success(await response.data.value);
                 setTimeout(() => {
                     location.reload()
                 }, 300);
             })
             .catch(error => {
-                toast("une erreur é survenue", "success");
+                toastSpApi.error("une erreur é survenue " + error.toString());
             })
         
     })
-
-    function toast(message, icon = null) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-
-        return Toast.fire({
-            icon: icon,
-            text: message
-        });;
-    }
 })

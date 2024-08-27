@@ -16,5 +16,10 @@ namespace spapp.ModelViews
         public long? Population { get; set; }
         public List<CityModel> Cities { get; set; } = new List<CityModel>();
 
+
+
+
+        
+
     }
 }

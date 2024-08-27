@@ -63,13 +63,13 @@
 
         ApiSpapp.put('complain-type', complaintypeEditData)
             .then(async response => {
-                toastSpApi.success(await response.data.value, "success");
+                toastSpApi.success(await response.data.value);
                 setTimeout(() => {
                     location.reload()
                 }, 500)
             })
             .catch(error => {
-                toastSpApi.success("une erreur est survenue", "error");
+                toastSpApi.error("une erreur est survenue");
 
             })
     })
@@ -78,13 +78,13 @@
         let id = $(this).attr('data-ComplainType-id');
         ApiSpapp.delete(`complain-type/${id}`)
             .then(async response => {
-                toastSpApi.success(await response.data.value, "success");
+                toastSpApi.success(await response.data.value);
                 setTimeout(() => {
                     location.reload()
                 },500)
             })
             .catch(error => {
-                toastSpApi.success("une erreur est survenue", "error");
+                toastSpApi.error("une erreur est survenue");
             })
     })
 

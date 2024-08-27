@@ -37,20 +37,16 @@
       "PackagePath": "staticwebassets\\js\\app\\Toast.js"
     },
     {
-      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\city.js",
-      "PackagePath": "staticwebassets\\js\\city.js"
-    },
-    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\city\\index.js",
       "PackagePath": "staticwebassets\\js\\city\\index.js"
     },
     {
-      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type-category.js",
-      "PackagePath": "staticwebassets\\js\\complain-type-category.js"
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type-category\\index.js",
+      "PackagePath": "staticwebassets\\js\\complain-type-category\\index.js"
     },
     {
-      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
-      "PackagePath": "staticwebassets\\js\\complain-type.js"
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type\\create.js",
+      "PackagePath": "staticwebassets\\js\\complain-type\\create.js"
     },
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type\\index.js",
@@ -85,12 +81,16 @@
       "PackagePath": "staticwebassets\\js\\multiselect\\select2.min.js"
     },
     {
-      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js",
-      "PackagePath": "staticwebassets\\js\\municipality.js"
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality\\create.js",
+      "PackagePath": "staticwebassets\\js\\municipality\\create.js"
     },
     {
-      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood.js",
-      "PackagePath": "staticwebassets\\js\\neighborhood.js"
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality\\index.js",
+      "PackagePath": "staticwebassets\\js\\municipality\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood\\index.js",
+      "PackagePath": "staticwebassets\\js\\neighborhood\\index.js"
     },
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\site.js",

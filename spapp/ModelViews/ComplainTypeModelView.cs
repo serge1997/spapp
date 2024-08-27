@@ -9,7 +9,7 @@ namespace spapp.ModelViews
     public class ComplainTypeModelView
     {
         public int Id { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Le nom é obligatoire")]
         public string Name { get; set; }
         public string? Description { get; set; }
 

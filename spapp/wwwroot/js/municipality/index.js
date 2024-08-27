@@ -2,7 +2,10 @@
     var municipality;
 
     
-    $('#cityId').filterMultiSelect();
+    $('#cityId').select2({
+        dropdownCssClass: 'increasezindex',
+        width: '100%'
+    });
     
 
     
@@ -17,7 +20,7 @@
     $('.edit-municipality').click(function () {
         let id = $(this).attr('data-municipality-id');
         let select = $('#cityId');
-        axios.get(`/api/municipality/${id}`)
+        ApiSpapp.get(`municipality/${id}`)
             .then(async response => {
                 municipality = await JSON.parse(response.data.value);
                 $('#Name').val(municipality.Name);
@@ -25,7 +28,6 @@
                 $('#Latitude').val(municipality.Latitude);
                 $('#Longitude').val(municipality.Longitude);
                 select.html(`<option selected>${municipality.City.Name}</option>`)
-                console.log(municipality.City.Name)
             })
             .catch(error => {
                 console.log(error)
@@ -49,10 +51,10 @@
         $('#Longitude').val() != "" ? Reflect.set(data, "Longitude", $('#Longitude').val()) : null;
         $('#Population').val() != "" ? Reflect.set(data, "Population", $('#Population').val()) : null;
 
-        axios.put('/api/municipality', data)
+        ApiSpapp.put('municipality', data)
             .then(async response => {
                 if (response.data.statusCode === 200) {
-                    toast(await response.data.value, "success");
+                    toastSpApi.success(await response.data.value);
                 }
                 setTimeout(() => {
                     location.reload()
@@ -66,35 +68,17 @@
 
     $('.delete-municipality').click(function () {
         let id = $(this).attr('data-municipality-id');
-        axios.delete(`/api/municipality/${id}`)
+        ApiSpapp.delete(`municipality/${id}`)
             .then(async response => {
-                toast(await response.data.value, "success");
+                toastSpApi.success(await response.data.value);
 
                 setTimeout(() => {
                     location.reload()
                 }, 500)
             })
             .catch(error => {
-                toast("une erreure est survenue", "error");
+                toastSpApi.error("une erreure est survenue");
                 console.log(error)
             })
     })
-    function toast(message, icon = null) {
-        const Toast = Swal.mixin({
-            toast: true,
-            position: "top-end",
-            showConfirmButton: false,
-            timer: 3000,
-            timerProgressBar: true,
-            didOpen: (toast) => {
-                toast.onmouseenter = Swal.stopTimer;
-                toast.onmouseleave = Swal.resumeTimer;
-            }
-        });
-
-        return Toast.fire({
-            icon: icon,
-            text: message
-        });;
-    }
 })

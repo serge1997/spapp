@@ -21,7 +21,7 @@
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Nom du type plainte<span class="text-danger"> *</span></label>
                             <input asp-for="Name" id="Name" class=" form-control" type="text" placeholder="Informer le nom de type plainte">
-                            <span class="text-danger" id="Name-error"></span>
+                            <span class="text-danger" id="Name-error"><small>@Html.ValidationMessageFor(t => t.Name)</small></span>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
@@ -71,5 +71,5 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/complain-type.js"></script>
+    <script src="~/js/complain-type/create.js"></script>
 }

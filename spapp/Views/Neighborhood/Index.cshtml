@@ -57,7 +57,7 @@
                                 <td>@neighborhood.Municipality.Name</td>
                                 <td>@neighborhood.Population</td>
                                 <td class="d-flex gap-1">
-                                    <button class="btn edit-neighborhood" data-neighborhood-id="@neighborhood.Id" data-bs-toggle="modal" data-bs-target="#editCityModal">
+                                    <button class="btn edit-neighborhood" data-neighborhood-id="@neighborhood.Id" data-bs-toggle="modal" data-bs-target="#editNeighborhoodModal">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
                                     <button class="btn text-danger delete-neighborhood" data-neighborhood-id="@neighborhood.Id">
@@ -72,7 +72,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="modal fade" id="editCityModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editNeighborhoodModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header border-0">
@@ -132,5 +132,5 @@
 
 @section Scripts {
 
-    <script src="~/js/neighborhood.js"></script>
+    <script src="~/js/neighborhood/index.js"></script>
 }

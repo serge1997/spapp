@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pKXjPboF1IFJio5dNS10Wk++asUdNHRUlPUWxGdhuFY=",
+  "Hash": "Mz1kncu2OsT7I3YuetiBoW83hHq2cjZXKp6ydWieWFY=",
   "Source": "spapp",
   "BasePath": "_content/spapp",
   "Mode": "Default",
@@ -207,25 +207,6 @@
       "OriginalItemSpec": "wwwroot\\js\\app\\Toast.js"
     },
     {
-      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\city.js",
-      "SourceId": "spapp",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
-      "BasePath": "_content/spapp",
-      "RelativePath": "js/city.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\city.js"
-    },
-    {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\city\\index.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
@@ -264,12 +245,12 @@
       "OriginalItemSpec": "wwwroot\\js\\complain\\create.js"
     },
     {
-      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type.js",
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type\\create.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
       "BasePath": "_content/spapp",
-      "RelativePath": "js/complain-type.js",
+      "RelativePath": "js/complain-type/create.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -280,7 +261,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\complain-type.js"
+      "OriginalItemSpec": "wwwroot\\js\\complain-type\\create.js"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type\\index.js",
@@ -302,12 +283,12 @@
       "OriginalItemSpec": "wwwroot\\js\\complain-type\\index.js"
     },
     {
-      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type-category.js",
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type-category\\index.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
       "BasePath": "_content/spapp",
-      "RelativePath": "js/complain-type-category.js",
+      "RelativePath": "js/complain-type-category/index.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -318,7 +299,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\complain-type-category.js"
+      "OriginalItemSpec": "wwwroot\\js\\complain-type-category\\index.js"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\menu\\jquery.smartmenus.bootstrap.min.js",
@@ -435,12 +416,12 @@
       "OriginalItemSpec": "wwwroot\\js\\multiselect\\select2.min.js"
     },
     {
-      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality.js",
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality\\create.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
       "BasePath": "_content/spapp",
-      "RelativePath": "js/municipality.js",
+      "RelativePath": "js/municipality/create.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -451,15 +432,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\municipality.js"
+      "OriginalItemSpec": "wwwroot\\js\\municipality\\create.js"
     },
     {
-      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood.js",
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\municipality\\index.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
       "BasePath": "_content/spapp",
-      "RelativePath": "js/neighborhood.js",
+      "RelativePath": "js/municipality/index.js",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -470,7 +451,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\neighborhood.js"
+      "OriginalItemSpec": "wwwroot\\js\\municipality\\index.js"
+    },
+    {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood\\index.js",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/neighborhood/index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\neighborhood\\index.js"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\site.js",

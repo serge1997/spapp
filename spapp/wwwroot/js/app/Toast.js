@@ -1,11 +1,11 @@
 ﻿class Toast {
 
-    success(message, icon) {
-        this.handle(message, icon);
+    success(message) {
+        this.handle(message, "success");
     }
 
-    error(message, icon) {
-        this.handle(message, icon);
+    error(message) {
+        this.handle(message, "error");
     }
 
     handle(message, icon) {

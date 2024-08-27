@@ -1,4 +1,5 @@
-﻿using spapp.Models;
+﻿using spapp.Main.Repositories.City;
+using spapp.Models;
 using spapp.ModelViews;
 
 namespace spapp.Main.Repositories.Municipality
@@ -11,5 +12,6 @@ namespace spapp.Main.Repositories.Municipality
         Task<MunicipalityModel> UpdateAsync(MunicipalityModel model);
         Task<MunicipalityModel> DeleteAsync(int Id);
         Task<List<MunicipalityModel>> GetMunicipalitiesByCityAsync(int Id);
+        Task<MunicipalityModelView> SetMunicipalityModelView(ICityRepository cityRepository);
     }
 }

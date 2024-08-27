@@ -7,13 +7,9 @@
     
    
    
-    $('#ComplainTypeCategoryId').filterMultiSelect({
-        placeholderText: "Aucun élement selecionné",
-    });
+    $('#ComplainTypeCategoryId').select2();
 
-    $('#Priority').filterMultiSelect({
-        placeholderText: "Aucun élement selecionné",
-    });
+    $('#Priority').select2();
 
    
 
