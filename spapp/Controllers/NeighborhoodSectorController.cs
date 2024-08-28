@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using spapp.Http.Requests;
 using spapp.Http.Response;
 using spapp.Http.Services;
 using spapp.Main.Repositories.Municipality;
@@ -44,11 +45,12 @@ namespace spapp.Controllers
         {
             try
             {
+                
                 NeighborhoodSectorModelView instance = await _neighborhoodSectorRepository
                     .SetNeighborhoodSectorModelView(_municipalityRepository, _neighborhoodRepository);
 
                 return View(instance);
-
+                
             }
             catch (Exception ex)
             {
@@ -91,13 +93,33 @@ namespace spapp.Controllers
             try
             {
                 NeighborhoodSectorModel result = await _neighborhoodSectorRepository
-                    .Find(Id);
-
-                return Json(result, EntitiesRelatedJsonSerializer.RelatedToSerialize());
+                    .FindAsync(Id);
+            
+                return Json(Results.Ok(NeighborhoodSectorResponse.AsModelResponse(result)));
             }
             catch( Exception ex )
             {
                 return Json(Results.NotFound());
+            }
+        }
+
+        [HttpPut]
+        [Route("/api/neighborhood-sector")]
+        public async Task<JsonResult> Update([FromBody]NeighborhoodSectorRequest request)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    string message = "Secteur a été actualisé avec succès";
+                    await _neighborhoodSectorRepository.UpdateAsync(request);
+                    return Json(Results.Ok(message));
+                }
+                return Json(Results.BadRequest(ModelState));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.BadRequest($"une erreure est survenue: {ex.Message}"));
             }
         }
     }

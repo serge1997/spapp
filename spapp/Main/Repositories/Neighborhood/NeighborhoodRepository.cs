@@ -62,7 +62,10 @@ namespace spapp.Main.Repositories.Neighborhood
         public async Task<List<NeighborhoodModel>> GetAllByMunicipality(int Municipality)
         {
             return await _spappContextDb.Neighborhoods
-                .Where(nei => nei.MunicipalityId == Municipality).ToListAsync();
+                .Include(nei => nei.City)
+                .Include(nei => nei.Municipality)
+                .Where(nei => nei.MunicipalityId == Municipality)
+                .ToListAsync();
         }
         public async Task<NeighborhoodModel> DeleteAsync(int Id)
         {

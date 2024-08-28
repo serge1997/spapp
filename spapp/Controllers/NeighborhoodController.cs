@@ -79,7 +79,8 @@ namespace spapp.Controllers
             {
                 NeighborhoodModel result = await _neighborhoodRepository
                     .FindNeighborhoodByIdAsync(Id);
-                return Json(Results.Ok(JsonSerializer.Serialize(result, EntitiesRelatedJsonSerializer.RelatedToSerialize())));
+
+                return Json(Results.Ok(NeighborhoodResponse.AsModelResponse(result)));
             }
             catch(Exception ex)
             {
@@ -132,7 +133,7 @@ namespace spapp.Controllers
                 List<NeighborhoodModel> results = await _neighborhoodRepository
                     .GetAllByMunicipality(Id);
 
-                return Json(Results.Ok(results));
+                return Json(Results.Ok(NeighborhoodResponse.AsModelListResponse(results)));
             }
             catch(Exception ex)
             {

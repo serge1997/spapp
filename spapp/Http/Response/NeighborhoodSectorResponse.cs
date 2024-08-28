@@ -12,8 +12,11 @@ namespace spapp.Http.Response
         int NeighborhoodId,
         string City,
         string IsRiskArea,
+        bool IsRisked,
         string Createt_at,
-        string? Observation
+        string? Observation,
+        double? Latitude,
+        double? Longitude
  
     );
     public static class NeighborhoodSectorResponse
@@ -35,8 +38,11 @@ namespace spapp.Http.Response
                     model.NeighborhoodId,
                     model.Municipality.City.Name,
                     model.IsRiskArea == true ? "Zone á risque" : "Pas de risque",
+                    model.IsRiskArea,
                     model.Created_at.ToString("dd/mm/yyyy"),
-                    model.Observation
+                    model.Observation,
+                    model.Latitude,
+                    model.Longitude
                 );
         }
     }

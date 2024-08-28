@@ -7,20 +7,28 @@
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\neighborhood-sector\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\repositories\\neighborhoodsector\\ineighborhoodsectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\repositories\\neighborhoodsector\\ineighborhoodsectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\neighborhoodsectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\controllers\\neighborhoodsectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\requests\\neighborhoodsectorrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\requests\\neighborhoodsectorrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\toast.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\app\\toast.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\repositories\\neighborhoodsector\\neighborhoodsectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\repositories\\neighborhoodsector\\neighborhoodsectorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\response\\neighborhoodsectorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\response\\neighborhoodsectorresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\neighborhoodsectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\controllers\\neighborhoodsectorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\modelviews\\neighborhoodsectormodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\modelviews\\neighborhoodsectormodelview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\neighborhoodsector\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\neighborhoodsector\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,8 +38,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Toast.js",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\Toast.js",
+              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\app\\Toast.js",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\Toast.js",
+              "RelativeToolTip": "spapp\\wwwroot\\js\\app\\Toast.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-28T15:04:27.301Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NeighborhoodSectorController.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\NeighborhoodSectorController.cs",
+              "RelativeDocumentMoniker": "spapp\\Controllers\\NeighborhoodSectorController.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\NeighborhoodSectorController.cs",
+              "RelativeToolTip": "spapp\\Controllers\\NeighborhoodSectorController.cs",
+              "ViewState": "AQIAAGoAAAAAAAAAAAAuwHUAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T14:50:07.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NeighborhoodSectorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\NeighborhoodSector\\NeighborhoodSectorRepository.cs",
+              "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\NeighborhoodSector\\NeighborhoodSectorRepository.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\NeighborhoodSector\\NeighborhoodSectorRepository.cs",
+              "RelativeToolTip": "spapp\\Main\\Repositories\\NeighborhoodSector\\NeighborhoodSectorRepository.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAAwDkAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T14:37:16.22Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NeighborhoodSectorRequest.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Requests\\NeighborhoodSectorRequest.cs",
+              "RelativeDocumentMoniker": "spapp\\Http\\Requests\\NeighborhoodSectorRequest.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Requests\\NeighborhoodSectorRequest.cs",
+              "RelativeToolTip": "spapp\\Http\\Requests\\NeighborhoodSectorRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T14:36:46.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NeighborhoodSectorResponse.cs",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\NeighborhoodSectorResponse.cs",
+              "RelativeDocumentMoniker": "spapp\\Http\\Response\\NeighborhoodSectorResponse.cs",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\NeighborhoodSectorResponse.cs",
+              "RelativeToolTip": "spapp\\Http\\Response\\NeighborhoodSectorResponse.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwCwAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T14:31:04.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\NeighborhoodSector\\Index.cshtml",
+              "RelativeDocumentMoniker": "spapp\\Views\\NeighborhoodSector\\Index.cshtml",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\NeighborhoodSector\\Index.cshtml",
+              "RelativeToolTip": "spapp\\Views\\NeighborhoodSector\\Index.cshtml",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAAAHIAAABYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-28T14:29:54.179Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -40,61 +126,9 @@
               "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\neighborhood-sector\\index.js",
               "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood-sector\\index.js",
               "RelativeToolTip": "spapp\\wwwroot\\js\\neighborhood-sector\\index.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAArAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAuwE0AAABPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-27T20:00:32.245Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "INeighborhoodSectorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\NeighborhoodSector\\INeighborhoodSectorRepository.cs",
-              "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\NeighborhoodSector\\INeighborhoodSectorRepository.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\NeighborhoodSector\\INeighborhoodSectorRepository.cs",
-              "RelativeToolTip": "spapp\\Main\\Repositories\\NeighborhoodSector\\INeighborhoodSectorRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBMAAAA5AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T19:01:26.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NeighborhoodSectorResponse.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\NeighborhoodSectorResponse.cs",
-              "RelativeDocumentMoniker": "spapp\\Http\\Response\\NeighborhoodSectorResponse.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\NeighborhoodSectorResponse.cs",
-              "RelativeToolTip": "spapp\\Http\\Response\\NeighborhoodSectorResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T18:49:40.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "NeighborhoodSectorModelView.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\ModelViews\\NeighborhoodSectorModelView.cs",
-              "RelativeDocumentMoniker": "spapp\\ModelViews\\NeighborhoodSectorModelView.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\ModelViews\\NeighborhoodSectorModelView.cs",
-              "RelativeToolTip": "spapp\\ModelViews\\NeighborhoodSectorModelView.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAADwvwUAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:37:19.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "NeighborhoodSectorController.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\NeighborhoodSectorController.cs",
-              "RelativeDocumentMoniker": "spapp\\Controllers\\NeighborhoodSectorController.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\NeighborhoodSectorController.cs",
-              "RelativeToolTip": "spapp\\Controllers\\NeighborhoodSectorController.cs",
-              "ViewState": "AQIAAE8AAAAAAAAAAAAAAFgAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-27T14:34:28.69Z",
+              "WhenOpened": "2024-08-28T14:19:56.637Z",
               "EditorCaption": ""
             }
           ]

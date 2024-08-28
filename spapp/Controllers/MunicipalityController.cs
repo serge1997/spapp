@@ -6,6 +6,7 @@ using spapp.ModelViews;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using spapp.Http.Services;
+using spapp.Http.Response;
 
 namespace spapp.Controllers
 {
@@ -120,7 +121,7 @@ namespace spapp.Controllers
             }
             catch(Exception ex)
             {
-                return Json(Results.StatusCode(500));
+                return Json(Results.StatusCode(500), ex.Message);
             }
         }
 
@@ -164,12 +165,13 @@ namespace spapp.Controllers
             {
                 List<MunicipalityModel> municipalities = await _municipalityRepository
                     .GetAllMunicipalityAsync();
-                return Json(Results.Ok(municipalities));
+
+                return Json(Results.Ok(MunicipalityResponse.AsModelListResponse(municipalities)));
 
             }
             catch (Exception ex)
             {
-                return Json(Results.StatusCode(500));
+                return Json(Results.StatusCode(500), ex.Message);
             }
         }
     }

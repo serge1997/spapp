@@ -1,13 +1,18 @@
-﻿namespace spapp.Http.Requests
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace spapp.Http.Requests
 {
     public record NeighborhoodSectorRequest(
         int Id,
+        [Required]
         string Name,
-        int MunicipalityId,
-        int NeighborhoodId,
+        [Required]
+        int? MunicipalityId,
+        [Required]
+        int? NeighborhoodId,
         bool IsRiskArea,
-        double? Latitiude,
-        double? Longitiude,
+        double? Latitude,
+        double? Longitude,
         string? Observation
     );
     
