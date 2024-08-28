@@ -14,6 +14,7 @@ namespace spapp.Main.Repositories.NeighborhoodSector
         Task<NeighborhoodSectorModel> FindAsync(int Id);
 
         NeighborhoodSectorModel? FindByName(string Name);
+        Task<List<NeighborhoodSectorModel>> GetAllByNeighborhood(string[] Neighborhoods);
 
         Task<NeighborhoodSectorModel> UpdateAsync(NeighborhoodSectorRequest request);
 

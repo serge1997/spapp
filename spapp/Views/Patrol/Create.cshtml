@@ -1,4 +1,7 @@
-﻿@{
+﻿@model PatrolModelView
+
+@{
+    ViewData["Title"] = "creer une patrouille";
 }
 
 <div class="container-fluid px-1 py-5 mx-auto">
@@ -36,7 +39,15 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Vehicule <span class="text-danger">*</span></label>
-                            <select id="patrol-vehicle" class="form-control">
+                            <select asp-for="VehicleId" id="patrol-vehicle" class="form-control">
+                               
+                                @if(Model.Vehicles is not null)
+                                {
+                                    foreach (VehicleModel vehicle in Model.Vehicles)
+                                    {
+                                        <option value="@vehicle.Id">@vehicle.Model</option>
+                                    }
+                                }
                             </select>
                         </div>
                     </div>
@@ -44,18 +55,25 @@
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Comunes de patrouille <span class="text-danger">*</span></label>
                             <select id="patrol-municipality" name="patrol-municipality[]" multiple class="form-control">
+                                @if (Model.Municipalities is not null)
+                                {
+                                    foreach (MunicipalityModel mun in Model.Municipalities)
+                                    {
+                                        <option value="@mun.Id">@mun.Name</option>
+                                    }
+                                }
                             </select>
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Quartiers <span class="text-danger">*</span></label>
-                            <select id="patrol-neighborhood" name="patrol-neighborhood[]" multiple class="form-control">
+                            <select id="patrol-neighborhood" name="patrol-neighborhood[]" multiple class="form-control">                              
                             </select>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Zone spécifique de patrouille <span class="text-danger">*</span></label>
-                            <select id="patrol-specifique-zone" name="patrol-specifique-zone[]" multiple class="form-control">
+                            <select id="patrol-specifique-zone" name="patrol-specifique-zone[]" multiple class="form-control">                              
                             </select>
                         </div>                        
                     </div>

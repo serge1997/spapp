@@ -1,4 +1,5 @@
 ﻿using Azure.Core;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using spapp.Http.Requests;
@@ -59,6 +60,23 @@ namespace spapp.Main.Repositories.NeighborhoodSector
                 .FirstOrDefault(sector => sector.Name.Equals(Name))!;
         }
 
+        public async Task<List<NeighborhoodSectorModel>> GetAllByNeighborhood(string[] Neighborhoods)
+        {
+            int[] ids = Neighborhoods.Select(int.Parse).ToArray();
+
+            var parameters = ids.Select((id, index) => new SqlParameter($"@p{index}", id))
+                .ToList();
+
+            var parametersNames = string.Join(',', parameters
+                .Select(p => p.ParameterName));
+
+            return await _spappContextDb.NeighborhoodSectors
+                .FromSqlRaw($"SELECT *FROM [NeighborhoodSectors] WHERE NeighborhoodId IN ({parametersNames})", parameters.ToArray())
+                .Include(sector => sector.Neighborhood)
+                .Include(sector => sector.Municipality.City)
+                .ToListAsync();
+
+        }
         public async Task<NeighborhoodSectorModel> UpdateAsync(NeighborhoodSectorRequest request)
         {
             //BeforeSave(request.Name, request.MunicipalityId, (int)request.NeighborhoodId!);

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using spapp.Models;
 using spapp.ModelViews;
 using spapp.SpappContext;
@@ -59,18 +60,27 @@ namespace spapp.Main.Repositories.Neighborhood
             return model;
         }
 
-        public async Task<List<NeighborhoodModel>> GetAllByMunicipality(int Municipality)
+        public async Task<List<NeighborhoodModel>> GetAllByMunicipality(string[] Municipality)
         {
+
+            int[] idsToInt = Municipality.Select(int.Parse).ToArray();
+
+            var parameters = idsToInt
+                .Select((id, index) => new SqlParameter($"@p{index}", id))
+                .ToList();
+
+            var parameterNames = string.Join(",", parameters.Select(p => p.ParameterName));
+
             return await _spappContextDb.Neighborhoods
+                .FromSqlRaw($"SELECT * FROM [Neighborhoods] WHERE MunicipalityId IN ({parameterNames})", parameters.ToArray())
                 .Include(nei => nei.City)
                 .Include(nei => nei.Municipality)
-                .Where(nei => nei.MunicipalityId == Municipality)
                 .ToListAsync();
         }
         public async Task<NeighborhoodModel> DeleteAsync(int Id)
         {
             NeighborhoodModel finded = await FindNeighborhoodByIdAsync(Id);
-
+           
             _spappContextDb.Neighborhoods.Remove(finded);
             await _spappContextDb.SaveChangesAsync();
 

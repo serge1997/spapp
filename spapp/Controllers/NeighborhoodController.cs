@@ -126,18 +126,20 @@ namespace spapp.Controllers
 
         [HttpGet]
         [Route("/api/neighborhood-by-municipality/{Id}")]
-        public async Task<JsonResult> GetByMunicipality(int Id)
+        public async Task<JsonResult> GetByMunicipality(string Id)
         {
             try
             {
+                string[] ids = Id.Split(',');
+               
                 List<NeighborhoodModel> results = await _neighborhoodRepository
-                    .GetAllByMunicipality(Id);
+                    .GetAllByMunicipality(ids);
 
                 return Json(Results.Ok(NeighborhoodResponse.AsModelListResponse(results)));
             }
             catch(Exception ex)
             {
-                return Json(Results.NotFound());
+                return Json(Results.NotFound(ex.ToString()));
             }
         }
 

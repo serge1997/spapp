@@ -10,7 +10,7 @@ namespace spapp.Main.Repositories.Neighborhood
         Task<List<NeighborhoodModel>> GetAllAsyncNeighborhood();
         Task<NeighborhoodModel> FindNeighborhoodByIdAsync(int Id);
         Task<NeighborhoodModel> UpdateAsync(NeighborhoodModel neighborhood);
-        Task<List<NeighborhoodModel>> GetAllByMunicipality(int Municipality);
+        Task<List<NeighborhoodModel>> GetAllByMunicipality(string[] Municipality);
         Task<NeighborhoodModel> DeleteAsync(int Id);
     }
 }

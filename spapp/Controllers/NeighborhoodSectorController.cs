@@ -138,5 +138,24 @@ namespace spapp.Controllers
                 return Json(Results.NotFound(ex.Message));
             }
         }
+
+        [HttpGet]
+        [Route("/api/neighborhood-sector-by-neighborhood/{Ids}")]
+        public async Task<JsonResult> GetAllByNeighborhood(string Ids)
+        {
+            try
+            {
+                string[] neighborhoods = Ids.Split(',');
+                List<NeighborhoodSectorModel> results = await _neighborhoodSectorRepository
+                    .GetAllByNeighborhood(neighborhoods);
+
+                return Json(Results.Ok(NeighborhoodSectorResponse.AsModelListResponse(results!)));
+
+            }
+            catch(Exception ex )
+            {
+                return Json(Results.NotFound(ex.Message));
+            }
+        }
     }
 }
