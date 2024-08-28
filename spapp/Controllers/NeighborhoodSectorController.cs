@@ -67,7 +67,7 @@ namespace spapp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    TempData["SuccessMessage"] = $"Secteur enregistré avec succès {model.MunicipalityId}";
+                    TempData["SuccessMessage"] = $"Secteur enregistré avec succès";
                     await _neighborhoodSectorRepository.CreateAsync(model);
                     
                     return RedirectToAction(nameof(Index));
@@ -80,8 +80,7 @@ namespace spapp.Controllers
             }
             catch(Exception ex)
             {
-                TempData["ErrorMessage"] = $"Une erreure est survenue (create sector) {model.NeighborhoodId}: {ex.ToString()}";
-                //return Content(ex.ToString());
+                TempData["ErrorMessage"] = $"Une erreure est survenue (create sector): {ex.Message}";
                 return RedirectToAction(nameof(Index));
             }
         }
@@ -120,6 +119,23 @@ namespace spapp.Controllers
             catch(Exception ex)
             {
                 return Json(Results.BadRequest($"une erreure est survenue: {ex.Message}"));
+            }
+        }
+
+        [HttpDelete]
+        [Route("/api/neighborhood-sector/{Id}")]
+        public async Task<JsonResult> Delete(int Id)
+        {
+            try
+            {
+                string message = "Le secteur a été supprimé";
+
+                await _neighborhoodSectorRepository.DeleteAsync(Id);
+                return Json(Results.Ok(message));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.NotFound(ex.Message));
             }
         }
     }

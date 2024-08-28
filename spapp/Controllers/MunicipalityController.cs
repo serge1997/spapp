@@ -45,7 +45,6 @@ namespace spapp.Controllers
             try
             {
                 MunicipalityModelView municipalityModelView = new();
-                //municipalityModelView.Cities = new List<CityModel>();
                 List<CityModel> Cities = await _cityRepository.GetAllCitiesAsync();
 
                 foreach (CityModel city in Cities)
@@ -73,14 +72,14 @@ namespace spapp.Controllers
                     return View(data);
                 }
                 await _municipalityRepository.CreateAsync(municipalityModelView);
-                TempData["SuccessMessage"] = $"enregistrée avec succées {municipalityModelView.CityId}";
+                TempData["SuccessMessage"] = $"enregistrée avec succées";
                 return RedirectToAction(nameof(Index));
 
             }
             catch (Exception ex)
             {
-                TempData["EroorMessage"] = $"une erreure survenue {ex.Message}";
-                return View(nameof(Create));
+                TempData["EroorMessage"] = $"une erreure survenue (post municipality) {ex.Message}";
+                return RedirectToAction(nameof(Index));
             }
         }
 

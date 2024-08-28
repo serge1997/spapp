@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Azure.Core;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using spapp.Http.Requests;
 using spapp.Main.Repositories.Municipality;
@@ -24,6 +25,7 @@ namespace spapp.Main.Repositories.NeighborhoodSector
 
         public async Task<NeighborhoodSectorModel> CreateAsync(NeighborhoodSectorModelView modelView)
         {
+            BeforeSave(modelView.Name, modelView.MunicipalityId, modelView.NeighborhoodId);
             NeighborhoodSectorModel model = new()
             {
                 Name = modelView.Name,
@@ -51,16 +53,19 @@ namespace spapp.Main.Repositories.NeighborhoodSector
                 .FirstOrDefaultAsync(t => t.Id == Id);
         }
 
+        public NeighborhoodSectorModel? FindByName(string Name)
+        {
+            return _spappContextDb.NeighborhoodSectors
+                .FirstOrDefault(sector => sector.Name.Equals(Name))!;
+        }
+
         public async Task<NeighborhoodSectorModel> UpdateAsync(NeighborhoodSectorRequest request)
         {
-            if (request.NeighborhoodId == null || request.MunicipalityId == null)
-            {
-                throw new Exception("verifier les informations (commune et quartier)");
-            }
+            //BeforeSave(request.Name, request.MunicipalityId, (int)request.NeighborhoodId!);
             NeighborhoodSectorModel model = await FindAsync(request.Id);
             model.Name = request.Name;
-            model.MunicipalityId = (int)request.MunicipalityId;
-            model.NeighborhoodId = (int)request.NeighborhoodId;
+            model.MunicipalityId = request.MunicipalityId;
+            model.NeighborhoodId = (int)request.NeighborhoodId!;
             model.IsRiskArea = request.IsRiskArea;
             model.Observation = request.Observation;
             model.Longitude = request.Longitude;
@@ -94,5 +99,21 @@ namespace spapp.Main.Repositories.NeighborhoodSector
 
             return finded;
         }
+
+        public void BeforeSave(string name, int municipality, int neighborhood)
+        {
+            NeighborhoodSectorModel? finded = FindByName(name);
+            if (finded is not null)
+            {
+                if (finded.MunicipalityId == municipality && finded.NeighborhoodId == neighborhood)
+                {
+                    throw new Exception("Le secteur existe déja dans le systeme");
+
+                }
+            }
+                   
+        }
+
+
     }
 }

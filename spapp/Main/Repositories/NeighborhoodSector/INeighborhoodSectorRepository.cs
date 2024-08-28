@@ -13,6 +13,8 @@ namespace spapp.Main.Repositories.NeighborhoodSector
 
         Task<NeighborhoodSectorModel> FindAsync(int Id);
 
+        NeighborhoodSectorModel? FindByName(string Name);
+
         Task<NeighborhoodSectorModel> UpdateAsync(NeighborhoodSectorRequest request);
 
         Task<NeighborhoodSectorModelView> SetNeighborhoodSectorModelView(
@@ -21,5 +23,7 @@ namespace spapp.Main.Repositories.NeighborhoodSector
            );
 
         Task<NeighborhoodSectorModel> DeleteAsync(int Id);
+
+        void BeforeSave(string name, int municipality, int neighborhood);
     }
 }

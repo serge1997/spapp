@@ -17,7 +17,6 @@
         ApiSpapp.get(`neighborhood-sector/${id}`)
             .then(async response => {
                 neighborhoodSector = await response.data.value;
-                console.log(neighborhoodSector);
                 $('#Name').val(neighborhoodSector.name);
                 $('#Observation').val(neighborhoodSector.observation)
                 $('#Latitude').val(neighborhoodSector.latitude);
@@ -26,7 +25,7 @@
                 $('#MunicipalityId').val(neighborhoodSector.municipalityId).trigger('change')
             })
             .catch(error => {
-                toastSpApi.error("une erreure est survenue " + error.toString());
+                toastSpApi.error("une erreure est survenue ");
             })
     })
 
@@ -38,16 +37,25 @@
             showDenyButton: true,
             confirmButtonText: "Confirmer",
             denyButtonText: `Annuler`,
-            confirmButtonColor: "#0f766e"
+            confirmButtonColor: "#0f766e",
+            icon: "question"
         })
             .then(result => {
                 if (result.isConfirmed) {
                     ApiSpapp.delete(`neighborhood-sector/${id}`)
                         .then(async response => {
-                            neighborhoodSector = await JSON.parse(response.data);
+                            console.log(response.data);
+                            if (await response.data.statusCode !== 200) {
+                                return toastSpApi.error(await response.data.value);
+                            }
+                            toastSpApi.success(await response.data.value);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 300)
+                           
                         })
                         .catch(error => {
-                            toastApiSpapp.error("une erreure est survenue " + error.toSTring());
+                            toastSpApi.error("une erreure est survenue " + error.toSTring());
                         })
                 }
             })
@@ -74,8 +82,21 @@
             .then(async response => {
                 
                 if (response.data.statusCode !== 200) {
-                    console.log(response.data)
-                    return toastSpApi.error(await response.data.value, 10000)                  
+                    const formState = response.data.value;
+
+                    if (formState.Name) {
+                        $('#name-error').html(`<small>${formState.Name.errors[0].errorMessage}</small>`)
+                    } else {
+                        $('#name-error small').remove();
+                    }
+
+                    if (formState.NeighborhoodId) {
+                        $('#neighborhood-error').html(`<small>${formState.NeighborhoodId.errors[0].errorMessage}</small>`)
+                    } else {
+                        $('#neighborhood-error small').remove();
+                    }
+
+                    return;
                 }
 
                 toastSpApi.success(await response.data.value);

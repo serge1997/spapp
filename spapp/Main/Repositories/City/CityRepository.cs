@@ -12,6 +12,7 @@ namespace spapp.Main.Repositories.City
 
         public async Task<CityModel> CreateCityAsync(CityModel city)
         {
+            BeforeSave(city.Name);
             CityModel model = new()
             {
                 Name = city.Name,
@@ -39,6 +40,10 @@ namespace spapp.Main.Repositories.City
             return await _spappContextDb.Cities.FirstOrDefaultAsync(City => City.Id == Id);
         }
 
+        public CityModel? FindByName(string name)
+        {
+            return _spappContextDb.Cities.FirstOrDefault(City => City.Name.Equals(name))!;
+        }
         public async Task<CityModel> UpdateAsync(CityRequest request)
         {
            
@@ -62,6 +67,20 @@ namespace spapp.Main.Repositories.City
             CityModel model = await FindCityAsync(Id);
             _spappContextDb.Cities.Remove(model);
             await _spappContextDb.SaveChangesAsync();
+        }
+
+        public void BeforeSave(string Name)
+        {
+            CityModel? finded = FindByName(Name);
+
+            if (finded is not null)
+            {
+                if (finded.Name.Equals(Name))
+                {
+                    throw new Exception($"La ville {Name} existe deja dans le systeme");
+                }
+            }
+
         }
     }
 }

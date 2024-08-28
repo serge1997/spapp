@@ -12,6 +12,7 @@ namespace spapp.Main.Repositories.Municipality
 
         public async Task<MunicipalityModel> CreateAsync(MunicipalityModelView model)
         {
+            BeforeSave(model.Name, model.CityId);
             MunicipalityModel municpal = new()
             {
                 Name = model.Name,
@@ -43,6 +44,11 @@ namespace spapp.Main.Repositories.Municipality
                 .FirstOrDefaultAsync(m => m.Id == Id);
         }
 
+        public MunicipalityModel? FindByNameAndCity(string Name, int City)
+        {
+            return _spappContext.Municipalities
+                .FirstOrDefault(mun => mun.Name.Equals(Name) && mun.CityId == City)!;
+        }
         public async Task<MunicipalityModel> UpdateAsync(MunicipalityModel model)
         {
             MunicipalityModel finded = await FindAsync(model.Id);
@@ -83,6 +89,19 @@ namespace spapp.Main.Repositories.Municipality
 
             return instance;
             
+        }
+
+        public void BeforeSave(string Name, int City)
+        {
+            MunicipalityModel? finded = FindByNameAndCity(Name, City);
+
+            if (finded is not null)
+            {
+                if (finded.CityId == City && finded.Name.Equals(Name)) 
+                {
+                    throw new Exception($"La commune {Name} existe dejá dans le systeme");
+                }
+            }
         }
     }
 }

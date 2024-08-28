@@ -68,17 +68,30 @@
 
     $('.delete-municipality').click(function () {
         let id = $(this).attr('data-municipality-id');
-        ApiSpapp.delete(`municipality/${id}`)
-            .then(async response => {
-                toastSpApi.success(await response.data.value);
 
-                setTimeout(() => {
-                    location.reload()
-                }, 500)
-            })
-            .catch(error => {
-                toastSpApi.error("une erreure est survenue");
-                console.log(error)
-            })
+        Swal.fire({
+            text: "Voulez vous supprimer cette commune ?",
+            showDenyButton: true,
+            confirmButtonText: "Confirmer",
+            denyButtonText: `Annuler`,
+            confirmButtonColor: "#0f766e",
+            icon: "question"
+        })
+        .then(result => {
+            if (result.isConfirmed) {
+                ApiSpapp.delete(`municipality/${id}`)
+                    .then(async response => {
+                        toastSpApi.success(await response.data.value);
+
+                        setTimeout(() => {
+                            location.reload()
+                        }, 500)
+                    })
+                    .catch(error => {
+                        toastSpApi.error("une erreure est survenue");
+                        console.log(error)
+                    })
+            }
+        })       
     })
 })

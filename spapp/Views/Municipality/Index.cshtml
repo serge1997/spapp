@@ -5,7 +5,7 @@
 <div class="w-100">
     <div class="row">
         <div class="col-md-10 m-auto">
-            @if (TempData["SuccessMessage"] is not null)
+            @if (TempData["SuccessMessage"] is not null && TempData["EroorMessage"] is null)
             {
                 <div class="alert alert_success">
                     <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>

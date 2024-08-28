@@ -5,7 +5,7 @@
 <div class="w-100">
     <div class="row">
         <div class="col-md-10 m-auto">
-            @if (TempData["SuccessMessage"] is not null)
+            @if (TempData["SuccessMessage"] is not null && TempData["ErrorMessage"] is null)
             {
                 <div class="alert alert_success">
                     <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
@@ -87,20 +87,20 @@
                                 <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                                     <label class="form-control-label">Nome du secteur<span class="text-danger"> *</span></label>
                                     <input id="Name" class=" form-control" type="text" placeholder="Informer le nom">
-                                    <span class="text-danger"><small></small></span>
+                                    <span class="text-danger" id="name-error"></span>
                                 </div>
                             </div>
                             <div class="row justify-content-between text-left">
                                 <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                                     <label class="form-control-label">Commune <span class="text-danger">*</span></label>
-                                    <select id="MunicipalityId" id="municipality-select" class="form-control single-select2-spapp">
-                                    </select>
-                                    <span class="text-danger"><small></small></span>
+                                    <select id="MunicipalityId" class="form-control single-select2-spapp">
+                                    </select>                 
                                 </div>
                                 <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                                     <label class="form-control-label">Quartier <span class="text-danger">*</span></label>
-                                    <select id="NeighborhoodId" id="neighborhood-select" class="form-control single-select2-spapp">
+                                    <select id="NeighborhoodId" class="form-control single-select2-spapp">
                                     </select>
+                                    <span class="text-danger" id="neighborhood-error"></span>
                                 </div>
                             </div>
                             <div class="row justify-content-between text-left">

@@ -46,8 +46,8 @@ namespace spapp.Controllers
             }
             catch(Exception ex)
             {
-                TempData["ErrorMessage"] = "une erreure survenue";
-                return View(nameof(Create));
+                TempData["ErrorMessage"] = $"une erreure survenue (create city): {ex.Message}";
+                return RedirectToAction(nameof(Index));
             }
         }
 
