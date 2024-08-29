@@ -29,6 +29,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\agent\\create.js",
+      "PackagePath": "staticwebassets\\js\\agent\\create.js"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\app\\Apispapp.js",
       "PackagePath": "staticwebassets\\js\\app\\Apispapp.js"
     },

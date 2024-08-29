@@ -7,10 +7,7 @@
     listAllMunicipality();
     listAllNeighborhoodByMunicipality();
 
-    $('.single-select2-spapp').select2({
-        dropdownCssClass: 'increasezindex',
-        width: '100%'
-    });
+    
  
     $('.edit-sector').click(function () {
         let id = $(this).attr('data-sector-id');

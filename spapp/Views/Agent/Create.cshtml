@@ -1,0 +1,164 @@
+﻿@model AgentModelView
+@{
+    ViewData["Title"] = "Enregistrer un nouveau agent";
+}
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row">
+        <div class="col-md-10">
+            <a asp-controller="Complain" asp-action="Index" class="action-url-btn btn" title="retour">
+                <span>
+                    <i class="bi bi-arrow-left-square"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-3 border d-flex align-items-center shadow-sm" id="form-create-tab">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-agent-btn">1</button>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-address-btn">2</button>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-familly-btn">3</button>
+            </div>
+        </div>
+        <form class="row">
+            <div class="row" id="form-agent-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-person"></i>
+                    <h4 class="modal-title">Info de l'gagent</h4>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom complet</label>
+                        <input type="text" class="form-control" placeholder="Nom" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Email</label>
+                        <input type="text" class="form-control" placeholder="numero telephone" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom d'utilisateur</label>
+                        <input type="text" class="form-control" placeholder="Nom d'utilisateur" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Mot de passe</label>
+                        <input type="text" class="form-control" placeholder="mot de passe" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Numero de carte d'identité</label>
+                        <input type="text" class="form-control" placeholder="numero de carte d'identité" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Numero attestation</label>
+                        <input type="text" class="form-control" placeholder="numero attestation" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Division</label>
+                        <select class="form-select">
+                            <option value="value">text</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Grade</label>
+                        <select class="form-select single-select2-spapp">
+                            @if (Model.AgentRanks is not null)
+                            {
+                                foreach (AgentRankModel rank in Model.AgentRanks)
+                                {
+                                    <option value="@rank.Id">@rank.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <label class="form-control-label">Groupe sanguin</label>
+                        <input type="text" class="form-control" placeholder="groupe sanguin" />
+                    </div>                   
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Situation matrimonial</label>
+                        <select class="form-select">
+                            <option value="value">text</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nombre d'enfants</label>
+                        <input type="number" class="form-control" placeholder="nombre d'enfants" />
+                    </div>
+                </div>
+            </div>
+            <div class="row d-none d-flex align-items-center gap-2" id="form-address-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-megaphone"></i>
+                    <h4 class="modal-title">Plainte info</h4>
+                </div>
+
+
+            </div>
+            <div class="row d-none d-flex align-items-center gap-2" id="form-familly-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-house"></i>
+                    <h4 class="modal-title">Address</h4>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Ville</label>                       
+                        <select class="form-select single-select2-spapp">
+                            @if(Model.Citys is not null)
+                            {
+                                foreach (CityModel city in Model.Citys)
+                                {
+                                    <option value="@city.Id">@city.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Commune</label>
+                        <select class="form-select single-select2-spapp">
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Quartier</label>
+                        <select class="form-select single-select2-spapp">
+
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom du secteur</label>
+                        <select class="form-select single-select2-spapp" style="width: 75%">
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom de la rue</label>
+                        <input type="text" class="form-control" placeholder="nom de la rue" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Numero de residence</label>
+                        <input type="text" class="form-control" placeholder="numero de residence" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/agent/create.js"></script>
+}

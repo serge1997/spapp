@@ -14,5 +14,9 @@
         $('#sidebar').css({ 'width': '55px', 'transition': 'ease-in .2s' })
         $(this).addClass('d-none')
     })
-   
+
+    $('.single-select2-spapp').select2({
+        dropdownCssClass: 'increasezindex',
+        width: '100%'
+    });
 })
