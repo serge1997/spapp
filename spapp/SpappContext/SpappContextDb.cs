@@ -20,6 +20,11 @@ namespace spapp.SpappContext
         public DbSet<VehicleBrandModel> VehicleBrands { get; set; }
         public DbSet<VehicleModel> Vehicles { get; set; }
         public DbSet<NeighborhoodSectorModel> NeighborhoodSectors { get; set; }
+        public DbSet<AddressModel> Addresses { get; set; }
+
+
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_configuration.GetValue<string>("Database:ConnectionString"));
@@ -37,6 +42,7 @@ namespace spapp.SpappContext
             modelBuilder.ApplyConfiguration(new VehicleBrandModelMap());
             modelBuilder.ApplyConfiguration(new VehicleModelMap());
             modelBuilder.ApplyConfiguration(new NeighborhoodSectorModelMap());
+            modelBuilder.ApplyConfiguration(new AddressModelMap());
 
             base.OnModelCreating(modelBuilder);
         }

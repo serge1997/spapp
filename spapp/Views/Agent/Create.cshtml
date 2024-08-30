@@ -28,7 +28,7 @@
             <div class="row" id="form-agent-info">
                 <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
                     <i class="bi bi-person"></i>
-                    <h4 class="modal-title">Info de l'gagent</h4>
+                    <h4 class="modal-title">Info de l'agent</h4>
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-6">
@@ -102,7 +102,7 @@
             <div class="row d-none d-flex align-items-center gap-2" id="form-address-info">
                 <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
                     <i class="bi bi-megaphone"></i>
-                    <h4 class="modal-title">Plainte info</h4>
+                    <h4 class="modal-title">info famille</h4>
                 </div>
 
 
@@ -115,7 +115,8 @@
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Ville</label>                       
-                        <select class="form-select single-select2-spapp">
+                        <select class="form-select single-select2-spapp" id="city-select">
+                            <option selected>Selectionner une ville</option>
                             @if(Model.Citys is not null)
                             {
                                 foreach (CityModel city in Model.Citys)
@@ -127,20 +128,22 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Commune</label>
-                        <select class="form-select single-select2-spapp">
+                        <select class="form-select single-select2-spapp" id="select-municipality">
+                            <option selected>Selectionner une commune</option>
                         </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Quartier</label>
-                        <select class="form-select single-select2-spapp">
-
+                        <select class="form-select single-select2-spapp" id="neighborhood-select">
+                            <option selected>Selectionner un quartier</option>
                         </select>
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom du secteur</label>
-                        <select class="form-select single-select2-spapp" style="width: 75%">
+                        <select class="form-select single-select2-spapp" id="select-sector">
+                            <option selected>Selectionner un Secteur</option>
                         </select>
                     </div>
                 </div>
@@ -152,6 +155,12 @@
                     <div class="col-sm-6">
                         <label class="form-control-label">Numero de residence</label>
                         <input type="text" class="form-control" placeholder="numero de residence" />
+                    </div>
+                </div>
+                <div class="row mb-3">                  
+                    <div class="col-sm-12">
+                        <label class="form-control-label">Complement</label>
+                        <textarea type="text" class="form-control" placeholder="complement, indices"></textarea>
                     </div>
                 </div>
             </div>

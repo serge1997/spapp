@@ -117,6 +117,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\utilities.js",
+      "PackagePath": "staticwebassets\\js\\utilities.js"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\vehicle\\create.js",
       "PackagePath": "staticwebassets\\js\\vehicle\\create.js"
     },

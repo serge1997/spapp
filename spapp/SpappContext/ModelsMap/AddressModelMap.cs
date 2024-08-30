@@ -1,0 +1,25 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using spapp.Models;
+
+namespace spapp.SpappContext.ModelsMap
+{
+    public class AddressModelMap : IEntityTypeConfiguration<AddressModel>
+    {
+        public void Configure(EntityTypeBuilder<AddressModel> builder) 
+        {
+            builder.HasKey(add => add.Id);
+            builder.HasOne(add => add.CityModel)
+                .WithMany()
+                .HasForeignKey(add => add.CityId);
+
+            builder.HasOne(add => add.NeighborhoodModel)
+                .WithMany()
+                .HasForeignKey(add => add.NeighborhoodId);
+
+            builder.HasOne(add => add.NeighborhoodSectorModel)
+                .WithMany()
+                .HasForeignKey(add => add.NeighborhoodSectorId);
+        }
+    }
+}

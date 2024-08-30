@@ -1,18 +1,24 @@
 ﻿using spapp.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace spapp.ModelViews
 {
     public class AgentModelView
     {
         public int Id { get; set; }
+        [Required(ErrorMessage = "Le nom est obligatoire")]
         public string FullName { get; set; }
+        [Required(ErrorMessage = "Le nom d1utilisateur est obligatoire")]
         public string Username { get; set; }
-        public string Password { get; set; }
+        [Required(ErrorMessage = "Le mot de passe obligatoire")]
+        public string Password { get; set; }       
         public string MatriculeNumber { get; set; }
         public string? CNINumber { get; set; }
-        public string AttestionNumber { get; set; }
+        public string? AttestionNumber { get; set; }
         public string? BloodGroup { get; set; }
+        [Required(ErrorMessage = "La division est obligatoire")]
         public int AgentRankId { get; set; }
+        [Required(ErrorMessage = "La grade est obligatoire")]
         public int AgentGroupId { get; set; }
         public string? Contact { get; set; }
         public string? Email { get; set; }

@@ -22,6 +22,61 @@ namespace spapp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("spapp.Models.AddressModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Complement")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Indication")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double?>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("Longitude")
+                        .HasColumnType("float");
+
+                    b.Property<int>("MunicipalityId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("NeighborhoodId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("NeighborhoodSectorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Origin")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("StreetName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CityId");
+
+                    b.HasIndex("NeighborhoodId");
+
+                    b.HasIndex("NeighborhoodSectorId");
+
+                    b.ToTable("Addresses");
+                });
+
             modelBuilder.Entity("spapp.Models.AgentGroupModel", b =>
                 {
                     b.Property<int>("Id")
@@ -357,6 +412,31 @@ namespace spapp.Migrations
                     b.HasIndex("VehicleBrandId");
 
                     b.ToTable("Vehicles");
+                });
+
+            modelBuilder.Entity("spapp.Models.AddressModel", b =>
+                {
+                    b.HasOne("spapp.Models.CityModel", "CityModel")
+                        .WithMany()
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("spapp.Models.NeighborhoodModel", "NeighborhoodModel")
+                        .WithMany()
+                        .HasForeignKey("NeighborhoodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("spapp.Models.NeighborhoodSectorModel", "NeighborhoodSectorModel")
+                        .WithMany()
+                        .HasForeignKey("NeighborhoodSectorId");
+
+                    b.Navigation("CityModel");
+
+                    b.Navigation("NeighborhoodModel");
+
+                    b.Navigation("NeighborhoodSectorModel");
                 });
 
             modelBuilder.Entity("spapp.Models.ComplainTypeModel", b =>
