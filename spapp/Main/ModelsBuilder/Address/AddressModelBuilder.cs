@@ -6,60 +6,66 @@ namespace spapp.Main.ModelsBuilder.Address
     {
         private AddressModel _adress = new();
 
-        public AddressModelBuilder AddStreetName(string? streetName)
+        public IAddressModelBuilder AddStreetName(string? streetName)
         {
             _adress.StreetName = streetName;
             return this;
         }
 
-        public AddressModelBuilder AddCityId(int CityId)
+        public IAddressModelBuilder AddHomeNumber(int? homeNumber)
+        {
+            this._adress.HouseNumber = homeNumber;
+            return this;
+        }
+
+        public IAddressModelBuilder AddCityId(int CityId)
         {
             _adress.CityId = CityId;
             return this;
         }
 
-        public AddressModelBuilder AddMunicipalityId(int MunicipalityId)
+        public IAddressModelBuilder AddMunicipalityId(int MunicipalityId)
         {
             this._adress.MunicipalityId = MunicipalityId;
             return this;
         }
 
-        public AddressModelBuilder AddNeighborhoodId(int NeighborhoodId)
+        public IAddressModelBuilder AddNeighborhoodId(int NeighborhoodId)
         {
             this._adress.NeighborhoodId = NeighborhoodId;
             return this;
         }
 
-        public AddressModelBuilder AddNeighborhoodSectorId(int? NeighboorhoodSectorId)
+        public IAddressModelBuilder AddNeighborhoodSectorId(int? NeighboorhoodSectorId)
         {
             this._adress.NeighborhoodSectorId = NeighboorhoodSectorId;
             return this;
         }
 
-        public AddressModelBuilder AddComplement(string? Complement)
+        public IAddressModelBuilder AddComplement(string? Complement)
         {
             this._adress.Complement = Complement;
             return this;
         }
 
-        public AddressModelBuilder AddLatitude(double? Latitude)
+        public IAddressModelBuilder AddLatitude(double? Latitude)
         {
             this._adress.Latitude = Latitude;
             return this;
         }
 
-        public AddressModelBuilder AddLongitude(double? Longitude)
+        public IAddressModelBuilder AddLongitude(double? Longitude)
         {
             this._adress.Longitude = Longitude;
             return this;
         }
 
-        public AddressModelBuilder AddIndication(string? Indication)
+        public IAddressModelBuilder AddIndication(string? Indication)
         {
             this._adress.Indication = Indication;
             return this;
         }
-        public AddressModelBuilder AddOrigin(string Origin)
+        public IAddressModelBuilder AddOrigin(string Origin)
         {
             this._adress.Origin = Origin;
             return this;

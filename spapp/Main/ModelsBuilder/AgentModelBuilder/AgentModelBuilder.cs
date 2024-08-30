@@ -7,34 +7,43 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
     {
         private AgentModel _agent = new();
 
-        public AgentModelBuilder AddFullName(string fullName)
+        public IAgentModelBuilder AddFullName(string fullName)
         {
             this._agent.FullName = fullName;
             return this;
         }
-        public AddressModelBuilder AddAddress()
-        {
-            return new AddressModelBuilder();
-        }
 
-        public AgentModelBuilder AddUserName(string userName)
+        public IAgentModelBuilder AddUserName(string userName)
         {
             this._agent.Username = userName;
             return this;
         }
-        public AgentModelBuilder AddPassword(string password)
+        public IAgentModelBuilder AddPassword(string password)
         {
             this._agent.Password = password;
             return this;
         }
-        public AgentModelBuilder AddEmail(string? email)
+        public IAgentModelBuilder AddEmail(string? email)
         {
             this._agent.Email = email;
             return this;
         }
-        public AgentModelBuilder AddCNINumber(string? cniNumber)
+        public IAgentModelBuilder AddCNINumber(string? cniNumber)
         {
             this._agent.CNINumber = cniNumber;
+            return this;
+        }
+
+        public IAgentModelBuilder AddMatriculeNumber(string matriculeNumber)
+        {
+            string name = this._agent.FullName;
+            string first = name.Split(" ")[0];
+
+            string protocol = first[0] + DateTime.Now
+                .ToString("dd/MM/yyyyHHmmssfff")
+                .Replace("/", "");
+
+            this._agent.MatriculeNumber = protocol;
             return this;
         }
         public AgentModel Build()

@@ -15,6 +15,16 @@ namespace spapp.Controllers
 
         public IActionResult Index()
         {
+            string name = "Serge Gogo";
+            string first = name.Split(" ")[0];
+
+            string protocol = first[0] + DateTime.Now
+                .ToString("dd/MM/yyyyHHmmssfff")
+                .Replace("/", "");
+            
+
+            TempData["protocol"] = protocol;
+
             return View();
         }
 

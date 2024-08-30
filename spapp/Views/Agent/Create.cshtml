@@ -128,7 +128,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Commune</label>
-                        <select class="form-select single-select2-spapp" id="select-municipality">
+                        <select asp-for="Address.MunicipalityId" class="form-select single-select2-spapp" id="select-municipality">
                             <option selected>Selectionner une commune</option>
                         </select>
                     </div>
@@ -136,13 +136,13 @@
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Quartier</label>
-                        <select class="form-select single-select2-spapp" id="neighborhood-select">
+                        <select asp-for="Address.NeighborhoodId" class="form-select single-select2-spapp" id="neighborhood-select">
                             <option selected>Selectionner un quartier</option>
                         </select>
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom du secteur</label>
-                        <select class="form-select single-select2-spapp" id="select-sector">
+                        <select asp-for="Address.NeighborhoodSectorId" class="form-select single-select2-spapp" id="select-sector">
                             <option selected>Selectionner un Secteur</option>
                         </select>
                     </div>
@@ -150,17 +150,17 @@
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom de la rue</label>
-                        <input type="text" class="form-control" placeholder="nom de la rue" />
+                        <input asp-for="Address.StreetName" type="text" class="form-control" placeholder="nom de la rue" />
                     </div>
                     <div class="col-sm-6">
-                        <label class="form-control-label">Numero de residence</label>
+                        <label asp-for="Address.HouseNumber" class="form-control-label">Numero de residence</label>
                         <input type="text" class="form-control" placeholder="numero de residence" />
                     </div>
                 </div>
                 <div class="row mb-3">                  
                     <div class="col-sm-12">
                         <label class="form-control-label">Complement</label>
-                        <textarea type="text" class="form-control" placeholder="complement, indices"></textarea>
+                        <textarea asp-for="Address.Complement" type="text" class="form-control" placeholder="complement, indices"></textarea>
                     </div>
                 </div>
             </div>

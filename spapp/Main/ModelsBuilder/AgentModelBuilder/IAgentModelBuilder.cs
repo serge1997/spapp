@@ -6,12 +6,12 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
     public interface IAgentModelBuilder
     {
 
-        AgentModelBuilder AddFullName(string fullName);
-        AgentModelBuilder AddUserName(string userName);
-        AgentModelBuilder AddPassword(string password);
-        AgentModelBuilder AddEmail(string? email);
-        AgentModelBuilder AddCNINumber(string? cniNumber);
-        AddressModelBuilder AddAddress();
+        IAgentModelBuilder AddFullName(string fullName);
+        IAgentModelBuilder AddUserName(string userName);
+        IAgentModelBuilder AddPassword(string password);
+        IAgentModelBuilder AddEmail(string? email);
+        IAgentModelBuilder AddCNINumber(string? cniNumber);
+        IAgentModelBuilder AddMatriculeNumber(string matriculeNumber);
 
         AgentModel Build();
     }

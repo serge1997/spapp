@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string? StreetName { get; set; } 
+        public int? HouseNumber { get; set; }
         public int CityId { get; set; }
         public int MunicipalityId { get; set; }
         public int NeighborhoodId { get; set; }

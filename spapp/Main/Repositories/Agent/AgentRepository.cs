@@ -31,13 +31,15 @@ namespace spapp.Main.Repositories.Agent
                 .AddPassword(agentModelView.Password)
                 .AddCNINumber(agentModelView.CNINumber)
                 .AddEmail(agentModelView.Email)
+                .AddMatriculeNumber(agentModelView.MatriculeNumber)
                 .Build();
 
             AddressModel address = _addressModelBuilder
                 .AddStreetName(agentModelView.Address.StreetName!)
+                .AddHomeNumber(agent.Address.HouseNumber!)
                 .AddCityId(agentModelView.Address.CityId)
                 .AddMunicipalityId(agentModelView.Address.MunicipalityId)
-                .AddNeighborhoodSectorId(agentModelView.Address.NeighborhoodSectorId)
+                .AddNeighborhoodId(agentModelView.Address.NeighborhoodId)
                 .AddNeighborhoodSectorId(agentModelView.Address.NeighborhoodSectorId)
                 .AddLatitude(agentModelView.Address.Latitude)
                 .AddLongitude(agentModelView.Address.Longitude)

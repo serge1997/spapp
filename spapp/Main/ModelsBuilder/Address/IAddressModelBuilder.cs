@@ -5,16 +5,17 @@ namespace spapp.Main.ModelsBuilder.Address
     public interface IAddressModelBuilder
     {
 
-        AddressModelBuilder AddStreetName(string streetName);
-        AddressModelBuilder AddCityId(int CityId);
-        AddressModelBuilder AddMunicipalityId(int MunicipalityId);
-        AddressModelBuilder AddNeighborhoodId(int NeighbourhoodId);
-        AddressModelBuilder AddNeighborhoodSectorId(int? NeighbourhoodSectorId);
-        AddressModelBuilder AddComplement(string? Complement);
-        AddressModelBuilder AddLatitude(double? Latitude);
-        AddressModelBuilder AddLongitude(double? Longitude);
-        AddressModelBuilder AddIndication(string? Indication);
-        AddressModelBuilder AddOrigin(string Origin);
+        IAddressModelBuilder AddStreetName(string? streetName);
+        IAddressModelBuilder AddHomeNumber(int? homeNumber);
+        IAddressModelBuilder AddCityId(int CityId);
+        IAddressModelBuilder AddMunicipalityId(int MunicipalityId);
+        IAddressModelBuilder AddNeighborhoodId(int NeighbourhoodId);
+        IAddressModelBuilder AddNeighborhoodSectorId(int? NeighbourhoodSectorId);
+        IAddressModelBuilder AddComplement(string? Complement);
+        IAddressModelBuilder AddLatitude(double? Latitude);
+        IAddressModelBuilder AddLongitude(double? Longitude);
+        IAddressModelBuilder AddIndication(string? Indication);
+        IAddressModelBuilder AddOrigin(string Origin);
         AddressModel Build();
     }
 }

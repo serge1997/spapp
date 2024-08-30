@@ -1,3 +1,5 @@
+using spapp.Main.ModelsBuilder.Address;
+using spapp.Main.ModelsBuilder.AgentModelBuilder;
 using spapp.Main.Repositories.Agent;
 using spapp.Main.Repositories.AgentGroup;
 using spapp.Main.Repositories.AgentRank;
@@ -30,6 +32,8 @@ builder.Services.AddScoped<IVehicleBrandRepository, VehicleBrandRepository>();
 builder.Services.AddScoped<IVehicleRepository,  VehicleRepository>();
 builder.Services.AddScoped<INeighborhoodSectorRepository, NeighborhoodSectorRepository>();
 builder.Services.AddScoped<IPatrolRepository, PatrolRepository>();
+builder.Services.AddScoped<IAgentModelBuilder, AgentModelBuilder>();
+builder.Services.AddScoped<IAddressModelBuilder,  AddressModelBuilder>();
 
 builder.Services.AddCors(options =>
 {
