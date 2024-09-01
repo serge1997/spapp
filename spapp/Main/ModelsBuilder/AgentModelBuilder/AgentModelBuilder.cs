@@ -1,4 +1,5 @@
-﻿using spapp.Main.ModelsBuilder.Address;
+﻿using spapp.Enums;
+using spapp.Main.ModelsBuilder.Address;
 using spapp.Models;
 
 namespace spapp.Main.ModelsBuilder.AgentModelBuilder
@@ -28,13 +29,25 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
             this._agent.Email = email;
             return this;
         }
+
+        public IAgentModelBuilder AddContact(string? contact)
+        {
+            this._agent.Contact = contact;
+            return this;
+        }
         public IAgentModelBuilder AddCNINumber(string? cniNumber)
         {
             this._agent.CNINumber = cniNumber;
             return this;
         }
 
-        public IAgentModelBuilder AddMatriculeNumber(string matriculeNumber)
+        public IAgentModelBuilder AddAttestationNumber(string? attestationNumber)
+        {
+            this._agent.AttestionNumber = attestationNumber;
+            return this;
+        }
+
+        public IAgentModelBuilder AddMatriculeNumber()
         {
             string name = this._agent.FullName;
             string first = name.Split(" ")[0];
@@ -46,6 +59,37 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
             this._agent.MatriculeNumber = protocol;
             return this;
         }
+
+        public IAgentModelBuilder AddChilddrenQUantity(int? childdrenQuantity)
+        {
+            this._agent.ChilddrenQuantity = childdrenQuantity;
+            return this;
+        }
+
+        public IAgentModelBuilder AddAgentGroupId(int agentGroupId)
+        {
+            this._agent.AgentGroupId = agentGroupId;
+            return this;
+        }
+
+        public IAgentModelBuilder AddAGentRankId(int agentRankId)
+        {
+            this._agent.AgentRankId = agentRankId;
+            return this;
+        }
+
+        public IAgentModelBuilder AddMaritalStatus(MaritalStatusEnum maritalStatus)
+        {
+            this._agent.MaritalStatus = maritalStatus;
+            return this;
+        }
+
+        public IAgentModelBuilder AddAddress(AddressModel address)
+        {
+            this._agent.AddressId = address.Id;
+            return this;
+        }
+
         public AgentModel Build()
         {
             return this._agent;

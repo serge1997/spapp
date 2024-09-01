@@ -70,6 +70,8 @@ namespace spapp.Migrations
 
                     b.HasIndex("CityId");
 
+                    b.HasIndex("MunicipalityId");
+
                     b.HasIndex("NeighborhoodId");
 
                     b.HasIndex("NeighborhoodSectorId");
@@ -99,6 +101,77 @@ namespace spapp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AgentGroups");
+                });
+
+            modelBuilder.Entity("spapp.Models.AgentModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AddressId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AgentGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AgentRankId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("AttestionNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BloodGroup")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CNINumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("ChilddrenQuantity")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Contact")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Created_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaritalStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("MatriculeNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Updated_at")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AddressId");
+
+                    b.HasIndex("AgentGroupId");
+
+                    b.HasIndex("AgentRankId");
+
+                    b.ToTable("Agents");
                 });
 
             modelBuilder.Entity("spapp.Models.AgentRankModel", b =>
@@ -422,6 +495,12 @@ namespace spapp.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("spapp.Models.MunicipalityModel", "MunicipalityModel")
+                        .WithMany()
+                        .HasForeignKey("MunicipalityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("spapp.Models.NeighborhoodModel", "NeighborhoodModel")
                         .WithMany()
                         .HasForeignKey("NeighborhoodId")
@@ -434,9 +513,38 @@ namespace spapp.Migrations
 
                     b.Navigation("CityModel");
 
+                    b.Navigation("MunicipalityModel");
+
                     b.Navigation("NeighborhoodModel");
 
                     b.Navigation("NeighborhoodSectorModel");
+                });
+
+            modelBuilder.Entity("spapp.Models.AgentModel", b =>
+                {
+                    b.HasOne("spapp.Models.AddressModel", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("spapp.Models.AgentGroupModel", "AgentGroup")
+                        .WithMany()
+                        .HasForeignKey("AgentGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("spapp.Models.AgentRankModel", "AgentRank")
+                        .WithMany()
+                        .HasForeignKey("AgentRankId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
+
+                    b.Navigation("AgentGroup");
+
+                    b.Navigation("AgentRank");
                 });
 
             modelBuilder.Entity("spapp.Models.ComplainTypeModel", b =>

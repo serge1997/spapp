@@ -14,7 +14,7 @@ namespace spapp.Main.ModelsBuilder.Address
 
         public IAddressModelBuilder AddHomeNumber(int? homeNumber)
         {
-            this._adress.HouseNumber = homeNumber;
+            //this._adress.HouseNumber = homeNumber;
             return this;
         }
 
@@ -68,6 +68,12 @@ namespace spapp.Main.ModelsBuilder.Address
         public IAddressModelBuilder AddOrigin(string Origin)
         {
             this._adress.Origin = Origin;
+            return this;
+        }
+
+        public IAddressModelBuilder AddCreatedAt()
+        {
+            this._adress.Created_at = DateTime.Now;
             return this;
         }
         public AddressModel Build()

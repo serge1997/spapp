@@ -21,7 +21,7 @@ namespace spapp.SpappContext
         public DbSet<VehicleModel> Vehicles { get; set; }
         public DbSet<NeighborhoodSectorModel> NeighborhoodSectors { get; set; }
         public DbSet<AddressModel> Addresses { get; set; }
-
+        public DbSet<AgentModel> Agents { get; set; }
 
 
 
@@ -43,6 +43,7 @@ namespace spapp.SpappContext
             modelBuilder.ApplyConfiguration(new VehicleModelMap());
             modelBuilder.ApplyConfiguration(new NeighborhoodSectorModelMap());
             modelBuilder.ApplyConfiguration(new AddressModelMap());
+            modelBuilder.ApplyConfiguration(new AgentModelMap());
 
             base.OnModelCreating(modelBuilder);
         }

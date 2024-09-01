@@ -16,6 +16,7 @@ namespace spapp.Main.ModelsBuilder.Address
         IAddressModelBuilder AddLongitude(double? Longitude);
         IAddressModelBuilder AddIndication(string? Indication);
         IAddressModelBuilder AddOrigin(string Origin);
+        IAddressModelBuilder AddCreatedAt();
         AddressModel Build();
     }
 }

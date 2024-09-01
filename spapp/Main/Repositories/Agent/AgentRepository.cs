@@ -1,5 +1,7 @@
-﻿using spapp.Main.ModelsBuilder.Address;
+﻿using Microsoft.EntityFrameworkCore;
+using spapp.Main.ModelsBuilder.Address;
 using spapp.Main.ModelsBuilder.AgentModelBuilder;
+using spapp.Main.Repositories.Address;
 using spapp.Main.Repositories.AgentRank;
 using spapp.Main.Repositories.City;
 using spapp.Models;
@@ -13,47 +15,69 @@ namespace spapp.Main.Repositories.Agent
         ICityRepository cityRepository,
         IAgentRankRepository agentRankRepository,
         IAgentModelBuilder agentModelBuilder,
-        IAddressModelBuilder addressModelBuilder
+        IAddressRepository addressRepository
     ) : IAgentRepository
     {
         private readonly SpappContextDb _spappContextDb = spappContextDb;
         private readonly ICityRepository _cityRepository = cityRepository;
         private readonly IAgentRankRepository _agentRankRepository = agentRankRepository;
         private IAgentModelBuilder _agentModelBuilder = agentModelBuilder;
-        private IAddressModelBuilder _addressModelBuilder = addressModelBuilder;
+        private IAddressRepository _addressRepository = addressRepository;
 
 
         public async Task<AgentModel> CreateAsync(AgentModelView agentModelView)
         {
-            AgentModel agent = _agentModelBuilder
-                .AddFullName(agentModelView.FullName)
-                .AddUserName(agentModelView.Username)
-                .AddPassword(agentModelView.Password)
-                .AddCNINumber(agentModelView.CNINumber)
-                .AddEmail(agentModelView.Email)
-                .AddMatriculeNumber(agentModelView.MatriculeNumber)
-                .Build();
-
-            AddressModel address = _addressModelBuilder
-                .AddStreetName(agentModelView.Address.StreetName!)
-                .AddHomeNumber(agent.Address.HouseNumber!)
-                .AddCityId(agentModelView.Address.CityId)
-                .AddMunicipalityId(agentModelView.Address.MunicipalityId)
-                .AddNeighborhoodId(agentModelView.Address.NeighborhoodId)
-                .AddNeighborhoodSectorId(agentModelView.Address.NeighborhoodSectorId)
-                .AddLatitude(agentModelView.Address.Latitude)
-                .AddLongitude(agentModelView.Address.Longitude)
-                .AddIndication(agentModelView.Address.Indication)
-                .AddOrigin(agentModelView.Address.Origin!)
-                .Build();
-
-
-            _spappContextDb.Addresses.Add(address);
-            //_spappContextDb.Agents.Add(agent);
+            
+            AddressModel address = await _addressRepository
+                .CreateAsync(agentModelView.Address);
 
             await _spappContextDb.SaveChangesAsync();
 
+
+            AgentModel agent = _agentModelBuilder
+                .AddFullName(agentModelView.FullName)
+                .AddUserName(agentModelView.Username)
+                .AddEmail(agentModelView.Email)
+                .AddContact(agentModelView.Contact)
+                .AddAgentGroupId(agentModelView.AgentGroupId)
+                .AddAGentRankId(agentModelView.AgentRankId)
+                .AddChilddrenQUantity(agentModelView.ChilddrenQuantity)
+                .AddPassword(agentModelView.Password)
+                .AddCNINumber(agentModelView.CNINumber)
+                .AddEmail(agentModelView.Email)
+                .AddMaritalStatus(agentModelView.MaritalStatus)
+                .AddAddress(address)
+                .AddMatriculeNumber()
+                .Build();
+
+            _spappContextDb.Agents.Add(agent);
+            await _spappContextDb.SaveChangesAsync();
+
             return agent;
+        }
+
+        public async Task<List<AgentModel>> GetAllAsync()
+        {
+            return await _spappContextDb.Agents
+                .Include(agent => agent.AgentGroup)
+                .Include(agent => agent.AgentRank)
+                .Include(agent => agent.Address.CityModel)
+                .Include(agent => agent.Address.MunicipalityModel)
+                .Include(agent => agent.Address.NeighborhoodModel)
+                .Include(agent => agent.Address.NeighborhoodSectorModel)
+                .ToListAsync();
+        }
+
+        public async Task<AgentModel> FindAsync(int Id)
+        {
+            return await _spappContextDb.Agents
+                .Include(agent => agent.AgentGroup)
+                .Include(agent => agent.AgentRank)
+                .Include(agent => agent.Address.CityModel)
+                .Include(agent => agent.Address.MunicipalityModel)
+                .Include(agent => agent.Address.NeighborhoodModel)
+                .Include(agent => agent.Address.NeighborhoodSectorModel)
+                .FirstOrDefaultAsync(agent => agent.Id == Id);
         }
 
         public async Task<AgentModelView> SetAgentModelView(

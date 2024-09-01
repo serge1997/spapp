@@ -1,5 +1,7 @@
 ﻿using spapp.Models;
 using System.ComponentModel.DataAnnotations;
+using spapp.Http.Requests;
+using spapp.Enums;
 
 namespace spapp.ModelViews
 {
@@ -8,11 +10,11 @@ namespace spapp.ModelViews
         public int Id { get; set; }
         [Required(ErrorMessage = "Le nom est obligatoire")]
         public string FullName { get; set; }
-        [Required(ErrorMessage = "Le nom d1utilisateur est obligatoire")]
+        [Required(ErrorMessage = "Le nom d'utilisateur est obligatoire")]
         public string Username { get; set; }
         [Required(ErrorMessage = "Le mot de passe obligatoire")]
         public string Password { get; set; }       
-        public string MatriculeNumber { get; set; }
+        public string? MatriculeNumber { get; set; }
         public string? CNINumber { get; set; }
         public string? AttestionNumber { get; set; }
         public string? BloodGroup { get; set; }
@@ -22,13 +24,13 @@ namespace spapp.ModelViews
         public int AgentGroupId { get; set; }
         public string? Contact { get; set; }
         public string? Email { get; set; }
-        public int AddressId { get; set; }
+        public int? AddressId { get; set; }
 
         //family info
         public int? ChilddrenQuantity { get; set; }
-        public string? MaritalStatus { get; set; }
+        public MaritalStatusEnum MaritalStatus { get; set; }
         public List<AgentRankModel> AgentRanks { get; set; } = [];
         public List<CityModel> Citys { get; set; } = [];
-        public AddressModel Address { get; set; }
+        public AddressRequest Address { get; set; }
     }
 }

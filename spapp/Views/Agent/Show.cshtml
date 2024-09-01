@@ -1,0 +1,51 @@
+﻿@model AgentResource
+@{
+    ViewData["Title"] = "info d'un agent";
+}
+
+<div class="w-100">
+    <div class="row">
+        <div class="col-sm-2">
+            <h6 class="mb-3 mt-3 modal-title">
+                <span class="d-flex align-items-center">
+                    <i class="bi bi-person"></i>
+                </span>
+                <span>
+                    @Model.FullName
+                </span>
+            </h6>
+            <div class="row">
+                <div class="col-sm-12 mb-3">
+                    <button class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
+                        <span><i class="bi bi-info-circle"></i></span> <span>Info general</span>
+                    </button>
+                </div>
+                <div class="col-sm-12 mb-3">
+                    <button class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
+                        <span><i class="bi bi-house-door"></i></span> <span>Address</span>
+                    </button>
+                </div>
+                <div class="col-sm-12">
+                    <button class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
+                        <span><i class="bi bi-people"></i></span> <span>Famille</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10 mt-3">
+            <div class="row">
+                <div class="col-md-10 d-flex gap-3">                 
+                    <a asp-controller="Agent" asp-action="Index" class="action-url-btn btn" title="retour">
+                         <span>
+                             <i class="bi bi-arrow-left-square"></i>
+                         </span>
+                    </a>
+                    <button class="btn alert-secondary">Editer les information de l'agent</button>
+                    <button class="btn btn-warning d-flex gap-2">                       
+                        <span>blocker l'accès de l'agent</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
