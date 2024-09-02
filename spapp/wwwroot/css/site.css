@@ -60,3 +60,8 @@ button.close {
 .select2-dropdown.increasezindex {
     z-index: 99999;
 }
+
+.info-value {
+    color: #023E73;
+    font-size: 0.9em;
+}

@@ -7,24 +7,40 @@
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\agent\\show.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\agent\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\agent\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\agent\\show.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\agent\\show.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\agent\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\agent\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\agent\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\agent\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\city\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\city\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\response\\agentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\response\\agentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\models\\agentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\models\\agentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\repositories\\agent\\agentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\repositories\\agent\\agentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\http\\response\\agentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\http\\response\\agentresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\modelsbuilder\\agentmodelbuilder\\iagentmodelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\modelsbuilder\\agentmodelbuilder\\iagentmodelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\controllers\\agentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,18 +66,6 @@
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\modelsbuilder\\agentmodelbuilder\\agentmodelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\models\\agentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\models\\agentmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\main\\modelsbuilder\\agentmodelbuilder\\iagentmodelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\main\\modelsbuilder\\agentmodelbuilder\\iagentmodelbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\spappcontext\\modelsmap\\agentmodelmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\spappcontext\\modelsmap\\agentmodelmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood-sector\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\neighborhood-sector\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
@@ -73,11 +77,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
+              "Title": "show.js",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\agent\\show.js",
+              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\agent\\show.js",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\agent\\show.js",
+              "RelativeToolTip": "spapp\\wwwroot\\js\\agent\\show.js",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAwBAAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-02T02:29:24.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "spapp\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "spapp\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAADMAAAAAAAAAAAAAAEEAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-02T02:10:38.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\City\\Create.cshtml",
               "RelativeDocumentMoniker": "spapp\\Views\\City\\Create.cshtml",
@@ -90,17 +120,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "dbo.Agents [Dados]",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_localdb__MSSQLLocalDB/Appsp_local/True/SqlTable/dbo.Agents.sql",
               "ToolTip": "dbo.Agents [Dados]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-09-01T21:35:15.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-01T21:35:15.562Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "AgentController.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Controllers\\AgentController.cs",
               "RelativeDocumentMoniker": "spapp\\Controllers\\AgentController.cs",
@@ -108,8 +137,7 @@
               "RelativeToolTip": "spapp\\Controllers\\AgentController.cs",
               "ViewState": "AQIAAFIAAAAAAAAAAAAuwF4AAABCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T21:18:40.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-01T21:18:40.958Z"
             },
             {
               "$type": "Document",
@@ -119,7 +147,7 @@
               "RelativeDocumentMoniker": "spapp\\Views\\Agent\\Show.cshtml",
               "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Agent\\Show.cshtml",
               "RelativeToolTip": "spapp\\Views\\Agent\\Show.cshtml",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAACsAAAANAAAA",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAAAGMAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-09-01T21:17:59.725Z",
               "EditorCaption": ""
@@ -132,14 +160,14 @@
               "RelativeDocumentMoniker": "spapp\\Http\\Response\\AgentResponse.cs",
               "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Http\\Response\\AgentResponse.cs",
               "RelativeToolTip": "spapp\\Http\\Response\\AgentResponse.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAmwCoAAAAiAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAmwAwAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-01T20:32:14.655Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "IAgentRepository.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\Agent\\IAgentRepository.cs",
               "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\Agent\\IAgentRepository.cs",
@@ -147,25 +175,24 @@
               "RelativeToolTip": "spapp\\Main\\Repositories\\Agent\\IAgentRepository.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-01T20:31:40.885Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-01T20:31:40.885Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 6,
               "Title": "AgentModel.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\AgentModel.cs",
               "RelativeDocumentMoniker": "spapp\\Models\\AgentModel.cs",
               "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\AgentModel.cs",
               "RelativeToolTip": "spapp\\Models\\AgentModel.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAUwBgAAAAyAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-01T18:45:35.898Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "AgentModelBuilder.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\ModelsBuilder\\AgentModelBuilder\\AgentModelBuilder.cs",
               "RelativeDocumentMoniker": "spapp\\Main\\ModelsBuilder\\AgentModelBuilder\\AgentModelBuilder.cs",
@@ -173,12 +200,11 @@
               "RelativeToolTip": "spapp\\Main\\ModelsBuilder\\AgentModelBuilder\\AgentModelBuilder.cs",
               "ViewState": "AQIAAEMAAAAAAAAAAAAAwFMAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T02:07:24.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-30T02:07:24.72Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 9,
               "Title": "IAgentModelBuilder.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\ModelsBuilder\\AgentModelBuilder\\IAgentModelBuilder.cs",
               "RelativeDocumentMoniker": "spapp\\Main\\ModelsBuilder\\AgentModelBuilder\\IAgentModelBuilder.cs",
@@ -191,20 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AgentModelMap.cs",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\SpappContext\\ModelsMap\\AgentModelMap.cs",
-              "RelativeDocumentMoniker": "spapp\\SpappContext\\ModelsMap\\AgentModelMap.cs",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\SpappContext\\ModelsMap\\AgentModelMap.cs",
-              "RelativeToolTip": "spapp\\SpappContext\\ModelsMap\\AgentModelMap.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-30T01:16:13.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "index.js",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\neighborhood-sector\\index.js",
               "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\neighborhood-sector\\index.js",
@@ -212,12 +225,11 @@
               "RelativeToolTip": "spapp\\wwwroot\\js\\neighborhood-sector\\index.js",
               "ViewState": "AQIAAIcAAAAAAAAAAAAAAJ8AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-30T00:55:42.275Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-30T00:55:42.275Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "AgentRepository.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Main\\Repositories\\Agent\\AgentRepository.cs",
               "RelativeDocumentMoniker": "spapp\\Main\\Repositories\\Agent\\AgentRepository.cs",
@@ -230,7 +242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "AgentGroupModel.cs",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Models\\AgentGroupModel.cs",
               "RelativeDocumentMoniker": "spapp\\Models\\AgentGroupModel.cs",
@@ -238,12 +250,11 @@
               "RelativeToolTip": "spapp\\Models\\AgentGroupModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T15:36:38.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-29T15:36:38.414Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "create.js",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\agent\\create.js",
               "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\agent\\create.js",
@@ -251,8 +262,7 @@
               "RelativeToolTip": "spapp\\wwwroot\\js\\agent\\create.js",
               "ViewState": "AQIAABUAAAAAAAAAAAAAwCIAAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-29T15:33:20.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-29T15:33:20.576Z"
             },
             {
               "$type": "Document",
@@ -262,14 +272,14 @@
               "RelativeDocumentMoniker": "spapp\\Views\\Agent\\Create.cshtml",
               "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Agent\\Create.cshtml",
               "RelativeToolTip": "spapp\\Views\\Agent\\Create.cshtml",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAE8AAABeAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAE8AAABeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-29T15:31:20.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Agent\\Index.cshtml",
               "RelativeDocumentMoniker": "spapp\\Views\\Agent\\Index.cshtml",

@@ -16,17 +16,17 @@
             </h6>
             <div class="row">
                 <div class="col-sm-12 mb-3">
-                    <button class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
+                    <button id="general-info-btn" class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
                         <span><i class="bi bi-info-circle"></i></span> <span>Info general</span>
                     </button>
                 </div>
                 <div class="col-sm-12 mb-3">
-                    <button class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
+                    <button id="address-info-btn" class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
                         <span><i class="bi bi-house-door"></i></span> <span>Address</span>
                     </button>
                 </div>
                 <div class="col-sm-12">
-                    <button class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
+                    <button id="familly-info-btn" class="btn alert-secondary border w-75 gap-2 d-flex align-items-center">
                         <span><i class="bi bi-people"></i></span> <span>Famille</span>
                     </button>
                 </div>
@@ -46,6 +46,56 @@
                     </button>
                 </div>
             </div>
+            <div class="row mt-3 p-3 border">
+                <div class="col-md-10 m-auto" id="general-info-tab">
+                    <div class="row mb-5">
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Nom complet : </h6>
+                            <h6 class="fw-bold info-value">@Model.FullName</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Numero Matricule : </h6>
+                            <h6 class="fw-bold info-value">@Model.MatriculeNumber</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Email : </h6>
+                            <h6 class="fw-bold info-value">@Model.Email</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Contact : </h6>
+                            <h6 class="fw-bold info-value">@Model.Contact</h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Division : </h6>
+                            <h6 class="fw-bold info-value">@Model.AgentGroup</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Grade : </h6>
+                            <h6 class="fw-bold info-value">@Model.AgentRank</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Num CNI : </h6>
+                            <h6 class="fw-bold info-value"></h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Num Attestation : </h6>
+                            <h6 class="fw-bold info-value"></h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 m-auto d-none" id="address-info-tab">
+                    <h3>Address</h3>
+                </div>
+                <div class="col-md-10 m-auto d-none" id="familly-info-tab">
+                    <h3>Famille</h3>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
+@section Scripts{
+    <script src="~/js/agent/show.js"></script>
+}
