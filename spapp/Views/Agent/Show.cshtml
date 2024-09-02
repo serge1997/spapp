@@ -40,7 +40,7 @@
                              <i class="bi bi-arrow-left-square"></i>
                          </span>
                     </a>
-                    <button class="btn alert-secondary">Editer les information de l'agent</button>
+                    <a role="btn" class="btn alert-secondary">Editer les information de l'agent</a>
                     <button class="btn btn-warning d-flex gap-2">                       
                         <span>blocker l'accès de l'agent</span>
                     </button>
@@ -48,7 +48,8 @@
             </div>
             <div class="row mt-3 p-3 border">
                 <div class="col-md-10 m-auto" id="general-info-tab">
-                    <div class="row mb-5">
+                    <h3 class="modal-title mb-3">Info general</h3>
+                    <div class="row d-flex flex-wrap mb-5">
                         <div class="col-md-3 d-flex flex-column">
                             <h6 class="fw-bold text-secondary">Nom complet : </h6>
                             <h6 class="fw-bold info-value">@Model.FullName</h6>
@@ -66,7 +67,7 @@
                             <h6 class="fw-bold info-value">@Model.Contact</h6>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row d-flex flex-wrap mb-5">
                         <div class="col-md-3 d-flex flex-column">
                             <h6 class="fw-bold text-secondary">Division : </h6>
                             <h6 class="fw-bold info-value">@Model.AgentGroup</h6>
@@ -84,12 +85,66 @@
                             <h6 class="fw-bold info-value"></h6>
                         </div>
                     </div>
+                    <div class="row d-flex flex-wrap">
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Enregistré le : </h6>
+                            <h6 class="fw-bold info-value">@Model.Created_at</h6>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-10 m-auto d-none" id="address-info-tab">
-                    <h3>Address</h3>
+                    <h3 class="modal-title mb-3">Address</h3>
+                    <div class="row d-flex flex-wrap mb-5">
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Ville : </h6>
+                            <h6 class="fw-bold info-value">@Model.City</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Commune : </h6>
+                            <h6 class="fw-bold info-value">@Model.Municipality</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Quartier : </h6>
+                            <h6 class="fw-bold info-value">@Model.Neighborhood</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Secteur : </h6>
+                            <h6 class="fw-bold info-value">@Model.NeighborhoodSector</h6>
+                        </div>
+                    </div>
+                    <div class="row mb-5 d-flex flex-wrap">
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Rue : </h6>
+                            <h6 class="fw-bold info-value">@Model.StreetName</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Complement : </h6>
+                            <h6 class="fw-bold info-value">@Model.Complement</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Num résidence : </h6>
+                            <h6 class="fw-bold info-value">A definir</h6>
+                        </div>
+                    </div>
+                    <div class="row d-flex flex-wrap">
+                        <div class="col-md-6 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Indication : </h6>
+                            <h6 class="fw-bold info-value">@Model.Indication</h6>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-10 m-auto d-none" id="familly-info-tab">
-                    <h3>Famille</h3>
+                    <h3 class="modal-title mb-3">Famille</h3>
+                    <div class="row d-flex flex-wrap mb-5">
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Situation matrimonial : </h6>
+                            <h6 class="fw-bold info-value">@Model.MaritalStatus</h6>
+                        </div>
+                        <div class="col-md-3 d-flex flex-column">
+                            <h6 class="fw-bold text-secondary">Nombre d'enfants : </h6>
+                            <h6 class="fw-bold info-value">@Model.ChilddrenQuantity</h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

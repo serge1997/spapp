@@ -100,5 +100,21 @@ namespace spapp.Controllers
                 return RedirectToAction(nameof(Index));
             }
         }
+
+        [HttpGet]
+        [Route("/agent/edit/{Id}")]
+        public async Task<IActionResult> Edit(int Id)
+        {
+            try
+            {
+                return View();
+
+            }
+            catch(Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Une erreure est survenue en listant les données de l'agent: {ex.Message}";
+                return RedirectToAction(nameof(Index));
+            }
+        }
     }
 }
