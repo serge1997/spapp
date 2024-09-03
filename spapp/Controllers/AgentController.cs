@@ -107,7 +107,25 @@ namespace spapp.Controllers
         {
             try
             {
-                return View();
+                AgentResource findAgent = AgentResponse.AsModelResponse(
+                    await _agentRepository.FindAsync(Id));
+
+                AgentModelView modelView = await _agentRepository
+                    .SetAgentModelView(
+                        _cityRepository,
+                        _agentRankRepository
+                     );
+                modelView.FullName = findAgent.FullName;
+                modelView.Username = findAgent.UserName;
+                modelView.Email = findAgent.Email;
+                
+
+
+                modelView.AgentResource = AgentResponse.AsModelResponse(
+                    await _agentRepository.FindAsync(Id)
+                 );
+                
+                return View(modelView);
 
             }
             catch(Exception ex)

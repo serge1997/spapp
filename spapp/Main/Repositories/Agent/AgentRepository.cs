@@ -29,7 +29,7 @@ namespace spapp.Main.Repositories.Agent
         {
             
             AddressModel address = await _addressRepository
-                .CreateAsync(agentModelView.Address);
+                .CreateAsync(agentModelView.AddressRequest);
 
             await _spappContextDb.SaveChangesAsync();
 

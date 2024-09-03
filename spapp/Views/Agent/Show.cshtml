@@ -40,7 +40,7 @@
                              <i class="bi bi-arrow-left-square"></i>
                          </span>
                     </a>
-                    <a role="btn" class="btn alert-secondary">Editer les information de l'agent</a>
+                    <a role="btn" asp-controller="Agent" asp-action="Edit" asp-route-id="@Model.Id" class="btn alert-secondary">Editer les information de l'agent</a>
                     <button class="btn btn-warning d-flex gap-2">                       
                         <span>blocker l'accès de l'agent</span>
                     </button>

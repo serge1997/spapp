@@ -1,2 +1,201 @@
-﻿@{
+﻿@model AgentModelView
+@{
+    ViewData["Title"] = "Enregistrer un nouveau agent";
+}
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row">
+        <div class="col-md-10">
+            <a asp-controller="Agent" asp-action="Show" asp-route-id="AgentResource!.Id" class="action-url-btn btn" title="retour">
+                <span>
+                    <i class="bi bi-arrow-left-square"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        @if (TempData["ErrorMessage"] is not null)
+        {
+            <div class="alert alert_error">
+                <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
+                <span class="text-white">
+                    @TempData["ErrorMessage"]
+                </span>
+            </div>
+        }
+    </div>
+    <div class="container">
+        <div class="row mt-3 border d-flex align-items-center shadow-sm" id="form-create-tab">
+            <div class="col-md-4 d-flex justify-content-center align-items-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-agent-btn">1</button>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-address-btn">2</button>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-familly-btn">3</button>
+            </div>
+        </div>
+        <form class="row" method="post" asp-controller="Agent" asp-action="Create">
+            <div class="row" id="form-agent-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-person"></i>
+                    <h4 class="modal-title">Editer les infos de l'agent</h4>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom complet</label>
+                        <input asp-for="AgentResource!.FullName" type="text" class="form-control" placeholder="Nom" />
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.FullName)</small></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Email</label>
+                        <input asp-for="AgentResource!.Email" type="text" class="form-control" placeholder="informez une address e-mail" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom d'utilisateur</label>
+                        <input asp-for="AgentResource!.UserName" disabled type="text" class="form-control" placeholder="Nom d'utilisateur" />
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.Username)</small></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Mot de passe</label>
+                        <input asp-for="Password" type="password" class="form-control" placeholder="mot de passe" />
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.Password)</small></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Numero de carte d'identité</label>
+                        <input asp-for="CNINumber" type="text" class="form-control" placeholder="numero de carte d'identité" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Numero attestation</label>
+                        <input asp-for="AttestionNumber" type="text" class="form-control" placeholder="numero attestation" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Division</label>
+                        <select asp-for="AgentGroupId" class="form-select single-select2-spapp">
+                            <option value="5" selected>Police National</option>
+                        </select>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AgentGroupId)</small></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Grade</label>
+                        <select asp-for="AgentRankId" class="form-select single-select2-spapp">
+                            @if (Model.AgentRanks is not null)
+                            {
+                                foreach (AgentRankModel rank in Model.AgentRanks)
+                                {
+                                    <option value="@rank.Id">@rank.Name</option>
+                                }
+                            }
+                        </select>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AgentRankId)</small></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Telephone</label>
+                        <input asp-for="Contact" type="text" class="form-control" placeholder="informez un numero de telephone" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Groupe sanguin</label>
+                        <input asp-for="BloodGroup" type="text" class="form-control" placeholder="groupe sanguin" />
+                    </div>
+                </div>
+            </div>
+            <div class="row d-none d-flex align-items-center gap-2" id="form-address-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-users"></i>
+                    <h4 class="modal-title">Editer les infos famille</h4>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Situation matrimonial</label>
+                        <select asp-for="MaritalStatus" class="form-select single-select2-spapp">
+                            <option value="@MaritalStatusEnum.Maried">@MaritalStatusEnum.Maried.Marital()</option>
+                            <option value="@MaritalStatusEnum.Single">@MaritalStatusEnum.Single.Marital()</option>
+                            <option value="@MaritalStatusEnum.SingleParent">@MaritalStatusEnum.SingleParent.Marital()</option>
+                            <option value="@MaritalStatusEnum.Widow">@MaritalStatusEnum.Widow.Marital()</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nombre d'enfants</label>
+                        <input asp-for="ChilddrenQuantity" type="number" class="form-control" placeholder="nombre d'enfants" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="row d-none d-flex align-items-center gap-2" id="form-familly-info">
+                <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                    <i class="bi bi-house"></i>
+                    <h4 class="modal-title">Editer l'address de l'utilisateur</h4>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Ville</label>
+                        <select asp-for="Address.CityId" class="form-select single-select2-spapp" id="city-select">
+                            <option selected>Selectionner une ville</option>
+                            @if (Model.Citys is not null)
+                            {
+                                foreach (CityModel city in Model.Citys)
+                                {
+                                    <option value="@city.Id">@city.Name</option>
+                                }
+                            }
+                        </select>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.Address.CityId)</small></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Commune</label>
+                        <select asp-for="Address.MunicipalityId" class="form-select single-select2-spapp" id="select-municipality">
+                            <option selected>Selectionner une commune</option>
+                        </select>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.Address.MunicipalityId)</small></span>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Quartier</label>
+                        <select asp-for="Address.NeighborhoodId" class="form-select single-select2-spapp" id="neighborhood-select">
+                            <option selected>Selectionner un quartier</option>
+                        </select>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.Address.NeighborhoodId)</small></span>
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom du secteur</label>
+                        <select asp-for="Address.NeighborhoodSectorId" class="form-select single-select2-spapp" id="select-sector">
+                            <option selected>Selectionner un Secteur</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Nom de la rue</label>
+                        <input asp-for="Address.StreetName" type="text" class="form-control" placeholder="nom de la rue" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Numero de residence</label>
+                        <input type="text" class="form-control" placeholder="numero de residence" />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <label class="form-control-label">Complement</label>
+                        <textarea asp-for="Address.Complement" type="text" class="form-control" placeholder="complement, indices"></textarea>
+                    </div>
+                </div>
+                <div class="row mb-3 px-3">
+                    <button class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/agent/create.js"></script>
 }

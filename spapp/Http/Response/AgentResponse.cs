@@ -6,6 +6,7 @@ namespace spapp.Http.Response
     public sealed record AgentResource(
         int Id,
         string FullName,
+        string UserName,
         string MatriculeNumber,
         string AgentGroup,
         string AgentRank,
@@ -39,6 +40,7 @@ namespace spapp.Http.Response
             return new AgentResource(
                     agent.Id,
                     agent.FullName,
+                    agent.Username,
                     agent.MatriculeNumber,
                     agent.AgentGroup.Name,
                     agent.AgentRank.Name,

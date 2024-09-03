@@ -57,9 +57,9 @@
                                 <td>@agent.MatriculeNumber</td>
                                 <td>@agent.AgentRank</td>
                                 <td class="d-flex">
-                                    <button class="btn edit-city" data-city-id="@agent.Id" data-bs-toggle="modal" data-bs-target="#editCityModal">
+                                    <a role="btn" asp-controller="Agent" asp-action="Edit" asp-route-id="@agent.Id" class="btn edit-city" data-city-id="@agent.Id" data-bs-toggle="modal" data-bs-target="#editCityModal">
                                         <i class="bi bi-pencil-square"></i>
-                                    </button>
+                                    </a>
                                     <button class="btn text-danger disabled" id="delete-city" data-city-id="@agent.Id">
                                         <i class="bi bi-trash"></i>
                                     </button>

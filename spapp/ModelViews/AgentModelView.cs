@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using spapp.Http.Requests;
 using spapp.Enums;
+using spapp.Http.Response;
 
 namespace spapp.ModelViews
 {
@@ -31,6 +32,8 @@ namespace spapp.ModelViews
         public MaritalStatusEnum MaritalStatus { get; set; }
         public List<AgentRankModel> AgentRanks { get; set; } = [];
         public List<CityModel> Citys { get; set; } = [];
-        public AddressRequest Address { get; set; }
+        public AddressRequest AddressRequest { get; set; }
+        public AddressModel? Address {  get; set; }
+        public AgentResource? AgentResource { get; set; }
     }
 }
