@@ -11,6 +11,7 @@ namespace spapp.Main.Repositories.Agent
         Task<AgentModel> CreateAsync(AgentModelView agentModelView);
         Task<List<AgentModel>> GetAllAsync();
         Task<AgentModel> FindAsync(int Id);
+        Task<AgentModel> UpdateAsync(AgentModelView agentModelView);
         Task<AgentModelView> SetAgentModelView(
             ICityRepository cityRepository,
             IAgentRankRepository agentRankRepository

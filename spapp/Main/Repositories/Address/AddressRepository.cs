@@ -1,4 +1,5 @@
-﻿using spapp.Http.Requests;
+﻿using Microsoft.EntityFrameworkCore;
+using spapp.Http.Requests;
 using spapp.Main.ModelsBuilder.Address;
 using spapp.Models;
 using spapp.ModelViews;
@@ -38,6 +39,33 @@ namespace spapp.Main.Repositories.Address
             await _spappContextDb.SaveChangesAsync();
 
             return address;
+        }
+
+        public async Task<AddressModel> FindByStreetNameAndCity(string streetName, int? CityId = null)
+        {
+            var Address = _spappContextDb.Addresses;
+            if (CityId != null)
+            {
+                return await Address
+                .FirstOrDefaultAsync(add => string.Equals(add.StreetName.ToLower(), streetName.ToLower()) && add.CityId == CityId);
+            }
+
+            return await Address
+                .FirstOrDefaultAsync(add => string.Equals(add.StreetName.ToLower(), streetName.ToLower()));
+
+        }
+
+        public async Task<AddressModel> FindOrCreate(AddressRequest request)
+        {
+            AddressModel finded = await FindByStreetNameAndCity(request.StreetName!, request.CityId);
+
+            if (finded is null)
+            {
+                await CreateAsync(request);
+            }
+
+            return finded!;
+
         }
     }
 }

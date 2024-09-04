@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using spapp.Main.ModelsBuilder.Address;
 using spapp.Main.ModelsBuilder.AgentModelBuilder;
 using spapp.Main.Repositories.Address;
@@ -7,6 +8,7 @@ using spapp.Main.Repositories.City;
 using spapp.Models;
 using spapp.ModelViews;
 using spapp.SpappContext;
+using System.Net;
 
 namespace spapp.Main.Repositories.Agent
 {
@@ -44,6 +46,7 @@ namespace spapp.Main.Repositories.Agent
                 .AddChilddrenQUantity(agentModelView.ChilddrenQuantity)
                 .AddPassword(agentModelView.Password)
                 .AddCNINumber(agentModelView.CNINumber)
+                .AddAttestationNumber(agentModelView.AttestionNumber)
                 .AddEmail(agentModelView.Email)
                 .AddMaritalStatus(agentModelView.MaritalStatus)
                 .AddAddress(address)
@@ -79,6 +82,34 @@ namespace spapp.Main.Repositories.Agent
                 .Include(agent => agent.Address.NeighborhoodModel)
                 .Include(agent => agent.Address.NeighborhoodSectorModel)
                 .FirstOrDefaultAsync(agent => agent.Id == Id);
+        }
+
+        public async Task<AgentModel> UpdateAsync(AgentModelView agentModelView)
+        {
+            AgentModel finded = await FindAsync(agentModelView.Id);
+            AddressModel address = await _addressRepository
+                .FindOrCreate(agentModelView.AddressRequest!);
+
+            if (finded is not null)
+            {
+               finded =  _agentModelBuilder
+                            .AddFullName(agentModelView.FullName)
+                            .AddUserName(agentModelView.Username)
+                            .AddEmail(agentModelView.Email)
+                            .AddContact(agentModelView.Contact)
+                            .AddAgentGroupId(agentModelView.AgentGroupId)
+                            .AddAGentRankId(agentModelView.AgentRankId)
+                            .AddChilddrenQUantity(agentModelView.ChilddrenQuantity)
+                            .AddCNINumber(agentModelView.CNINumber)
+                            .AddEmail(agentModelView.Email)
+                            .AddMaritalStatus(agentModelView.MaritalStatus)
+                            .AddAddress(address)
+                            .Build();
+                
+                _spappContextDb.Agents.Update(finded);
+                await _spappContextDb.SaveChangesAsync();
+            }
+            throw new Exception("Agent non rencontré");
         }
 
         public async Task<AgentModelView> SetAgentModelView(

@@ -9,6 +9,7 @@ using spapp.Main.Repositories.Neighborhood;
 using spapp.Main.Repositories.NeighborhoodSector;
 using spapp.Models;
 using spapp.ModelViews;
+using spapp.SpappContext;
 
 namespace spapp.Controllers
 {
@@ -18,7 +19,8 @@ namespace spapp.Controllers
         IAgentRankRepository agentRankRepository,
         IMunicipalityRepository municipalityRepository,
         INeighborhoodRepository neighborhoodRepository,
-        INeighborhoodSectorRepository neighborhoodSectorRepository
+        INeighborhoodSectorRepository neighborhoodSectorRepository,
+        SpappContextDb context
     ) : Controller
     {
         private readonly IAgentRepository _agentRepository = agentRepository;
@@ -27,6 +29,7 @@ namespace spapp.Controllers
         private readonly IMunicipalityRepository _municipalityRepository = municipalityRepository;
         private readonly INeighborhoodRepository _neighbordRepository = neighborhoodRepository;
         private readonly INeighborhoodSectorRepository _neighbordRepositorySector = neighborhoodSectorRepository;
+        private readonly SpappContextDb _context = context;
 
         [HttpGet]
         [Route("/agent")]
@@ -72,6 +75,8 @@ namespace spapp.Controllers
         {
             try
             {
+                _context.Database.BeginTransaction();
+
                 if (!ModelState.IsValid)
                 {
                     AgentModelView instance = await _agentRepository
@@ -84,11 +89,14 @@ namespace spapp.Controllers
                 }
 
                 await _agentRepository.CreateAsync(agentModelView);
+
+                _context.Database.CommitTransaction();
                 TempData["SuccessMessage"] = "l'agent enregistré avec succès";
                 return RedirectToAction(nameof(Index));
             }
             catch(Exception ex)
             {
+                _context.Database.RollbackTransaction();
                 TempData["ErrorMessage"] = $"Une erreure est survenue : {agentModelView.AgentRankId} {ex.ToString()}";
                 return RedirectToAction(nameof(Index));
             }
@@ -165,6 +173,30 @@ namespace spapp.Controllers
             {
                 TempData["ErrorMessage"] = $"Une erreure est survenue en listant les données de l'agent: {ex.Message}";
                 return RedirectToAction(nameof(Index));
+            }
+        }
+
+        [HttpPost]
+        [Route("/agent/update")]
+        public async Task<IActionResult> Update(AgentModelView model)
+        {
+            try
+            {
+                _context.Database.BeginTransaction();
+
+                TempData["SuccessMessage"] = "informations actualisées avec succes";
+                await _agentRepository.UpdateAsync(model);
+
+                _context.Database.CommitTransaction();
+
+                return RedirectToAction(nameof(Index));
+
+            }
+            catch(Exception ex)
+            {
+                _context.Database.RollbackTransaction();
+                TempData["ErrorMessage"] = $"une erreure est survenue en éditant l'agent: {ex.Message}";
+                return RedirectToAction(nameof(Index)); 
             }
         }
     }
