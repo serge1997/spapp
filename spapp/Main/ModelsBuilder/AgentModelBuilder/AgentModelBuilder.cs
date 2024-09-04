@@ -84,6 +84,11 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
             return this;
         }
 
+        public IAgentModelBuilder AddCreated()
+        {
+            this._agent.Created_at = DateTime.Now;
+            return this;
+        }
         public IAgentModelBuilder AddAddress(AddressModel address)
         {
             this._agent.AddressId = address.Id;

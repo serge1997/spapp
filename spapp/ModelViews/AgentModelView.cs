@@ -21,8 +21,10 @@ namespace spapp.ModelViews
         public string? BloodGroup { get; set; }
         [Required(ErrorMessage = "La division est obligatoire")]
         public int AgentRankId { get; set; }
+        public string? AgentRank {  get; set; }
         [Required(ErrorMessage = "La grade est obligatoire")]
         public int AgentGroupId { get; set; }
+        public string? AgentGroup {  get; set; }
         public string? Contact { get; set; }
         public string? Email { get; set; }
         public int? AddressId { get; set; }
@@ -32,8 +34,11 @@ namespace spapp.ModelViews
         public MaritalStatusEnum MaritalStatus { get; set; }
         public List<AgentRankModel> AgentRanks { get; set; } = [];
         public List<CityModel> Citys { get; set; } = [];
-        public AddressRequest AddressRequest { get; set; }
+        public AddressRequest? AddressRequest { get; set; }
         public AddressModel? Address {  get; set; }
         public AgentResource? AgentResource { get; set; }
+        public List<MunicipalityModel>? Municipalities { get; set; }
+        public List<NeighborhoodModel>? Neighborhoods { get; set; } 
+        public List<NeighborhoodSectorModel>? NeighborhoodSectors { get; set; }
     }
 }

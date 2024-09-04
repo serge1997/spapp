@@ -28,7 +28,7 @@ namespace spapp.Main.Repositories.Municipality
             return municpal;
         }
 
-        public async Task<List<MunicipalityModel>> GetAllMunicipalityAsync()
+        public async Task<List<MunicipalityModel>?> GetAllMunicipalityAsync()
         {
             List<MunicipalityModel> entities = await _spappContext
                 .Municipalities

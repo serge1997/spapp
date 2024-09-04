@@ -19,6 +19,7 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
         IAgentModelBuilder AddAgentGroupId(int agentGroupId);
         IAgentModelBuilder AddAGentRankId(int agentRankId);
         IAgentModelBuilder AddMaritalStatus(MaritalStatusEnum maritalStatus);
+        IAgentModelBuilder AddCreated();
         IAgentModelBuilder AddAddress(AddressModel address);
         AgentModel Build();
     }

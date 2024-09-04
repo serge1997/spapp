@@ -1,8 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using spapp.Http.Requests;
 using spapp.Http.Response;
 using spapp.Main.Repositories.Agent;
 using spapp.Main.Repositories.AgentRank;
 using spapp.Main.Repositories.City;
+using spapp.Main.Repositories.Municipality;
+using spapp.Main.Repositories.Neighborhood;
+using spapp.Main.Repositories.NeighborhoodSector;
 using spapp.Models;
 using spapp.ModelViews;
 
@@ -11,12 +15,18 @@ namespace spapp.Controllers
     public class AgentController(
         IAgentRepository agentRepository,
         ICityRepository cityRepository,
-        IAgentRankRepository agentRankRepository
+        IAgentRankRepository agentRankRepository,
+        IMunicipalityRepository municipalityRepository,
+        INeighborhoodRepository neighborhoodRepository,
+        INeighborhoodSectorRepository neighborhoodSectorRepository
     ) : Controller
     {
         private readonly IAgentRepository _agentRepository = agentRepository;
         private readonly ICityRepository _cityRepository = cityRepository;
         private readonly IAgentRankRepository _agentRankRepository = agentRankRepository;
+        private readonly IMunicipalityRepository _municipalityRepository = municipalityRepository;
+        private readonly INeighborhoodRepository _neighbordRepository = neighborhoodRepository;
+        private readonly INeighborhoodSectorRepository _neighbordRepositorySector = neighborhoodSectorRepository;
 
         [HttpGet]
         [Route("/agent")]
@@ -110,20 +120,43 @@ namespace spapp.Controllers
                 AgentResource findAgent = AgentResponse.AsModelResponse(
                     await _agentRepository.FindAsync(Id));
 
+                AddressRequest addRequest = new(
+                       findAgent.AddresId,
+                       findAgent.StreetName,
+                       findAgent.CityId,
+                       findAgent.MunicipalityId,
+                       findAgent.NeighborhoodId,
+                       findAgent.NeighborhoodSectorId,
+                       findAgent.Complement,
+                       findAgent.Indication,
+                       "origin",
+                       findAgent.Latitude,
+                       findAgent.Longitude
+                    );
+
                 AgentModelView modelView = await _agentRepository
                     .SetAgentModelView(
                         _cityRepository,
                         _agentRankRepository
                      );
+                modelView.Id = findAgent.Id;
                 modelView.FullName = findAgent.FullName;
                 modelView.Username = findAgent.UserName;
                 modelView.Email = findAgent.Email;
-                
-
-
-                modelView.AgentResource = AgentResponse.AsModelResponse(
-                    await _agentRepository.FindAsync(Id)
-                 );
+                modelView.ChilddrenQuantity = findAgent.ChilddrenQuantity;
+                modelView.AddressRequest = addRequest;
+                modelView.AttestionNumber = findAgent.AttestationNumber;
+                modelView.CNINumber = findAgent.CNINumber;
+                modelView.BloodGroup = findAgent.BloodGroup;
+                modelView.AgentRankId = findAgent.AgentRankId;
+                modelView.AgentGroupId = findAgent.AgentGroupId;
+                modelView.AgentGroup = findAgent.AgentGroup;
+                modelView.AgentRank = findAgent.AgentRank;
+                modelView.Municipalities = await _municipalityRepository.GetAllMunicipalityAsync();
+                modelView.Neighborhoods = await _neighbordRepository.GetAllAsyncNeighborhood();
+                modelView.NeighborhoodSectors = await _neighbordRepositorySector.GetAllAsync();
+              
+                          
                 
                 return View(modelView);
 

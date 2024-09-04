@@ -137,8 +137,7 @@
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Ville</label>                       
-                        <select asp-for="AddressRequest.CityId" class="form-select single-select2-spapp" id="city-select">
-                            <option selected>Selectionner une ville</option>
+                        <select asp-for="AddressRequest!.CityId" class="form-select single-select2-spapp" id="city-select">                           
                             @if(Model.Citys is not null)
                             {
                                 foreach (CityModel city in Model.Citys)
@@ -147,35 +146,32 @@
                                 }
                             }
                         </select>
-                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest.CityId)</small></span>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest!.CityId)</small></span>
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Commune</label>
-                        <select asp-for="AddressRequest.MunicipalityId" class="form-select single-select2-spapp" id="select-municipality">
-                            <option selected>Selectionner une commune</option>
+                        <select asp-for="AddressRequest!.MunicipalityId" class="form-select single-select2-spapp" id="select-municipality">
                         </select>
-                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest.MunicipalityId)</small></span>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest!.MunicipalityId)</small></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Quartier</label>
-                        <select asp-for="AddressRequest.NeighborhoodId" class="form-select single-select2-spapp" id="neighborhood-select">
-                            <option selected>Selectionner un quartier</option>
+                        <select asp-for="AddressRequest!.NeighborhoodId" class="form-select single-select2-spapp" id="neighborhood-select">                 
                         </select>
-                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest.NeighborhoodId)</small></span>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest!.NeighborhoodId)</small></span>
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom du secteur</label>
-                        <select asp-for="AddressRequest.NeighborhoodSectorId" class="form-select single-select2-spapp" id="select-sector">
-                            <option selected>Selectionner un Secteur</option>
+                        <select asp-for="AddressRequest!.NeighborhoodSectorId" class="form-select single-select2-spapp" id="select-sector">
                         </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom de la rue</label>
-                        <input asp-for="AddressRequest.StreetName" type="text" class="form-control" placeholder="nom de la rue" />
+                        <input asp-for="AddressRequest!.StreetName" type="text" class="form-control" placeholder="nom de la rue" />
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Numero de residence</label>
@@ -185,7 +181,7 @@
                 <div class="row mb-3">                  
                     <div class="col-sm-12">
                         <label class="form-control-label">Complement</label>
-                        <textarea asp-for="AddressRequest.Complement" type="text" class="form-control" placeholder="complement, indices"></textarea>
+                        <textarea asp-for="AddressRequest!.Complement" type="text" class="form-control" placeholder="complement, indices"></textarea>
                     </div>
                 </div>
                 <div class="row mb-3 px-3">

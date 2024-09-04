@@ -29,7 +29,7 @@ namespace spapp.Main.Repositories.Agent
         {
             
             AddressModel address = await _addressRepository
-                .CreateAsync(agentModelView.AddressRequest);
+                .CreateAsync(agentModelView.AddressRequest!);
 
             await _spappContextDb.SaveChangesAsync();
 
@@ -48,6 +48,7 @@ namespace spapp.Main.Repositories.Agent
                 .AddMaritalStatus(agentModelView.MaritalStatus)
                 .AddAddress(address)
                 .AddMatriculeNumber()
+                .AddCreated()
                 .Build();
 
             _spappContextDb.Agents.Add(agent);
