@@ -36,9 +36,9 @@ namespace spapp.ModelViews
         public List<CityModel> Citys { get; set; } = [];
         public AddressRequest? AddressRequest { get; set; }
         public AddressModel? Address {  get; set; }
-        public AgentResource? AgentResource { get; set; }
-        public List<MunicipalityModel>? Municipalities { get; set; }
-        public List<NeighborhoodModel>? Neighborhoods { get; set; } 
-        public List<NeighborhoodSectorModel>? NeighborhoodSectors { get; set; }
+        //public AgentResource? AgentResource { get; set; }
+        //public List<MunicipalityModel>? Municipalities { get; set; } = [];
+        //public List<NeighborhoodModel>? Neighborhoods { get; set; } = [];
+        //public List<NeighborhoodSectorModel>? NeighborhoodSectors { get; set; } = [];
     }
 }

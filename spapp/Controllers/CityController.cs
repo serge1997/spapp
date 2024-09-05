@@ -101,5 +101,13 @@ namespace spapp.Controllers
                 return Json(Results.UnprocessableEntity($"Une erreure est survenue {ex.Message}"));
             }
         }
+
+        [HttpGet]
+        [Route("/api/city")]
+        public async Task<JsonResult> IndexApi()
+        {
+            List<CityModel> cities = await _cityRepository.GetAllCitiesAsync();
+            return Json(Results.Ok(cities));
+        }
     }
 }

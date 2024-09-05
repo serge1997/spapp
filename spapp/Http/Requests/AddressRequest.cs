@@ -3,7 +3,6 @@
 namespace spapp.Http.Requests
 {
     public record AddressRequest(
-        int Id,
         string? StreetName,
         //public int? HouseNumber { get; set; }
         [Required(ErrorMessage = "La ville est obligatoire")]
@@ -12,11 +11,11 @@ namespace spapp.Http.Requests
         int MunicipalityId,
         [Required(ErrorMessage = "Le quartier est obligatoire")]
         int NeighborhoodId,
-        int? NeighborhoodSectorId,
-        string? Complement,
-        string? Indication,
-        string? Origin,
-        double? Latitude,
-        double? Longitude
+        int? NeighborhoodSectorId = null,
+        string? Complement = null,
+        string? Indication = null,
+        string? Origin = null,
+        double? Latitude = null,
+        double? Longitude = null
     );
 }

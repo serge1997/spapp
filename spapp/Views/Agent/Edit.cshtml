@@ -1,4 +1,4 @@
-﻿@model AgentModelView
+﻿@model AgentResource
 @{
     ViewData["Title"] = "Enregistrer un nouveau agent";
 }
@@ -35,7 +35,12 @@
                 <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-familly-btn">3</button>
             </div>
         </div>
-        <form class="row" method="post" asp-controller="Agent" asp-action="Create">
+        <form class="row" method="post" asp-controller="Agent" asp-action="Update">
+            <input type="hidden" asp-for="Id" id="agent-id" />
+            <input type="hidden" asp-for="CityId" id="city-id" />
+            <input type="hidden" asp-for="MunicipalityId" id="municipality-id" />
+            <input type="hidden" asp-for="NeighborhoodId" id="neighborhood-id" />
+            <input type="hidden" asp-for="NeighborhoodSectorId" id="neighborhood-sector-id" />
             <div class="row" id="form-agent-info">
                 <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
                     <i class="bi bi-person"></i>
@@ -55,14 +60,9 @@
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom d'utilisateur</label>
-                        <input asp-for="Username" disabled type="text" class="form-control" placeholder="Nom d'utilisateur" />
-                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.Username)</small></span>
-                    </div>
-                    <div class="col-sm-6">
-                        <label class="form-control-label">Mot de passe</label>
-                        <input asp-for="Password" type="password" disabled class="form-control" placeholder="mot de passe" />
-                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.Password)</small></span>
-                    </div>
+                        <input asp-for="UserName" disabled type="text" class="form-control" placeholder="Nom d'utilisateur" />
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.UserName)</small></span>
+                    </div>                  
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-6">
@@ -71,7 +71,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Numero attestation</label>
-                        <input asp-for="AttestionNumber" type="text" class="form-control" placeholder="numero attestation" />
+                        <input asp-for="AttestationNumber" type="text" class="form-control" placeholder="numero attestation" />
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -85,21 +85,7 @@
                     <div class="col-sm-6">
                         <label class="form-control-label">Grade</label>
                         <select asp-for="AgentRankId" class="form-select single-select2-spapp">
-                            @if (Model.AgentRanks is not null)
-                            {
-                                foreach (AgentRankModel rank in Model.AgentRanks)
-                                {
-                                    if (rank.Id == Model.AgentRankId)
-                                    {
-                                        <option value="@rank.Id" selected>@rank.Name</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="@rank.Id">@rank.Name</option>
-                                    }
-
-                                }
-                            }
+                          
                         </select>
                         <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AgentRankId)</small></span>
                     </div>
@@ -145,95 +131,38 @@
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Ville</label>
-                        <select asp-for="AddressRequest!.CityId" class="form-select single-select2-spapp" id="city-select">
-                            
-                            @if (Model.Citys is not null)
-                            {
-                                foreach (CityModel city in Model.Citys)
-                                {
-                                    if (city.Id == Model.AddressRequest!.CityId)
-                                    {
-                                        <option value="@city.Id" selected>@city.Name</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="@city.Id">@city.Name</option>
-                                    }
-
-                                }
-                            }
+                        <select asp-for="CityId" class="form-select single-select2-spapp" id="city-select">
+                                                    
                         </select>
-                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest!.CityId)</small></span>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.CityId)</small></span>
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Commune</label>
-                        <select asp-for="AddressRequest!.MunicipalityId" class="form-select single-select2-spapp" id="select-municipality">
-                            @if (Model.Municipalities is not null)
-                            {
-                                foreach (MunicipalityModel mun in Model.Municipalities)
-                                {
-                                    if (mun.Id == Model.AddressRequest!.MunicipalityId)
-                                    {
-                                        <option value="@mun.Id" selected>@mun.Name</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="@mun.Id">@mun.Name</option>
-                                    }
-
-                                }
-                            }
+                        <select asp-for="MunicipalityId" class="form-select single-select2-spapp" id="select-municipality">
+                          
                         </select>
-                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest!.MunicipalityId)</small></span>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.MunicipalityId)</small></span>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Quartier</label>
-                        <select asp-for="AddressRequest!.NeighborhoodId" class="form-select single-select2-spapp" id="neighborhood-select">
-                            @if (Model.Neighborhoods is not null)
-                            {
-                                foreach (NeighborhoodModel nei in Model.Neighborhoods)
-                                {
-                                    if (nei.Id == Model.AddressRequest!.NeighborhoodId)
-                                    {
-                                        <option value="@nei.Id" selected>@nei.Name</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="@nei.Id">@nei.Name</option>
-                                    }
-
-                                }
-                            }
+                        <select asp-for="NeighborhoodId" class="form-select single-select2-spapp" id="neighborhood-select">
+                            
                         </select>
-                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AddressRequest!.NeighborhoodId)</small></span>
+                        <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.NeighborhoodId)</small></span>
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom du secteur</label>
-                        <select asp-for="AddressRequest!.NeighborhoodSectorId" class="form-select single-select2-spapp" id="select-sector">
-                            @if (Model.NeighborhoodSectors is not null)
-                            {
-                                foreach (NeighborhoodSectorModel sector in Model.NeighborhoodSectors)
-                                {
-                                    if (sector.Id == Model.AddressRequest!.MunicipalityId)
-                                    {
-                                        <option value="@sector.Id" selected>@sector.Name</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="@sector.Id">@sector.Name</option>
-                                    }
-
-                                }
-                            }
+                        <select asp-for="NeighborhoodSectorId" class="form-select single-select2-spapp" id="select-sector">
+                           
                         </select>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom de la rue</label>
-                        <input asp-for="AddressRequest!.StreetName" type="text" class="form-control" placeholder="nom de la rue" />
+                        <input asp-for="StreetName" type="text" class="form-control" placeholder="nom de la rue" />
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Numero de residence</label>
@@ -243,7 +172,7 @@
                 <div class="row mb-3">
                     <div class="col-sm-12">
                         <label class="form-control-label">Complement</label>
-                        <textarea asp-for="AddressRequest!.Complement" type="text" class="form-control" placeholder="complement, indices"></textarea>
+                        <textarea asp-for="Complement" type="text" class="form-control" placeholder="complement, indices"></textarea>
                     </div>
                 </div>
                 <div class="row mb-3 px-3">
@@ -255,5 +184,5 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/agent/create.js"></script>
+    <script src="~/js/agent/edit.js"></script>
 }

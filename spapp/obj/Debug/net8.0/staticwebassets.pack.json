@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\js\\agent\\create.js"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\agent\\edit.js",
+      "PackagePath": "staticwebassets\\js\\agent\\edit.js"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\agent\\show.js",
       "PackagePath": "staticwebassets\\js\\agent\\show.js"
     },

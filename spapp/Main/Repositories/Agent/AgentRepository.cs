@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using spapp.Http.Requests;
 using spapp.Main.ModelsBuilder.Address;
 using spapp.Main.ModelsBuilder.AgentModelBuilder;
 using spapp.Main.Repositories.Address;
@@ -84,25 +85,28 @@ namespace spapp.Main.Repositories.Agent
                 .FirstOrDefaultAsync(agent => agent.Id == Id);
         }
 
-        public async Task<AgentModel> UpdateAsync(AgentModelView agentModelView)
+        public async Task<AgentModel> UpdateAsync(UpdateAgentRequest request)
         {
-            AgentModel finded = await FindAsync(agentModelView.Id);
+            AgentModel finded = await FindAsync(request.Id);
             AddressModel address = await _addressRepository
-                .FindOrCreate(agentModelView.AddressRequest!);
+                .FindOrCreate(new AddressRequest(
+                    request.StreetName,
+                    request.CityId, 
+                    request.MunicipalityId, 
+                    request.NeighborhoodId
+                 ));
 
             if (finded is not null)
             {
                finded =  _agentModelBuilder
-                            .AddFullName(agentModelView.FullName)
-                            .AddUserName(agentModelView.Username)
-                            .AddEmail(agentModelView.Email)
-                            .AddContact(agentModelView.Contact)
-                            .AddAgentGroupId(agentModelView.AgentGroupId)
-                            .AddAGentRankId(agentModelView.AgentRankId)
-                            .AddChilddrenQUantity(agentModelView.ChilddrenQuantity)
-                            .AddCNINumber(agentModelView.CNINumber)
-                            .AddEmail(agentModelView.Email)
-                            .AddMaritalStatus(agentModelView.MaritalStatus)
+                            .AddFullName(request.FullName)
+                            .AddEmail(request.Email)
+                            .AddContact(request.Contact)
+                            .AddAGentRankId(request.AgentRankId)
+                            .AddChilddrenQUantity(request.ChilddrenQuantity)
+                            .AddCNINumber(request.CNINumber)
+                            .AddEmail(request.Email)
+                            .AddMaritalStatus(request.MaritalStatus)
                             .AddAddress(address)
                             .Build();
                 

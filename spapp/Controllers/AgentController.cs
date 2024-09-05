@@ -10,6 +10,7 @@ using spapp.Main.Repositories.NeighborhoodSector;
 using spapp.Models;
 using spapp.ModelViews;
 using spapp.SpappContext;
+using System.Reflection;
 
 namespace spapp.Controllers
 {
@@ -126,47 +127,8 @@ namespace spapp.Controllers
             try
             {
                 AgentResource findAgent = AgentResponse.AsModelResponse(
-                    await _agentRepository.FindAsync(Id));
-
-                AddressRequest addRequest = new(
-                       findAgent.AddresId,
-                       findAgent.StreetName,
-                       findAgent.CityId,
-                       findAgent.MunicipalityId,
-                       findAgent.NeighborhoodId,
-                       findAgent.NeighborhoodSectorId,
-                       findAgent.Complement,
-                       findAgent.Indication,
-                       "origin",
-                       findAgent.Latitude,
-                       findAgent.Longitude
-                    );
-
-                AgentModelView modelView = await _agentRepository
-                    .SetAgentModelView(
-                        _cityRepository,
-                        _agentRankRepository
-                     );
-                modelView.Id = findAgent.Id;
-                modelView.FullName = findAgent.FullName;
-                modelView.Username = findAgent.UserName;
-                modelView.Email = findAgent.Email;
-                modelView.ChilddrenQuantity = findAgent.ChilddrenQuantity;
-                modelView.AddressRequest = addRequest;
-                modelView.AttestionNumber = findAgent.AttestationNumber;
-                modelView.CNINumber = findAgent.CNINumber;
-                modelView.BloodGroup = findAgent.BloodGroup;
-                modelView.AgentRankId = findAgent.AgentRankId;
-                modelView.AgentGroupId = findAgent.AgentGroupId;
-                modelView.AgentGroup = findAgent.AgentGroup;
-                modelView.AgentRank = findAgent.AgentRank;
-                modelView.Municipalities = await _municipalityRepository.GetAllMunicipalityAsync();
-                modelView.Neighborhoods = await _neighbordRepository.GetAllAsyncNeighborhood();
-                modelView.NeighborhoodSectors = await _neighbordRepositorySector.GetAllAsync();
-              
-                          
-                
-                return View(modelView);
+                    await _agentRepository.FindAsync(Id));                                      
+                return View(findAgent);
 
             }
             catch(Exception ex)
@@ -178,24 +140,30 @@ namespace spapp.Controllers
 
         [HttpPost]
         [Route("/agent/update")]
-        public async Task<IActionResult> Update(AgentModelView model)
+        public async Task<IActionResult> Update(UpdateAgentRequest request)
         {
             try
             {
-                _context.Database.BeginTransaction();
+               
+                if (ModelState.IsValid)
+                {
+                    _context.Database.BeginTransaction();
 
-                TempData["SuccessMessage"] = "informations actualisées avec succes";
-                await _agentRepository.UpdateAsync(model);
+                    TempData["SuccessMessage"] = "informations actualisées avec succes";
+                    await _agentRepository.UpdateAsync(request);
 
-                _context.Database.CommitTransaction();
+                    _context.Database.CommitTransaction();
 
-                return RedirectToAction(nameof(Index));
+                    return RedirectToAction(nameof(Index));
+                }           
+                return Redirect($"/agent/edit/{request.Id}");
+
 
             }
             catch(Exception ex)
             {
                 _context.Database.RollbackTransaction();
-                TempData["ErrorMessage"] = $"une erreure est survenue en éditant l'agent: {ex.Message}";
+                TempData["ErrorMessage"] = $"une erreure est survenue en éditant l'agent: {ex.ToString()}";
                 return RedirectToAction(nameof(Index)); 
             }
         }
