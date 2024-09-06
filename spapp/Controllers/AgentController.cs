@@ -16,20 +16,10 @@ namespace spapp.Controllers
 {
     public class AgentController(
         IAgentRepository agentRepository,
-        ICityRepository cityRepository,
-        IAgentRankRepository agentRankRepository,
-        IMunicipalityRepository municipalityRepository,
-        INeighborhoodRepository neighborhoodRepository,
-        INeighborhoodSectorRepository neighborhoodSectorRepository,
         SpappContextDb context
     ) : Controller
     {
-        private readonly IAgentRepository _agentRepository = agentRepository;
-        private readonly ICityRepository _cityRepository = cityRepository;
-        private readonly IAgentRankRepository _agentRankRepository = agentRankRepository;
-        private readonly IMunicipalityRepository _municipalityRepository = municipalityRepository;
-        private readonly INeighborhoodRepository _neighbordRepository = neighborhoodRepository;
-        private readonly INeighborhoodSectorRepository _neighbordRepositorySector = neighborhoodSectorRepository;
+        private readonly IAgentRepository _agentRepository = agentRepository;        
         private readonly SpappContextDb _context = context;
 
         [HttpGet]
@@ -57,10 +47,7 @@ namespace spapp.Controllers
             try
             {
                 AgentModelView agentModelView = await _agentRepository
-                    .SetAgentModelView(
-                        _cityRepository,
-                        _agentRankRepository
-                    );
+                    .SetAgentModelView();
 
                 return View(agentModelView);
             }
@@ -81,10 +68,8 @@ namespace spapp.Controllers
                 if (!ModelState.IsValid)
                 {
                     AgentModelView instance = await _agentRepository
-                   .SetAgentModelView(
-                       _cityRepository,
-                       _agentRankRepository
-                   );
+                        .SetAgentModelView();
+
                     TempData["ErrorMessage"] = $"Invalid some data. {ModelState.Values}";
                     return View(instance);
                 }

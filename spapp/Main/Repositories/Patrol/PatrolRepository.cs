@@ -1,4 +1,5 @@
-﻿using spapp.Main.Repositories.Municipality;
+﻿using spapp.Main.Repositories.Agent;
+using spapp.Main.Repositories.Municipality;
 using spapp.Main.Repositories.Neighborhood;
 using spapp.Main.Repositories.NeighborhoodSector;
 using spapp.Main.Repositories.Vehicle;
@@ -12,7 +13,8 @@ namespace spapp.Main.Repositories.Patrol
         IMunicipalityRepository municipalityRepository,
         INeighborhoodRepository neighborhoodRepository,
         INeighborhoodSectorRepository neighborhoodSectorRepository,
-        IVehicleRepository vehicleRepository
+        IVehicleRepository vehicleRepository,
+        IAgentRepository agentRepository
      ) : IPatrolRepository
     {
 
@@ -21,12 +23,10 @@ namespace spapp.Main.Repositories.Patrol
         private readonly INeighborhoodRepository _neighborhoodRepository = neighborhoodRepository;
         private readonly IVehicleRepository _vehicleRepository = vehicleRepository;
         private readonly INeighborhoodSectorRepository _neighborhoodSectorRepository = neighborhoodSectorRepository;
+        private readonly IAgentRepository _agentRepository = agentRepository;
 
         public async Task<PatrolModelView> SetPatrolModelView(
-            IMunicipalityRepository municipalityRepository,
-            INeighborhoodRepository neighborhoodRepository,
-            INeighborhoodSectorRepository neighborhoodSectorRepository,
-            IVehicleRepository vehicleRepository
+           
         )
         {
             PatrolModelView instance = new();
@@ -34,6 +34,7 @@ namespace spapp.Main.Repositories.Patrol
             instance.Neighborhoods = await _neighborhoodRepository.GetAllAsyncNeighborhood();
             instance.NeighborhoodSectors = await _neighborhoodSectorRepository.GetAllAsync();
             instance.Municipalities = await _municipalityRepository.GetAllMunicipalityAsync();
+            instance.Agents = await _agentRepository.GetAllAsync();
 
             return instance;
         }

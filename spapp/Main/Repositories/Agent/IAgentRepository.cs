@@ -13,9 +13,6 @@ namespace spapp.Main.Repositories.Agent
         Task<List<AgentModel>> GetAllAsync();
         Task<AgentModel> FindAsync(int Id);
         Task<AgentModel> UpdateAsync(UpdateAgentRequest request);
-        Task<AgentModelView> SetAgentModelView(
-            ICityRepository cityRepository,
-            IAgentRankRepository agentRankRepository
-         );
+        Task<AgentModelView> SetAgentModelView();
     }
 }

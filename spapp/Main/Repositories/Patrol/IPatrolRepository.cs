@@ -1,4 +1,5 @@
-﻿using spapp.Main.Repositories.Municipality;
+﻿using spapp.Main.Repositories.Agent;
+using spapp.Main.Repositories.Municipality;
 using spapp.Main.Repositories.Neighborhood;
 using spapp.Main.Repositories.NeighborhoodSector;
 using spapp.Main.Repositories.Vehicle;
@@ -9,11 +10,6 @@ namespace spapp.Main.Repositories.Patrol
     public interface IPatrolRepository
     {
 
-        Task<PatrolModelView> SetPatrolModelView(
-            IMunicipalityRepository municipalityRepository,
-            INeighborhoodRepository neighborhoodRepository,
-            INeighborhoodSectorRepository neighborhoodSectorRepository,
-            IVehicleRepository vehicleRepository
-        );
+        Task<PatrolModelView> SetPatrolModelView();
     }
 }

@@ -135,10 +135,7 @@ namespace spapp.Main.Repositories.Agent
 
         }
 
-        public async Task<AgentModelView> SetAgentModelView(
-            ICityRepository cityRepository,
-            IAgentRankRepository agentRankRepository
-         )
+        public async Task<AgentModelView> SetAgentModelView()
         {
             AgentModelView instance = new();
             instance.AgentRanks = await _agentRankRepository.GetAllAgentsRankAsync();

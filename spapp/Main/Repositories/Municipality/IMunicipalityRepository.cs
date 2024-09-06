@@ -7,7 +7,7 @@ namespace spapp.Main.Repositories.Municipality
     public interface IMunicipalityRepository
     {
         Task<MunicipalityModel> CreateAsync(MunicipalityModelView model);
-        Task<List<MunicipalityModel>?> GetAllMunicipalityAsync();
+        Task<List<MunicipalityModel>> GetAllMunicipalityAsync();
         Task<MunicipalityModel> FindAsync(int Id);
         MunicipalityModel? FindByNameAndCity(string Name, int City);
         Task<MunicipalityModel> UpdateAsync(MunicipalityModel model);

@@ -9,7 +9,7 @@
         <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center">
             <div class="card shadow-sm">
                 <h5 class="text-center mb-4">Enregistrer une patrouille</h5>
-                <form class="form-card p-4" method="post" asp-controller="City" asp-action="Create">
+                <form class="form-card p-4" method="post" asp-controller="Patrol" asp-action="Create">
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Attribuer un nom a cette patrouille<span class="text-danger"> *</span></label>
@@ -20,19 +20,27 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Conducteur <span class="text-danger">*</span></label>
-                            <select id="driver-select" class="form-control">
-                                <option value="1">Agent A</option>
-                                <option value="1">Agent W</option>
-                                <option value="1">Agent X</option>
+                            <select asp-for="DriverId" id="driver-select" class="form-control">
+                                @if (Model.Agents is not null)
+                                {
+                                    foreach (AgentModel agent in Model.Agents)
+                                    {
+                                        <option value="@agent.Id">@agent.FullName</option>
+                                    }
+                                }
                             </select>
                             <span class="text-danger"><small></small></span>
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Membre(s) <span class="text-danger">*</span></label>
-                            <select id="patrol-members" name="patrol-members[]" multiple class="form-control">
-                                <option value="1">Agent 3</option>
-                                <option value="1">Agent 12</option>
-                                <option value="1">Agent 16</option>
+                            <select asp-for="MembersId" id="patrol-members" name="patrol-members[]" multiple class="form-control">
+                                @if (Model.Agents is not null)
+                                {
+                                    foreach (AgentModel agent in Model.Agents)
+                                    {
+                                        <option value="@agent.Id">@agent.FullName</option>
+                                    }
+                                }
                             </select>
                         </div>
                     </div>
@@ -54,7 +62,7 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Comunes de patrouille <span class="text-danger">*</span></label>
-                            <select id="patrol-municipality" name="patrol-municipality[]" multiple class="form-control">
+                            <select asp-for="MunicipalitiesId" id="patrol-municipality" multiple class="form-control">
                                 @if (Model.Municipalities is not null)
                                 {
                                     foreach (MunicipalityModel mun in Model.Municipalities)

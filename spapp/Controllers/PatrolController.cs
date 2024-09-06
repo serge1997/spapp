@@ -1,26 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using spapp.Main.Repositories.Municipality;
-using spapp.Main.Repositories.Neighborhood;
-using spapp.Main.Repositories.NeighborhoodSector;
+using spapp.Http.Requests;
 using spapp.Main.Repositories.Patrol;
-using spapp.Main.Repositories.Vehicle;
 using spapp.ModelViews;
+using spapp.SpappContext;
 
 namespace spapp.Controllers
 {
     public class PatrolController(
         IPatrolRepository patrol,
-        IMunicipalityRepository municipalityRepository,
-        INeighborhoodRepository neighborhoodRepository,
-        INeighborhoodSectorRepository neighborhoodSectorRepository,
-        IVehicleRepository vehicleRepository
+        SpappContextDb context
     ) : Controller
     {
         private readonly IPatrolRepository _patrolRepository = patrol;
-        private readonly IMunicipalityRepository _municipalityRepository = municipalityRepository;
-        private readonly INeighborhoodRepository _neighborhoodRepository = neighborhoodRepository;
-        private readonly IVehicleRepository _vehicleRepository = vehicleRepository;
-        private readonly INeighborhoodSectorRepository _neighborhoodSectorRepository = neighborhoodSectorRepository;
+        private readonly SpappContextDb _context = context;
+       
 
         [HttpGet]
         [Route("/patrol")]
@@ -38,18 +31,37 @@ namespace spapp.Controllers
             try
             {
                 PatrolModelView patrolModelView = await _patrolRepository
-                    .SetPatrolModelView(
-                        _municipalityRepository,
-                        _neighborhoodRepository,                        
-                        _neighborhoodSectorRepository,
-                        _vehicleRepository
-                    );
+                    .SetPatrolModelView();
 
                 return View(patrolModelView);
             }
             catch(Exception ex)
             {
                 return View(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("/patrol/create")]
+        public async Task<IActionResult> Create(PatrolRequest request)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    PatrolModelView patrolModelView = await _patrolRepository
+                   .SetPatrolModelView();
+
+                    return View(patrolModelView);
+                }
+
+                TempData["SuccessMessage"] = $"Patrouille enregistrée avec succès: {request.MunicipalitiesId!.Length}";
+                return RedirectToAction(nameof(Index));
+            }
+            catch(Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Une est survenue en enregistrant une patrouille {ex.ToString()}";
+                return RedirectToAction(nameof(Index));
             }
         }
     }
