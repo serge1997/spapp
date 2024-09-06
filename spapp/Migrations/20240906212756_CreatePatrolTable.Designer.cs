@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using spapp.SpappContext;
 
@@ -11,9 +12,11 @@ using spapp.SpappContext;
 namespace spapp.Migrations
 {
     [DbContext(typeof(SpappContextDb))]
-    partial class SpappContextDbModelSnapshot : ModelSnapshot
+    [Migration("20240906212756_CreatePatrolTable")]
+    partial class CreatePatrolTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -463,84 +466,6 @@ namespace spapp.Migrations
                     b.ToTable("Patrols");
                 });
 
-            modelBuilder.Entity("spapp.Models.PatrolMunicipalityModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("MunicipalityId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PatrolId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("MunicipalityId");
-
-                    b.HasIndex("PatrolId");
-
-                    b.ToTable("PatrolMunicipalities");
-                });
-
-            modelBuilder.Entity("spapp.Models.PatrolNeighborhoodModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("NeighbordhoodId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PatrolId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NeighbordhoodId");
-
-                    b.HasIndex("PatrolId");
-
-                    b.ToTable("PatrolNeighborhoods");
-                });
-
-            modelBuilder.Entity("spapp.Models.PatrolNeighborhoodSectorModel", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("NeighbordhoodSectorId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PatrolId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NeighbordhoodSectorId");
-
-                    b.HasIndex("PatrolId");
-
-                    b.ToTable("PatrolNeighborhoodSectors");
-                });
-
             modelBuilder.Entity("spapp.Models.VehicleBrandModel", b =>
                 {
                     b.Property<int>("Id")
@@ -738,63 +663,6 @@ namespace spapp.Migrations
                     b.Navigation("Vehicle");
                 });
 
-            modelBuilder.Entity("spapp.Models.PatrolMunicipalityModel", b =>
-                {
-                    b.HasOne("spapp.Models.MunicipalityModel", "Municipality")
-                        .WithMany("PatrolMunicipalities")
-                        .HasForeignKey("MunicipalityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("spapp.Models.PatrolModel", "Patrol")
-                        .WithMany("PatrolMunicipalities")
-                        .HasForeignKey("PatrolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Municipality");
-
-                    b.Navigation("Patrol");
-                });
-
-            modelBuilder.Entity("spapp.Models.PatrolNeighborhoodModel", b =>
-                {
-                    b.HasOne("spapp.Models.NeighborhoodModel", "Neighborhood")
-                        .WithMany("PatrolNeighborhoods")
-                        .HasForeignKey("NeighbordhoodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("spapp.Models.PatrolModel", "Patrol")
-                        .WithMany("PatrolNeighborhoods")
-                        .HasForeignKey("PatrolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Neighborhood");
-
-                    b.Navigation("Patrol");
-                });
-
-            modelBuilder.Entity("spapp.Models.PatrolNeighborhoodSectorModel", b =>
-                {
-                    b.HasOne("spapp.Models.NeighborhoodSectorModel", "NeighborhoodSector")
-                        .WithMany("PatrolNeighborhoods")
-                        .HasForeignKey("NeighbordhoodSectorId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("spapp.Models.PatrolModel", "Patrol")
-                        .WithMany("PatrolNeighborhoodSectors")
-                        .HasForeignKey("PatrolId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("NeighborhoodSector");
-
-                    b.Navigation("Patrol");
-                });
-
             modelBuilder.Entity("spapp.Models.VehicleModel", b =>
                 {
                     b.HasOne("spapp.Models.VehicleBrandModel", "VehicleBrandModel")
@@ -828,29 +696,11 @@ namespace spapp.Migrations
                     b.Navigation("NeighborhoodSectors");
 
                     b.Navigation("Neighborhoods");
-
-                    b.Navigation("PatrolMunicipalities");
                 });
 
             modelBuilder.Entity("spapp.Models.NeighborhoodModel", b =>
                 {
                     b.Navigation("NeighborhoodSectors");
-
-                    b.Navigation("PatrolNeighborhoods");
-                });
-
-            modelBuilder.Entity("spapp.Models.NeighborhoodSectorModel", b =>
-                {
-                    b.Navigation("PatrolNeighborhoods");
-                });
-
-            modelBuilder.Entity("spapp.Models.PatrolModel", b =>
-                {
-                    b.Navigation("PatrolMunicipalities");
-
-                    b.Navigation("PatrolNeighborhoodSectors");
-
-                    b.Navigation("PatrolNeighborhoods");
                 });
 
             modelBuilder.Entity("spapp.Models.VehicleBrandModel", b =>

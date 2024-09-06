@@ -19,5 +19,6 @@ namespace spapp.Models
         public MunicipalityModel Municipality { get; set; }
         public CityModel City { get; set; }
         public List<NeighborhoodSectorModel> NeighborhoodSectors { get; set; }
+        public List<PatrolNeighborhoodModel> PatrolNeighborhoods { get; set; }
     }
 }

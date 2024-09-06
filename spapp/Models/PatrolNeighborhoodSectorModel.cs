@@ -7,5 +7,7 @@
         public int PatrolId { get; set; }
         public int NeighbordhoodSectorId { get; set; }
         public DateTime Created_at { get; set; }
+        public PatrolModel Patrol { get; set; }
+        public NeighborhoodSectorModel NeighborhoodSector { get; set; }
     }
 }

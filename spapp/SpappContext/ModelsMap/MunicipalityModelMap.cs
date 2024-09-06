@@ -11,6 +11,9 @@ namespace spapp.SpappContext.ModelsMap
         {
             entityTypeBuilder.HasKey(mun => mun.Id);
             entityTypeBuilder.HasOne(mun => mun.City);
+            entityTypeBuilder.HasMany(mun => mun.PatrolMunicipalities)
+                .WithOne(pmun => pmun.Municipality)
+                .HasForeignKey(pmun => pmun.MunicipalityId);
         }
     }
 }

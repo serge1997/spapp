@@ -16,5 +16,6 @@
 
         public NeighborhoodModel Neighborhood { get; set; }
         public MunicipalityModel Municipality { get; set; }
+        public List<PatrolNeighborhoodSectorModel> PatrolNeighborhoods { get; set; }
     }
 }

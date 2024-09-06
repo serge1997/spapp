@@ -1,10 +1,11 @@
 ﻿using spapp.Http.Requests;
 using spapp.Models;
 
-namespace spapp.Main.Repositories.PatrolMunicipality
+namespace spapp.Main.Repositories.PatrolNeighborhood
 {
-    public interface IPatrolMunicipalityRepository
+    public interface IPatrolNeighborhoodRepository
     {
+
         void Create(PatrolRequest request, PatrolModel patrol);
     }
 }

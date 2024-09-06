@@ -37,7 +37,8 @@ namespace spapp.Controllers
             }
             catch(Exception ex)
             {
-                return View(ex.Message);
+                TempData["ErrorMessage"] = $"Une est survenue en enregistrant une patrouille {ex.ToString()}";
+                return RedirectToAction(nameof(Index));
             }
         }
 
@@ -49,17 +50,23 @@ namespace spapp.Controllers
             {
                 if (!ModelState.IsValid)
                 {
+                    
+
                     PatrolModelView patrolModelView = await _patrolRepository
                    .SetPatrolModelView();
 
                     return View(patrolModelView);
                 }
+                _context.Database.BeginTransaction();
 
                 TempData["SuccessMessage"] = $"Patrouille enregistrée avec succès: {request.MunicipalitiesId!.Length}";
+
+                _context.Database.CommitTransaction();
                 return RedirectToAction(nameof(Index));
             }
             catch(Exception ex)
             {
+                _context.Database.RollbackTransaction();
                 TempData["ErrorMessage"] = $"Une est survenue en enregistrant une patrouille {ex.ToString()}";
                 return RedirectToAction(nameof(Index));
             }

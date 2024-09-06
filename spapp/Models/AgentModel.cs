@@ -34,6 +34,7 @@ namespace spapp.Models
         public AgentRankModel AgentRank { get; set; }
 
         public AddressModel Address { get; set; }
+        public PatrolModel? Patrol { get; set; }
         
         
     }

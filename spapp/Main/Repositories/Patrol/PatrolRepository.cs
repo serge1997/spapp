@@ -25,9 +25,7 @@ namespace spapp.Main.Repositories.Patrol
         private readonly INeighborhoodSectorRepository _neighborhoodSectorRepository = neighborhoodSectorRepository;
         private readonly IAgentRepository _agentRepository = agentRepository;
 
-        public async Task<PatrolModelView> SetPatrolModelView(
-           
-        )
+        public async Task<PatrolModelView> SetPatrolModelView()
         {
             PatrolModelView instance = new();
             instance.Vehicles = await _vehicleRepository.GetAllAsync();

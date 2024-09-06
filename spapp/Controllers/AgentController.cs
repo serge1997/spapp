@@ -2,15 +2,9 @@
 using spapp.Http.Requests;
 using spapp.Http.Response;
 using spapp.Main.Repositories.Agent;
-using spapp.Main.Repositories.AgentRank;
-using spapp.Main.Repositories.City;
-using spapp.Main.Repositories.Municipality;
-using spapp.Main.Repositories.Neighborhood;
-using spapp.Main.Repositories.NeighborhoodSector;
 using spapp.Models;
 using spapp.ModelViews;
 using spapp.SpappContext;
-using System.Reflection;
 
 namespace spapp.Controllers
 {
