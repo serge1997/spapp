@@ -50,7 +50,12 @@ namespace spapp.Main.Repositories.Agent
                 .AddAttestationNumber(agentModelView.AttestionNumber)
                 .AddEmail(agentModelView.Email)
                 .AddMaritalStatus(agentModelView.MaritalStatus)
-                .AddAddress(address)
+                .AddAddress(
+                    address,
+                    agentModelView.Complement,
+                    agentModelView.Indication,
+                    agentModelView.HouseNumber
+                 )
                 .AddMatriculeNumber()
                 .AddCreated()
                 .Build();
@@ -88,17 +93,26 @@ namespace spapp.Main.Repositories.Agent
         public async Task<AgentModel> UpdateAsync(UpdateAgentRequest request)
         {
             AgentModel finded = await FindAsync(request.Id);
-            AddressModel address = await _addressRepository
-                .FindOrCreate(new AddressRequest(
-                    request.StreetName,
-                    request.CityId, 
-                    request.MunicipalityId, 
-                    request.NeighborhoodId
-                 ));
-
-            if (finded is not null)
+           
+            if (finded is null)
             {
-               finded =  _agentModelBuilder
+                throw new Exception($"Agent non rencontré: {finded!.Id}");
+            }
+
+            AddressModel address = await _addressRepository
+               .FindOrCreate(new AddressRequest(
+                   request.StreetName,
+                   request.CityId,
+                   request.MunicipalityId,
+                   request.NeighborhoodId,
+                   request.NeighborhoodSectorId
+                   ), 
+                   finded.AddressId
+               );
+
+
+            AgentModel agent = _agentModelBuilder
+                            .SetEntity(finded)
                             .AddFullName(request.FullName)
                             .AddEmail(request.Email)
                             .AddContact(request.Contact)
@@ -107,13 +121,18 @@ namespace spapp.Main.Repositories.Agent
                             .AddCNINumber(request.CNINumber)
                             .AddEmail(request.Email)
                             .AddMaritalStatus(request.MaritalStatus)
-                            .AddAddress(address)
+                            .AddAddress(
+                                address,
+                                request.Complement,
+                                request.Indication,
+                                request.HouseNumber
+                            )
                             .Build();
-                
-                _spappContextDb.Agents.Update(finded);
-                await _spappContextDb.SaveChangesAsync();
-            }
-            throw new Exception("Agent non rencontré");
+
+            _spappContextDb.Agents.Update(agent);
+            await _spappContextDb.SaveChangesAsync();
+            return agent;
+
         }
 
         public async Task<AgentModelView> SetAgentModelView(

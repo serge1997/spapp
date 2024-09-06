@@ -9,13 +9,13 @@ namespace spapp.Http.Requests
         string FullName,
         int AgentRankId,
         MaritalStatusEnum MaritalStatus,
-        string StreetName,
         [Required(ErrorMessage = "La ville est obligatoire")]
         int CityId,
         [Required(ErrorMessage = "La commune est obligatoire")]
         int MunicipalityId,
         [Required(ErrorMessage = "Le quartier est obligatoire")]
         int NeighborhoodId,
+        string? StreetName = null,
         string? Email = null,
         string? CNINumber = null,
         string? AttestionNumber = null,
@@ -25,6 +25,7 @@ namespace spapp.Http.Requests
         int? NeighborhoodSectorId = null,
         string? Complement = null,
         string? Indication = null,
+        int? HouseNumber = null,
         string? Origin = null,
         double? Latitude = null,
         double? Longitude = null

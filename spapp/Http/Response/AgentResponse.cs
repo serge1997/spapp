@@ -30,8 +30,7 @@ namespace spapp.Http.Response
         string? StreetName,
         string? Complement,
         string? Indication,
-        double? Latitude,
-        double? Longitude,
+        int? HouseNumber,
         //familly
         int? ChilddrenQuantity,
         string MaritalStatus,
@@ -73,10 +72,9 @@ namespace spapp.Http.Response
                     agent.Address.NeighborhoodSectorModel?.Name,
                     agent.Address.NeighborhoodSectorId,
                     agent.Address.StreetName,
-                    agent.Address.Complement,
-                    agent.Address.Indication,
-                    agent.Address.Latitude,
-                    agent.Address.Longitude,
+                    agent.Complement,
+                    agent.Indication,
+                    agent.HouseNumber,              
                     agent.ChilddrenQuantity,
                     agent.MaritalStatus.Marital(),
                     agent.Created_at.ToString("dd/MM/yyyy")

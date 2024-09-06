@@ -3,6 +3,7 @@
     var municipalities;
     var neighborhoods;
     var neighborhoodSectors;
+    var agentRanks;
 
     initialize();
 
@@ -33,6 +34,7 @@
         listMunicipalities();
         listNeighborhoods();
         listNeighborhoodSectors();
+        listAgentRank();
     }
 
     function listCities() {
@@ -40,6 +42,10 @@
             .then(async response => {
                 cities = await response.data.value;
                 populateSelect('city-select', cities);
+
+                setTimeout(() => {
+                    $('#city-select').val($('#city-id').attr('data-id')).trigger('change')
+                })
             })
             .catch(error => {
                 toastSpApi.error("une erreure est survenue en listant les villes");
@@ -51,6 +57,9 @@
             .then(async response => {
                 neighborhoods = await response.data.value;
                 populateSelect('neighborhood-select', neighborhoods);
+                setTimeout(() => {
+                    $('#neighborhood-select').val($('#neighborhood-id').attr('data-id')).trigger('change')
+                })
             })
             .catch(error => {
                 toastSpApi.error("une erreure est survenue en listant les quarties");
@@ -64,7 +73,7 @@
                 populateSelect('select-municipality', municipalities)
 
                 setTimeout(() => {
-                    $('#select-municipality').val($('#municipality-id').val()).trigger('change')
+                    $('#select-municipality').val($('#municipality-id').attr('data-id')).trigger('change')
                 })
                 
             })
@@ -78,9 +87,27 @@
             .then(async response => {
                 neighborhoodSectors = await response.data.value;
                 populateSelect('select-sector', neighborhoodSectors)
+
+                setTimeout(() => {
+                    $('#select-sector').val($('#neighborhood-sector-id').attr('data-id')).trigger('change')
+                })
             })
             .catch(error => {
                 toastSpApi.error("une erreure est survenue en listant les secteurs");
+            })
+    }
+
+    function listAgentRank() {
+        ApiSpapp.get('agent-rank')
+            .then(async response => {
+                agentRanks = await response.data.value;
+                populateSelect('agent-rank-select', agentRanks);
+                setTimeout(() => {
+                    $('#agent-rank-select').val($('#agent-rank-id').attr('data-id')).trigger('change')
+                })
+            })
+            .catch(error => {
+                toastSpApi.error("une erreure est survenue en listant les quarties");
             })
     }
 

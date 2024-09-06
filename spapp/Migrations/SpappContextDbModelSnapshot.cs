@@ -33,20 +33,8 @@ namespace spapp.Migrations
                     b.Property<int>("CityId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Complement")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("Created_at")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Indication")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<double?>("Latitude")
-                        .HasColumnType("float");
-
-                    b.Property<double?>("Longitude")
-                        .HasColumnType("float");
 
                     b.Property<int>("MunicipalityId")
                         .HasColumnType("int");
@@ -132,6 +120,9 @@ namespace spapp.Migrations
                     b.Property<int?>("ChilddrenQuantity")
                         .HasColumnType("int");
 
+                    b.Property<string>("Complement")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Contact")
                         .HasColumnType("nvarchar(max)");
 
@@ -143,6 +134,12 @@ namespace spapp.Migrations
 
                     b.Property<string>("FullName")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("HouseNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Indication")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MaritalStatus")

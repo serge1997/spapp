@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("spapp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1c01f0437ffa03d254a46ad472d3e0b739013754")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d14b1f02081d928ec15d4f99fad04e12c3e3e49")]
 [assembly: System.Reflection.AssemblyProductAttribute("spapp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("spapp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

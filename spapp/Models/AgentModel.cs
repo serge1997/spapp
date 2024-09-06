@@ -23,12 +23,16 @@ namespace spapp.Models
         public int AddressId { get; set; }
         public DateTime Created_at {  get; set; }
         public DateTime? Updated_at {  set; get; }
+        public string? Complement {  get; set; }
+        public string? Indication { get; set; }
+        public int? HouseNumber {  get; set; }
 
         //family info
         public int? ChilddrenQuantity {  get; set; }
         public MaritalStatusEnum MaritalStatus {  get; set; }
         public AgentGroupModel AgentGroup { get; set; }
         public AgentRankModel AgentRank { get; set; }
+
         public AddressModel Address { get; set; }
         
         

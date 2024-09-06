@@ -148,9 +148,9 @@ namespace spapp.Controllers
                 if (ModelState.IsValid)
                 {
                     _context.Database.BeginTransaction();
-
-                    TempData["SuccessMessage"] = "informations actualisées avec succes";
-                    await _agentRepository.UpdateAsync(request);
+                    var agent = await _agentRepository.UpdateAsync(request);
+                    TempData["SuccessMessage"] = $"informations actualisées avec succes {request.AgentRankId}";
+                   
 
                     _context.Database.CommitTransaction();
 

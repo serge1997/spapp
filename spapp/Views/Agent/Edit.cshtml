@@ -37,10 +37,11 @@
         </div>
         <form class="row" method="post" asp-controller="Agent" asp-action="Update">
             <input type="hidden" asp-for="Id" id="agent-id" />
-            <input type="hidden" asp-for="CityId" id="city-id" />
-            <input type="hidden" asp-for="MunicipalityId" id="municipality-id" />
-            <input type="hidden" asp-for="NeighborhoodId" id="neighborhood-id" />
-            <input type="hidden" asp-for="NeighborhoodSectorId" id="neighborhood-sector-id" />
+            <input type="hidden" data-id="@Model.CityId" id="city-id" />
+            <input type="hidden" data-id="@Model.MunicipalityId" id="municipality-id" />
+            <input type="hidden" data-id="@Model.NeighborhoodId" id="neighborhood-id" />
+            <input type="hidden" data-id="@Model.NeighborhoodSectorId" id="neighborhood-sector-id" />
+            <input type="hidden" data-id="@Model.AgentRankId" id="agent-rank-id" />
             <div class="row" id="form-agent-info">
                 <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
                     <i class="bi bi-person"></i>
@@ -84,8 +85,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Grade</label>
-                        <select asp-for="AgentRankId" class="form-select single-select2-spapp">
-                          
+                        <select asp-for="AgentRankId" class="form-select single-select2-spapp" id="agent-rank-select">
                         </select>
                         <span class="text-danger"><small> @Html.ValidationMessageFor(agent => agent.AgentRankId)</small></span>
                     </div>
@@ -166,7 +166,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Numero de residence</label>
-                        <input type="text" class="form-control" placeholder="numero de residence" />
+                        <input asp-for="HouseNumber" type="text" class="form-control" placeholder="numero de residence" />
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -176,7 +176,7 @@
                     </div>
                 </div>
                 <div class="row mb-3 px-3">
-                    <button class="btn btn-block form-btn-submit text-white">Enregistrer</button>
+                    <button class="btn btn-block form-btn-submit text-white">Actualiser</button>
                 </div>
             </div>
         </form>

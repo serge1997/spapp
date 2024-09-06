@@ -8,6 +8,11 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
     {
         private AgentModel _agent = new();
 
+        public IAgentModelBuilder SetEntity(AgentModel entity)
+        {
+            this._agent = entity;
+            return this;
+        }
         public IAgentModelBuilder AddFullName(string fullName)
         {
             this._agent.FullName = fullName;
@@ -89,9 +94,17 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
             this._agent.Created_at = DateTime.Now;
             return this;
         }
-        public IAgentModelBuilder AddAddress(AddressModel address)
+        public IAgentModelBuilder AddAddress(
+            AddressModel address,
+            string? Complement,
+            string? Indication,
+            int? HouseNumber
+        )
         {
             this._agent.AddressId = address.Id;
+            this._agent.Complement = Complement;
+            this._agent.Indication = Indication;
+            this._agent.HouseNumber = HouseNumber;
             return this;
         }
 

@@ -7,6 +7,7 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
     public interface IAgentModelBuilder
     {
 
+        IAgentModelBuilder SetEntity(AgentModel entity);
         IAgentModelBuilder AddFullName(string fullName);
         IAgentModelBuilder AddUserName(string userName);
         IAgentModelBuilder AddPassword(string password);
@@ -20,7 +21,12 @@ namespace spapp.Main.ModelsBuilder.AgentModelBuilder
         IAgentModelBuilder AddAGentRankId(int agentRankId);
         IAgentModelBuilder AddMaritalStatus(MaritalStatusEnum maritalStatus);
         IAgentModelBuilder AddCreated();
-        IAgentModelBuilder AddAddress(AddressModel address);
+        IAgentModelBuilder AddAddress(
+            AddressModel address,
+            string? Complement,
+            string? Indication,
+            int? HouseNumber
+        );
         AgentModel Build();
     }
 }

@@ -4,7 +4,6 @@ namespace spapp.Http.Requests
 {
     public record AddressRequest(
         string? StreetName,
-        //public int? HouseNumber { get; set; }
         [Required(ErrorMessage = "La ville est obligatoire")]
         int CityId,
         [Required(ErrorMessage = "La commune est obligatoire")]

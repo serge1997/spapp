@@ -28,6 +28,9 @@ namespace spapp.ModelViews
         public string? Contact { get; set; }
         public string? Email { get; set; }
         public int? AddressId { get; set; }
+        public string? Complement { get; set; }
+        public string? Indication { get; set; }
+        public int? HouseNumber { get; set; }
 
         //family info
         public int? ChilddrenQuantity { get; set; }
@@ -36,9 +39,5 @@ namespace spapp.ModelViews
         public List<CityModel> Citys { get; set; } = [];
         public AddressRequest? AddressRequest { get; set; }
         public AddressModel? Address {  get; set; }
-        //public AgentResource? AgentResource { get; set; }
-        //public List<MunicipalityModel>? Municipalities { get; set; } = [];
-        //public List<NeighborhoodModel>? Neighborhoods { get; set; } = [];
-        //public List<NeighborhoodSectorModel>? NeighborhoodSectors { get; set; } = [];
     }
 }

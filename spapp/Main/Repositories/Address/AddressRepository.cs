@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using spapp.Http.Requests;
 using spapp.Main.ModelsBuilder.Address;
 using spapp.Models;
@@ -19,53 +20,96 @@ namespace spapp.Main.Repositories.Address
         public async Task<AddressModel> CreateAsync(AddressRequest request)
         {
             AddressModel address = _addressModelBuilder
-                .AddStreetName(request.StreetName!)
-                 //.AddHomeNumber(agentModelView.Address.HouseNumber!)
+                .AddStreetName(request.StreetName!)          
                 .AddCityId(request.CityId)
                 .AddMunicipalityId(request.MunicipalityId)
                 .AddNeighborhoodId(request.NeighborhoodId)
                 .AddNeighborhoodSectorId(request.NeighborhoodSectorId)
-                .AddLatitude(request.Latitude)
-                .AddLongitude(request.Longitude)
-                .AddIndication(request.Indication)
                 .AddOrigin(request.Origin!)
-                .AddComplement(request.Complement)
                 .AddCreatedAt()
                 .Build();
 
             _spappContextDb.Addresses.Add(address);
-            //_spappContextDb.Agents.Add(agent);
 
             await _spappContextDb.SaveChangesAsync();
 
             return address;
         }
 
-        public async Task<AddressModel> FindByStreetNameAndCity(string streetName, int? CityId = null)
+        public async Task<AddressModel?> FindByStreetNameAndCity(string streetName, int? CityId = null)
         {
             var Address = _spappContextDb.Addresses;
-            if (CityId != null)
+            if (CityId != null && !string.IsNullOrEmpty(streetName))
             {
                 return await Address
                 .FirstOrDefaultAsync(add => string.Equals(add.StreetName.ToLower(), streetName.ToLower()) && add.CityId == CityId);
             }
 
-            return await Address
-                .FirstOrDefaultAsync(add => string.Equals(add.StreetName.ToLower(), streetName.ToLower()));
+            return null;
 
         }
 
-        public async Task<AddressModel> FindOrCreate(AddressRequest request)
+        public async Task<AddressModel> FindOrCreate(AddressRequest request, int? agentAddressId = null)
         {
             AddressModel finded = await FindByStreetNameAndCity(request.StreetName!, request.CityId);
 
-            if (finded is null)
+            AddressModel agentAddress = await FindByAgentAddressWithoutStreetName(agentAddressId);
+
+            //update address if and address exists and streetname is null
+            if (agentAddress is not null && AddressExists(agentAddress!, request, agentAddressId))
             {
-                await CreateAsync(request);
+                await UpdateAsync(agentAddress, request, agentAddressId);
+                return agentAddress;
             }
 
+            if (finded is null)
+            {
+                return await CreateAsync(request);
+            }
+            await UpdateAsync(finded, request, agentAddressId);
             return finded!;
 
+        }
+
+        public bool AddressExists(AddressModel finded, AddressRequest request, int? agentAddressId = null)
+        {
+           if (finded is not null)
+           {
+                if (agentAddressId is null)
+                {
+                    return finded.CityId == request.CityId
+                        && request.MunicipalityId == request.MunicipalityId
+                        && finded.NeighborhoodId == request.NeighborhoodId
+                        && finded.NeighborhoodSectorId == request.NeighborhoodSectorId;
+                }
+
+                return finded.CityId == request.CityId
+                       && request.MunicipalityId == request.MunicipalityId
+                       && finded.NeighborhoodId == request.NeighborhoodId
+                       && finded.NeighborhoodSectorId == request.NeighborhoodSectorId
+                       && finded.Id == agentAddressId;
+           }
+
+            return false;
+
+        }
+
+        public async Task<AddressModel> FindByAgentAddressWithoutStreetName(int? AgentAdressId = null)
+        {
+            return await _spappContextDb.Addresses
+                .FirstOrDefaultAsync(add => add.Id == AgentAdressId && string.IsNullOrEmpty(add.StreetName));
+        }
+
+        public async Task<AddressModel> UpdateAsync(AddressModel finded, AddressRequest request, int? agentAddressId = null)
+        {
+            
+            
+            finded.StreetName = request.StreetName;
+            finded.NeighborhoodSectorId = request.NeighborhoodSectorId;
+            finded.Updated_at = DateTime.Now;
+            _spappContextDb.Addresses.Update(finded);
+            await _spappContextDb.SaveChangesAsync();
+            return finded;
         }
     }
 }
