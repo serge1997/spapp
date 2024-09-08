@@ -26,6 +26,7 @@ namespace spapp.SpappContext
         public DbSet<PatrolMunicipalityModel> PatrolMunicipalities {  set; get; }
         public DbSet<PatrolNeighborhoodModel> PatrolNeighborhoods { get; set; }
         public DbSet<PatrolNeighborhoodSectorModel> PatrolNeighborhoodSectors { get; set; }
+        public DbSet<PatrolMemberModel> PatrolMembers { set; get; }
 
 
 
@@ -52,6 +53,7 @@ namespace spapp.SpappContext
             modelBuilder.ApplyConfiguration(new PatrolMunicipalityModelMap());
             modelBuilder.ApplyConfiguration(new PatrolNeighborhoodModelMap());
             modelBuilder.ApplyConfiguration(new PatrolNeighborhoodSectorModelMap());
+            modelBuilder.ApplyConfiguration(new PatrolMemberModelMap());
 
             base.OnModelCreating(modelBuilder);
         }

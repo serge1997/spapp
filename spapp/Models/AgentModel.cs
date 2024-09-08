@@ -35,6 +35,7 @@ namespace spapp.Models
 
         public AddressModel Address { get; set; }
         public PatrolModel? Patrol { get; set; }
+        //public PatrolMemberModel PatrolMember { get; set; }
         
         
     }

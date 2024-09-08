@@ -21,7 +21,9 @@ namespace spapp.SpappContext.ModelsMap
 
             builder.HasOne(agent => agent.AgentRank)
                 .WithMany()
-                .HasForeignKey(agent => agent.AgentRankId);          
+                .HasForeignKey(agent => agent.AgentRankId);
+
+          
         }
     }
 }

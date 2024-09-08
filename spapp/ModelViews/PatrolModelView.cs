@@ -5,8 +5,10 @@ namespace spapp.ModelViews
     public class PatrolModelView
     {
         public int Id { get; set; }
+        public string? Name { get; set; }
         public int DriverId { get; set; }
         public int VehicleId { get; set; }
+        public string? Observation { get; set; }
         public int[]? MembersId { get; set; }
         public int[]? MunicipalitiesId { get; set; }
         public int[]? NeighbordhoodsId { get; set; }

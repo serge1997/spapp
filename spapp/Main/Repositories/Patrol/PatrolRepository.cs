@@ -1,8 +1,14 @@
-﻿using spapp.Main.Repositories.Agent;
+﻿using spapp.Http.Requests;
+using spapp.Main.Repositories.Agent;
 using spapp.Main.Repositories.Municipality;
 using spapp.Main.Repositories.Neighborhood;
 using spapp.Main.Repositories.NeighborhoodSector;
+using spapp.Main.Repositories.PatrolMember;
+using spapp.Main.Repositories.PatrolMunicipality;
+using spapp.Main.Repositories.PatrolNeighborhood;
+using spapp.Main.Repositories.PatrolNeighborhoodSector;
 using spapp.Main.Repositories.Vehicle;
+using spapp.Models;
 using spapp.ModelViews;
 using spapp.SpappContext;
 
@@ -25,6 +31,38 @@ namespace spapp.Main.Repositories.Patrol
         private readonly INeighborhoodSectorRepository _neighborhoodSectorRepository = neighborhoodSectorRepository;
         private readonly IAgentRepository _agentRepository = agentRepository;
 
+
+        public async Task<PatrolModel> CreateAsync(
+           PatrolRequest request,
+           IPatrolMunicipalityRepository patrolMunicipalityRepository,
+           IPatrolNeighborhoodRepository patrolNeighborhoodRepository,
+           IPatrolNeighborhoodSectorRepository patrolNeighborhoodSectorRepository,
+           IPatrolMemberRepository patrolMemberRepository
+        )
+        {
+            if (request.MembersId!.Length >= 1 & request.MembersId!.Contains(request.DriverId))
+            {
+                request.MembersId!.ToList().Remove(request.DriverId);
+            }
+            PatrolModel patrol = new()
+            {
+                Name = request.Name,
+                Observation = request.Observation,
+                DriverId = request.DriverId,
+                VehicleId = request.VehicleId,
+                Created_at = DateTime.Now
+            };
+
+            _spappContextDb.Patrols.Add(patrol);
+            await _spappContextDb.SaveChangesAsync();
+
+            patrolMunicipalityRepository.Create(request, patrol);
+            patrolNeighborhoodRepository.Create(request, patrol);
+            patrolNeighborhoodSectorRepository.Create(request, patrol);
+            patrolMemberRepository.Create(request, patrol);
+
+            return patrol;
+        }
         public async Task<PatrolModelView> SetPatrolModelView()
         {
             PatrolModelView instance = new();

@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using spapp.Http.Requests;
 using spapp.Main.Repositories.Patrol;
+using spapp.Main.Repositories.PatrolMember;
+using spapp.Main.Repositories.PatrolMunicipality;
+using spapp.Main.Repositories.PatrolNeighborhood;
+using spapp.Main.Repositories.PatrolNeighborhoodSector;
 using spapp.ModelViews;
 using spapp.SpappContext;
 
@@ -8,12 +12,20 @@ namespace spapp.Controllers
 {
     public class PatrolController(
         IPatrolRepository patrol,
-        SpappContextDb context
+        SpappContextDb context,
+        IPatrolMunicipalityRepository patrolMunicipalityRepository,
+        IPatrolNeighborhoodRepository patrolNeighborhoodRepository,
+        IPatrolNeighborhoodSectorRepository patrolNeighborhoodSectorRepository,
+        IPatrolMemberRepository patrolMemberRepository
     ) : Controller
     {
         private readonly IPatrolRepository _patrolRepository = patrol;
         private readonly SpappContextDb _context = context;
-       
+        private readonly IPatrolMunicipalityRepository _patrolMunicipalityRepository = patrolMunicipalityRepository;
+        private readonly IPatrolNeighborhoodRepository _patrolNeighborhoodRepository = patrolNeighborhoodRepository;
+        private readonly IPatrolNeighborhoodSectorRepository _patrolNeighborhoodSectorRepository = patrolNeighborhoodSectorRepository;
+        private readonly IPatrolMemberRepository _patrolMemberRepository = patrolMemberRepository;
+
 
         [HttpGet]
         [Route("/patrol")]
@@ -60,7 +72,13 @@ namespace spapp.Controllers
                 _context.Database.BeginTransaction();
 
                 TempData["SuccessMessage"] = $"Patrouille enregistrée avec succès: {request.MunicipalitiesId!.Length}";
-
+                await _patrolRepository.CreateAsync(
+                    request,
+                    _patrolMunicipalityRepository,
+                    _patrolNeighborhoodRepository,
+                    _patrolNeighborhoodSectorRepository,
+                    _patrolMemberRepository
+                );
                 _context.Database.CommitTransaction();
                 return RedirectToAction(nameof(Index));
             }

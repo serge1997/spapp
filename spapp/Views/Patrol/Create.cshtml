@@ -13,7 +13,7 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Attribuer un nom a cette patrouille<span class="text-danger"> *</span></label>
-                            <input class=" form-control" type="text" placeholder="Informer le nom">
+                            <input asp-for="Name" class=" form-control" type="text" placeholder="Informer le nom">
                             <span class="text-danger"><small></small></span>
                         </div>                       
                     </div>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Membre(s) <span class="text-danger">*</span></label>
-                            <select asp-for="MembersId" id="patrol-members" name="patrol-members[]" multiple class="form-control">
+                            <select asp-for="MembersId" id="patrol-members" multiple class="form-control">
                                 @if (Model.Agents is not null)
                                 {
                                     foreach (AgentModel agent in Model.Agents)
@@ -74,21 +74,21 @@
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Quartiers <span class="text-danger">*</span></label>
-                            <select id="patrol-neighborhood" name="patrol-neighborhood[]" multiple class="form-control">                              
+                            <select asp-for="NeighbordhoodsId" id="patrol-neighborhood" multiple class="form-control">
                             </select>
                         </div>
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Zone spécifique de patrouille <span class="text-danger">*</span></label>
-                            <select id="patrol-specifique-zone" name="patrol-specifique-zone[]" multiple class="form-control">                              
+                            <select asp-for="NeighbordhoodSectorsId" id="patrol-specifique-zone" multiple class="form-control">                              
                             </select>
                         </div>                        
                     </div>
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-12 flex-column d-flex align-items-start mb-3">
                             <label class="form-control-label">Observation <span class="text-danger">*</span></label>
-                            <textarea class="form-control" placeholder="observation"></textarea>
+                            <textarea asp-for="Observation" class="form-control" placeholder="observation"></textarea>
                         </div>
                     </div>
                     <div class="row justify-content-end p-4">

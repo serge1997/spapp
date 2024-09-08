@@ -11,6 +11,7 @@ using spapp.Main.Repositories.Municipality;
 using spapp.Main.Repositories.Neighborhood;
 using spapp.Main.Repositories.NeighborhoodSector;
 using spapp.Main.Repositories.Patrol;
+using spapp.Main.Repositories.PatrolMember;
 using spapp.Main.Repositories.PatrolMunicipality;
 using spapp.Main.Repositories.PatrolNeighborhood;
 using spapp.Main.Repositories.PatrolNeighborhoodSector;
@@ -42,6 +43,7 @@ builder.Services.AddScoped<IAddressRepository,  AddressRepository>();
 builder.Services.AddScoped<IPatrolMunicipalityRepository, PatrolMunicipalityRepository>();
 builder.Services.AddScoped<IPatrolNeighborhoodRepository,  PatrolNeighborhoodRepository>();
 builder.Services.AddScoped<IPatrolNeighborhoodSectorRepository,  PatrolNeighborhoodSectorRepository>();
+builder.Services.AddScoped<IPatrolMemberRepository,  PatrolMemberRepository>();
 
 builder.Services.AddCors(options =>
 {
