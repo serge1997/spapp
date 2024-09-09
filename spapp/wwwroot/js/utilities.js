@@ -1,6 +1,6 @@
 ﻿async function populateSelect(idAtrr, data) {
     let select = $(`#${idAtrr}`);
-    let options = "";
+    let options = "<option selected></option>";
 
     if (typeof data == "object") {
 

@@ -29,6 +29,22 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\imgs\\police-car-dispatched.png",
+      "PackagePath": "staticwebassets\\imgs\\police-car-dispatched.png"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\imgs\\police-car.png",
+      "PackagePath": "staticwebassets\\imgs\\police-car.png"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\imgs\\police-min-car.png",
+      "PackagePath": "staticwebassets\\imgs\\police-min-car.png"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\imgs\\policeman.png",
+      "PackagePath": "staticwebassets\\imgs\\policeman.png"
+    },
+    {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\agent\\create.js",
       "PackagePath": "staticwebassets\\js\\agent\\create.js"
     },
@@ -119,6 +135,14 @@
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\create.js",
       "PackagePath": "staticwebassets\\js\\patrol\\create.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\index.js",
+      "PackagePath": "staticwebassets\\js\\patrol\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\map.js",
+      "PackagePath": "staticwebassets\\js\\patrol\\map.js"
     },
     {
       "Id": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\site.js",

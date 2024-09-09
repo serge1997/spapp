@@ -27,12 +27,17 @@
 
     //list municipality by city
 
+    setTimeout(() => {
+        $('#city-select').trigger('change')
+    })
     $('#city-select').change(function () {
         $('#select-municipality option').remove();
         ApiSpapp.get(`municipality-by-city/${$(this).val()}`)
             .then(async response => {
                 municipalities = await response.data.value;
                 populateSelect('select-municipality', municipalities);
+                $('#select-municipality').trigger('change')
+
             })
             .catch(error => {
                 console.log(error);
@@ -41,6 +46,9 @@
 
     //list neighborhoods by municipality
 
+    setTimeout(() => {
+        $('#select-municipality').trigger('change')
+    }, 200)
     $('#select-municipality').change(function () {
         $('#neighborhood-select option').remove();
         ApiSpapp.get(`neighborhood-by-municipality/${$(this).val()}`)
@@ -55,6 +63,9 @@
 
     //list all sector
 
+    setTimeout(() => {
+        $('#neighborhood-select').trigger('change')
+    }, 400)
     $('#neighborhood-select').change(function () {
         $('#select-sector option').remove();
         ApiSpapp.get(`neighborhood-sector-by-neighborhood/${$(this).val()}`)

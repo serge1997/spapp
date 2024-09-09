@@ -23,6 +23,8 @@ namespace spapp.Main.Repositories.Patrol
            IPatrolNeighborhoodSectorRepository patrolNeighborhoodSectorRepository,
            IPatrolMemberRepository patrolMemberRepository
         );
+
+        Task<List<PatrolModel>> GetAllAsync();
         Task<PatrolModelView> SetPatrolModelView();
     }
 }

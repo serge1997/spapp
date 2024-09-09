@@ -1,4 +1,4 @@
-﻿
+﻿@model List<PatrolModel>
 @{
     ViewData["Title"] = "Patrouille";
 }
@@ -34,4 +34,129 @@
             </a>
         </div>
     </div>
+        <div class="row d-flex gap-3">
+            <div class="col-md-10 m-auto">
+                <div class="row d-flex gap-3 justify-content-center">
+                    @if (Model is not null)
+                    {
+                        foreach (PatrolModel patrol in Model)
+                        {
+                            <div class="card col-md-3">
+                                <div class="card-header bg-white">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex flex-column gap-1">
+                                            <span class="text-secondary">Patrouille</span>
+                                            <span class="fw-bold">@patrol.Name</span>
+                                        </div>
+                                        <img src="/imgs/police-car.png" class="img-thumbnail border-0 w-25" alt="police car" />
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h6 class="d-flex align-items-center gap-1">
+                                        <span>
+                                            <img src="/imgs/police-min-car.png" />
+                                        </span>
+                                        <span>
+                                            Conducteur
+                                        </span>
+                                    </h6>
+                                    <ul class="list-group list-group-flush mb-3">
+                                        <li class="list-group-item">@patrol.Driver.FullName</li>
+                                    </ul>
+                                    <h6 class="d-flex align-items-center gap-1">
+                                        <span>
+                                            <img src="/imgs/policeman.png" />
+                                        </span>
+                                        <span>
+                                            Membres
+                                        </span>
+                                    </h6>
+
+                                    @if (patrol.PatrolMembers is not null)
+                                    {
+                                        <ul class="list-group list-group-flush">
+                                            @foreach (PatrolMemberModel member in patrol.PatrolMembers)
+                                            {
+                                                <li class="list-group-item">@member.Agent.FullName</li>
+                                            }
+                                        </ul>
+                                    }               
+                                </div>
+                                <div class="card-footer d-flex justify-content-end">
+                                    <button class="btn">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                    <button class="btn show-patrol-locals" data-patrol-id="@patrol.Id">
+                                        <i class="bi bi-geo"></i>
+                                    </button>
+                                    <button class="btn" data-bs-toggle="modal">
+                                        <i class="bi bi-pencil-square"></i>
+                                    </button>
+                                    <button class="btn text-danger">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                                <div class="position-absolute bg-white border p-2 rounded-2 shadow d-none" id="patrol-locals-@patrol.Id" style="bottom: 13%; right: -60%; z-index: 1; width: 100%;">
+                                   <h6 class="text-secondary mb-2">Communes</h6>
+                                    @if (patrol.PatrolMunicipalities is not null)
+                                    {
+                                        <ul class="list-group list-group-flush">
+                                            @foreach (PatrolMunicipalityModel mun in patrol.PatrolMunicipalities)
+                                            {
+                                                <li class="list-group-item d-flex align-items-center gap-1">
+                                                    <span class="text-secondary">
+                                                        <i class="bi bi-geo-alt"></i>
+                                                    </span>
+                                                    <span>
+                                                        @mun.Municipality.Name
+                                                    </span>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                    <h6 class="text-secondary mb-2">Quartiers</h6>
+                                    @if (patrol.PatrolNeighborhoods is not null)
+                                    {
+                                        <ul class="list-group list-group-flush">
+                                            @foreach (PatrolNeighborhoodModel nei in patrol.PatrolNeighborhoods)
+                                            {
+                                                <li class="list-group-item d-flex align-items-center gap-1">
+                                                    <span class="text-secondary">
+                                                        <i class="bi bi-geo-alt"></i>
+                                                    </span>
+                                                    <span>
+                                                        @nei.Neighborhood.Name
+                                                    </span>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                    <h6 class="text-secondary mb-2">Secteurs</h6>
+                                    @if (patrol.PatrolNeighborhoodSectors is not null)
+                                    {
+                                        <ul class="list-group list-group-flush">
+                                            @foreach (PatrolNeighborhoodSectorModel sector in patrol.PatrolNeighborhoodSectors)
+                                            {
+                                                <li class="list-group-item d-flex align-items-center gap-1">
+                                                    <span class="text-secondary">
+                                                        <i class="bi bi-geo-alt"></i>
+                                                    </span>
+                                                    <span>
+                                                        @sector.NeighborhoodSector.Name
+                                                    </span>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
 </div>
+
+@section Scripts {
+    <script src="~/js/patrol/index.js"></script>
+}

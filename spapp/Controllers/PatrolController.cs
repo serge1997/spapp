@@ -5,6 +5,7 @@ using spapp.Main.Repositories.PatrolMember;
 using spapp.Main.Repositories.PatrolMunicipality;
 using spapp.Main.Repositories.PatrolNeighborhood;
 using spapp.Main.Repositories.PatrolNeighborhoodSector;
+using spapp.Models;
 using spapp.ModelViews;
 using spapp.SpappContext;
 
@@ -29,9 +30,20 @@ namespace spapp.Controllers
 
         [HttpGet]
         [Route("/patrol")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            try
+            {
+                List<PatrolModel> patrols = await _patrolRepository
+                    .GetAllAsync();
+
+                return View(patrols);
+            }
+            catch(Exception ex)
+            {
+                string message = $"Une erreure est survenue en listant les patrouilles: {ex.Message}";
+                return View();
+            }
         }
 
 

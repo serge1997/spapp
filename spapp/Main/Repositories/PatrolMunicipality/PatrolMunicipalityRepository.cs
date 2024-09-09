@@ -12,7 +12,7 @@ namespace spapp.Main.Repositories.PatrolMunicipality
         public void Create(PatrolRequest request, PatrolModel patrol)
         {
             
-            if (request.MunicipalitiesId!.Length >= 1)
+            if (request.MunicipalitiesId is not null)
             {
                 foreach (int id in request.MunicipalitiesId)
                 {

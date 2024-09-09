@@ -12,9 +12,9 @@ namespace spapp.Main.Repositories.PatrolNeighborhoodSector
 
         public void Create(PatrolRequest request, PatrolModel patrol)
         {
-            if(request.NeighbordhoodSectorsId!.Length >= 1)
+            if(patrol.PatrolNeighborhoodSectors is not null)
             {
-                foreach (int id in request.NeighbordhoodSectorsId)
+                foreach (int id in request.NeighbordhoodSectorsId!)
                 {
                     PatrolNeighborhoodSectorModel model = new();
                     model.PatrolId = patrol.Id;

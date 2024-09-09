@@ -4,9 +4,9 @@
     ViewData["Title"] = "creer une patrouille";
 }
 
-<div class="container-fluid px-1 py-5 mx-auto">
-    <div class="row d-flex justify-content-center">
-        <div class="col-xl-10 col-lg-10 col-md-10 col-11 text-center">
+<div class="p-0 m-auto">
+    <div class="row d-flex justify-content-start">
+        <div class="col-xl-9 col-lg-9 col-md-9 text-center">
             <div class="card shadow-sm">
                 <h5 class="text-center mb-4">Enregistrer une patrouille</h5>
                 <form class="form-card p-4" method="post" asp-controller="Patrol" asp-action="Create">
@@ -97,9 +97,15 @@
                 </form>
             </div>
         </div>
+        <div class="col-md-3 p-0">
+            <div class="w-100" id="create-patrol-map" style="height: 410px;">
+
+            </div>
+        </div>
     </div>
 </div>
 
 @section Scripts{
     <script src="~/js/patrol/create.js"></script>
+    <script src="~/js/patrol/map.js"></script>
 }

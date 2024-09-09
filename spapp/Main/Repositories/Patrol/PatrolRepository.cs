@@ -1,4 +1,5 @@
-﻿using spapp.Http.Requests;
+﻿using Microsoft.EntityFrameworkCore;
+using spapp.Http.Requests;
 using spapp.Main.Repositories.Agent;
 using spapp.Main.Repositories.Municipality;
 using spapp.Main.Repositories.Neighborhood;
@@ -40,10 +41,6 @@ namespace spapp.Main.Repositories.Patrol
            IPatrolMemberRepository patrolMemberRepository
         )
         {
-            if (request.MembersId!.Length >= 1 & request.MembersId!.Contains(request.DriverId))
-            {
-                request.MembersId!.ToList().Remove(request.DriverId);
-            }
             PatrolModel patrol = new()
             {
                 Name = request.Name,
@@ -56,12 +53,30 @@ namespace spapp.Main.Repositories.Patrol
             _spappContextDb.Patrols.Add(patrol);
             await _spappContextDb.SaveChangesAsync();
 
+            
             patrolMunicipalityRepository.Create(request, patrol);
             patrolNeighborhoodRepository.Create(request, patrol);
+           
             patrolNeighborhoodSectorRepository.Create(request, patrol);
+            
             patrolMemberRepository.Create(request, patrol);
 
             return patrol;
+        }
+
+        public async Task<List<PatrolModel>> GetAllAsync()
+        {
+            return await _spappContextDb.Patrols
+                .Include(patrol => patrol.Driver)
+                .Include(patrol => patrol.PatrolMembers)
+                    .ThenInclude(member => member.Agent)
+                .Include(patrol => patrol.PatrolMunicipalities)
+                    .ThenInclude(mun => mun.Municipality)
+                .Include(patrol => patrol.PatrolNeighborhoods)
+                    .ThenInclude(nei => nei.Neighborhood)
+                .Include(patrol => patrol.PatrolNeighborhoodSectors)
+                    .ThenInclude(sector => sector.NeighborhoodSector)
+                .ToListAsync();
         }
         public async Task<PatrolModelView> SetPatrolModelView()
         {

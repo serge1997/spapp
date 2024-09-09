@@ -11,7 +11,7 @@ namespace spapp.Main.Repositories.PatrolNeighborhood
 
         public void Create(PatrolRequest request, PatrolModel patrol)
         {
-            if (request.NeighbordhoodsId!.Length >= 1)
+            if (request.NeighbordhoodsId is not null)
             {
                 foreach (int id in  request.NeighbordhoodsId)
                 {

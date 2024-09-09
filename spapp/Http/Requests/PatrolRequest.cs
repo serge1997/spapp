@@ -5,10 +5,10 @@
         int VehicleId,
         string? Name,
         string? Observation,
-        int[]? MembersId,
-        int[]? MunicipalitiesId,
-        int[]? NeighbordhoodsId,
-        int[]? NeighbordhoodSectorsId
+        int[]? MembersId = null,
+        int[]? MunicipalitiesId = null,
+        int[]? NeighbordhoodsId = null,
+        int[]? NeighbordhoodSectorsId = null
     );
     
 }
