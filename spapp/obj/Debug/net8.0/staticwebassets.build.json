@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VUnNBbT3+fvn9MC6HGbK+rBYKVjeWbMmjOTrfUsz5Ek=",
+  "Hash": "mYkA/3gn1FWqGt1XhVSHgSkpWEWbfoMrtxKMfIqMeIc=",
   "Source": "spapp",
   "BasePath": "_content/spapp",
   "Mode": "Default",
@@ -378,6 +378,25 @@
       "OriginalItemSpec": "wwwroot\\js\\complain\\create.js"
     },
     {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain\\create-require-map.js",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/complain/create-require-map.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\complain\\create-require-map.js"
+    },
+    {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain-type\\create.js",
       "SourceId": "spapp",
       "SourceType": "Discovered",
@@ -433,6 +452,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\complain-type-category\\index.js"
+    },
+    {
+      "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\kmls\\treichville.kml",
+      "SourceId": "spapp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\",
+      "BasePath": "_content/spapp",
+      "RelativePath": "js/kmls/treichville.kml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\kmls\\treichville.kml"
     },
     {
       "Identity": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\menu\\jquery.smartmenus.bootstrap.min.js",

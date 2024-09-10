@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Sem título</name>
+	<gx:CascadingStyle kml:id="__managed_style_1B998DCAD0330DC7CB70">
+		<Style>
+			<IconStyle>
+				<scale>1.2</scale>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>4.8</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<gx:CascadingStyle kml:id="__managed_style_071CD1905E330DC7CB70">
+		<Style>
+			<IconStyle>
+				<Icon>
+					<href>https://earth.google.com/earth/document/icon?color=1976d2&amp;id=2000&amp;scale=4</href>
+				</Icon>
+				<hotSpot x="64" y="128" xunits="pixels" yunits="insetPixels"/>
+			</IconStyle>
+			<LabelStyle>
+			</LabelStyle>
+			<LineStyle>
+				<color>ff2dc0fb</color>
+				<width>3.2</width>
+			</LineStyle>
+			<PolyStyle>
+				<color>40ffffff</color>
+			</PolyStyle>
+			<BalloonStyle>
+				<displayMode>hide</displayMode>
+			</BalloonStyle>
+		</Style>
+	</gx:CascadingStyle>
+	<StyleMap id="__managed_style_0BB36828EA330DC7CB6F">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#__managed_style_071CD1905E330DC7CB70</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#__managed_style_1B998DCAD0330DC7CB70</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark id="05B76F73D0330DC7CB55">
+		<name>treichville</name>
+		<LookAt>
+			<longitude>-4.000478119264855</longitude>
+			<latitude>5.29130052597557</latitude>
+			<altitude>4.439575654763281</altitude>
+			<heading>0</heading>
+			<tilt>0</tilt>
+			<gx:fovy>35</gx:fovy>
+			<range>13112.1412789193</range>
+			<altitudeMode>absolute</altitudeMode>
+		</LookAt>
+		<styleUrl>#__managed_style_0BB36828EA330DC7CB6F</styleUrl>
+		<Polygon>
+			<outerBoundaryIs>
+				<LinearRing>
+					<coordinates>
+						-4.025731166597257,5.300813586766233,0 -4.023836670199708,5.302778310895617,0 -4.013441691946868,5.291491786165794,0 -4.018186423864559,5.292090151741656,0 -4.019105352709117,5.288584550691409,0 -4.014598732275396,5.287816071302235,0 -4.018424900034081,5.285420496330064,0 -4.018298444010028,5.277637105364034,0 -4.013961068961835,5.277722809705463,0 -4.014729852620878,5.270716108795579,0 -4.010802785079203,5.269773594147117,0 -3.996098426182664,5.280463215887301,0 -3.996361429562878,5.287558913360879,0 -3.992576818332382,5.289354204861221,0 -3.996955538174634,5.308082754315384,0 -4.002280564065039,5.310305842300679,0 -4.00305301911975,5.315515469389235,0 -4.009259392927112,5.314141860664878,0 -4.021434894470779,5.310649003611752,0 -4.028715391094593,5.303807013387069,0 -4.025731166597257,5.300813586766233,0 
+					</coordinates>
+				</LinearRing>
+			</outerBoundaryIs>
+		</Polygon>
+	</Placemark>
+</Document>
+</kml>

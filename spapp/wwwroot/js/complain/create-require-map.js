@@ -1,10 +1,9 @@
 ﻿$(document).ready(function () {
 
-    //map create patrol
     initialize();
 
     function initialize() {
-        mountMap('create-patrol-map');
+        mountMap('create-complain-require-map');
     }
     function mountMap(divId) {
 
@@ -16,5 +15,4 @@
             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
     }
-   
 })

@@ -30,7 +30,7 @@
                     <i class="bi bi-person"></i>
                     <h4 class="modal-title">Victime info</h4>
                 </div>
-                <div class="row">
+                <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom du plaidoyant</label>
                         <input type="text" class="form-control" placeholder="Nom"/>
@@ -40,6 +40,60 @@
                         <input type="text" class="form-control" placeholder="numero telephone" />
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Num. CNI </label>
+                        <input type="text" class="form-control" placeholder="Numero CNI" />
+                    </div>
+                    <div class="col-sm-6">
+                        <label class="form-control-label">Num. Attestation</label>
+                        <input type="text" class="form-control" placeholder="numero d'atestation" />
+                    </div>
+                </div>
+                <div class="row d-flex align-items-center gap-2">
+                    <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-house"></i>
+                        <h5 class="modal-title">Address du plaidoyant</h5>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <label class="form-control-label">Commune</label>
+                                <input type="text" class="form-control" placeholder="commune" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-control-label">Quartier</label>
+                                <input type="text" id="neighborhood" class="form-control" placeholder="Quartier" />
+                                <div class="w-100 autocomplete-spapp" id="autocomplete-neighborhood">
+                                    <small>autocomplete</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <label class="form-control-label">Secteur</label>
+                                <input type="text" class="form-control" placeholder="secteur" />
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="form-control-label">Rue</label>
+                                <input type="text" class="form-control" placeholder="rue" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-6">
+                                <label class="form-control-label">Complement</label>
+                                <input type="text" class="form-control" placeholder="complement" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 p-3">
+                        <div class="w-100" id="create-complain-require-map" style="height: 370px;">
+
+                        </div>
+                    </div>
+                </div>             
             </div>
             <div class="row d-none d-flex align-items-center gap-2" id="form-complain-info">
                 <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
@@ -62,4 +116,5 @@
 
 @section Scripts {
     <script src="~/js/complain/create.js"></script>
+    <script src="~/js/complain/create-require-map.js"></script>
 }

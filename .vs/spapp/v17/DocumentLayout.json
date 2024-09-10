@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\serge\\source\\repos\\spapp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\patrol\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\patrol\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\complain\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\complain\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain\\create-require-map.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\complain\\create-require-map.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\map.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\wwwroot\\js\\patrol\\map.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\patrol\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\patrol\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|c:\\users\\serge\\source\\repos\\spapp\\spapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2175C783-4F52-44C6-96B3-F36D9A349C88}|spapp\\spapp.csproj|solutionrelative:spapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Patrol\\Index.cshtml",
-              "RelativeDocumentMoniker": "spapp\\Views\\Patrol\\Index.cshtml",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Patrol\\Index.cshtml",
-              "RelativeToolTip": "spapp\\Views\\Patrol\\Index.cshtml",
-              "ViewState": "AQIAAJMAAAAAAAAAAAAAACYAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-09T01:28:32.665Z",
+              "Title": "map.js",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\map.js",
+              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\patrol\\map.js",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\map.js",
+              "RelativeToolTip": "spapp\\wwwroot\\js\\patrol\\map.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwBEAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-10T02:02:22.203Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "spapp\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "spapp\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAAAKUAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-09T01:26:15.08Z",
+              "DocumentIndex": 1,
+              "Title": "create-require-map.js",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain\\create-require-map.js",
+              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\complain\\create-require-map.js",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\complain\\create-require-map.js",
+              "RelativeToolTip": "spapp\\wwwroot\\js\\complain\\create-require-map.js",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-10T02:01:57.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Patrol\\Create.cshtml",
-              "RelativeDocumentMoniker": "spapp\\Views\\Patrol\\Create.cshtml",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Patrol\\Create.cshtml",
-              "RelativeToolTip": "spapp\\Views\\Patrol\\Create.cshtml",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAAAGQAAABGAAAA",
+              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Complain\\Create.cshtml",
+              "RelativeDocumentMoniker": "spapp\\Views\\Complain\\Create.cshtml",
+              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\Views\\Complain\\Create.cshtml",
+              "RelativeToolTip": "spapp\\Views\\Complain\\Create.cshtml",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAAEUAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-09T01:21:01.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "map.js",
-              "DocumentMoniker": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\map.js",
-              "RelativeDocumentMoniker": "spapp\\wwwroot\\js\\patrol\\map.js",
-              "ToolTip": "C:\\Users\\serge\\source\\repos\\spapp\\spapp\\wwwroot\\js\\patrol\\map.js",
-              "RelativeToolTip": "spapp\\wwwroot\\js\\patrol\\map.js",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAoAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-09-09T01:20:06.49Z",
+              "WhenOpened": "2024-09-10T01:42:15.4Z",
               "EditorCaption": ""
             }
           ]
