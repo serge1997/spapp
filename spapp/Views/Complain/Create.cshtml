@@ -59,15 +59,16 @@
                 <div class="row mb-3">
                     <div class="col-md-8">
                         <div class="row mb-3">
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 autocomplete-municipality-parrent" style="position: relative;">
                                 <label class="form-control-label">Commune</label>
-                                <input type="text" class="form-control" placeholder="commune" />
+                                <input type="text" id="municipality" class="form-control" placeholder="commune" />
+                                <div class="w-100 autocomplete-spapp" id="autocomplete-municipality">
+                                </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 autocomplete-neighborhood-parrent" style="position: relative;">
                                 <label class="form-control-label">Quartier</label>
                                 <input type="text" id="neighborhood" class="form-control" placeholder="Quartier" />
-                                <div class="w-100 autocomplete-spapp" id="autocomplete-neighborhood">
-                                    <small>autocomplete</small>
+                                <div class="w-100 autocomplete-spapp" id="autocomplete-neighborhood">                  
                                 </div>
                             </div>
                         </div>

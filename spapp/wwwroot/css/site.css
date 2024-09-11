@@ -65,3 +65,29 @@ button.close {
     color: #023E73;
     font-size: 0.9em;
 }
+
+.autocomplete-ul {
+    position: absolute;
+    background-color: #f1f5f9;
+    z-index: 1;
+    right: 3%;
+    left: 3%;
+}
+
+.autocomplete-li {
+    list-style: none;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #475569;
+    padding: 6px;
+    padding-left: 18px;
+    transition: .1s ease-in;
+}
+
+.autocomplete-li:hover {
+    background-color: #cbd5e1;
+    margin-left: 0%;
+    position: relative;
+    font-size: 18px;
+}
