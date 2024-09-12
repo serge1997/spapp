@@ -19,7 +19,7 @@ namespace spapp.Models
         public CityModel? CityModel { get;}
         public MunicipalityModel? MunicipalityModel { get;}
         public NeighborhoodModel? NeighborhoodModel { get;}
-        public NeighborhoodSectorModel? NeighborhoodSectorModel { get;}
+        public NeighborhoodSectorModel? NeighborhoodSectorModel { get; set; } = null;
 
     }
 }

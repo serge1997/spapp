@@ -49,6 +49,17 @@ namespace spapp.Main.Repositories.Address
 
         }
 
+        public async Task<List<AddressModel>> FindByStreetName(string? streetName)
+        {
+            return await _spappContextDb.Addresses
+                .Include(add => add.CityModel)
+                .Include(add => add.MunicipalityModel)
+                .Include(add => add.NeighborhoodModel)
+                .Include(add => add.NeighborhoodSectorModel)
+                .Where(add => add.StreetName!.Contains(streetName))
+                .ToListAsync();
+        }
+
         public async Task<AddressModel> FindOrCreate(AddressRequest request, int? agentAddressId = null)
         {
             AddressModel finded = await FindByStreetNameAndCity(request.StreetName!, request.CityId);

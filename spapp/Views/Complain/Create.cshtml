@@ -77,9 +77,11 @@
                                 <label class="form-control-label">Secteur</label>
                                 <input type="text" class="form-control" placeholder="secteur" />
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-6 autocomplete-streetname-parrent" style="position: relative;">
                                 <label class="form-control-label">Rue</label>
-                                <input type="text" class="form-control" placeholder="rue" />
+                                <input type="text" id="street-name" class="form-control" placeholder="rue" />
+                                <div class="w-100 autocomplete-spapp" id="autocomplete-streetname">
+                                </div>
                             </div>
                         </div>
                         <div class="row mb-3">

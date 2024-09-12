@@ -26,17 +26,22 @@
 
     })
 
-    const addresses = [
-        { street: "Street one" },
-        { street: "Street two" },
-        { street: "Street three" }
-    ]
 
     setTimeout(() => {
         mountAutoComplete('autocomplete-municipality-parrent', 'municipality', municipalities);
-    }, 800)
+    }, 1000)
 
+    $('#street-name').on('input', function () {
+        ApiSpapp.get(`address-by-streetname`, { streetname: $(this).val() })
+            .then(async response => {
+                let addresses = await response.data.value;
+                mountAutoComplete('autocomplete-streetname-parrent', 'street-name', addresses);
+            })
+    })
 
+    async function getAddressById(id) {
+
+    }
     async function getMunicipality() {
         ApiSpapp.get("municipality")
             .then(async response => {
