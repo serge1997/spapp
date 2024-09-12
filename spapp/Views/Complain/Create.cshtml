@@ -50,10 +50,15 @@
                         <input type="text" class="form-control" placeholder="numero d'atestation" />
                     </div>
                 </div>
-                <div class="row d-flex align-items-center gap-2">
+                <div class="row px-3 d-flex align-items-center gap-2">
                     <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
                         <i class="bi bi-house"></i>
-                        <h5 class="modal-title">Address du plaidoyant</h5>
+                        <h5 class="modal-title">Address du plaidoyant</h5>                     
+                    </div>
+                    <div class="alert alert_error risk-area-alert-div d-none p-2 shadow">
+                        <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
+                        <span class="text-white" id="risk-observation">
+                        </span>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -75,7 +80,7 @@
                         <div class="row mb-3">
                             <div class="col-sm-6">
                                 <label class="form-control-label">Secteur</label>
-                                <input type="text" class="form-control" placeholder="secteur" />
+                                <input type="text" id="neighborhood-sector" class="form-control" placeholder="secteur" />
                             </div>
                             <div class="col-sm-6 autocomplete-streetname-parrent" style="position: relative;">
                                 <label class="form-control-label">Rue</label>
@@ -103,8 +108,6 @@
                     <i class="bi bi-megaphone"></i>
                     <h4 class="modal-title">Plainte info</h4>
                 </div>
-
-               
             </div>
             <div class="row d-none d-flex align-items-center gap-2" id="form-address-info">
                 <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">

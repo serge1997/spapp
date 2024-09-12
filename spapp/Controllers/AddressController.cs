@@ -24,5 +24,23 @@ namespace spapp.Controllers
                 return Json(Results.NotFound($"erreure, Verifier le(s) parametres de recherche: {ex.Message}"));
             }
         }
+
+        [HttpGet]
+        [Route("/api/address-by-id/{Id}")]
+        public async Task<JsonResult> FindById(int Id)
+        {
+            try
+            {
+                AddressResource address = AddressResponse.AsModelResponse(
+                    await _addressRepository.FindById(Id)
+                );
+
+                return Json(Results.Ok(address));
+            }
+            catch(Exception ex)
+            {
+                return Json(Results.NotFound(ex.Message));
+            }
+        }
     }
 }

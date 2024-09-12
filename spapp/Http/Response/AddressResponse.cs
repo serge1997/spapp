@@ -12,6 +12,8 @@ namespace spapp.Http.Response
         int CityId,
         int MunicipalityId,
         int NeighborhoodId,
+        bool? IsRiskedArea = null,
+        string? RiskObservation = null,
         string? NeighborhoodSector = null,
         int? NeighborhoodSectorId = null
     );
@@ -34,6 +36,8 @@ namespace spapp.Http.Response
                 address.CityId,
                 address.MunicipalityId,
                 address.NeighborhoodId,
+                address.NeighborhoodSectorModel?.IsRiskArea,
+                address.NeighborhoodSectorModel?.Observation,
                 address.NeighborhoodSectorModel?.Name,
                 address.NeighborhoodSectorId
             );

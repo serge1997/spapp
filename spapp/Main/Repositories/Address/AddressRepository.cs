@@ -60,6 +60,16 @@ namespace spapp.Main.Repositories.Address
                 .ToListAsync();
         }
 
+        public async Task<AddressModel> FindById(int id)
+        {
+            return await _spappContextDb.Addresses
+                .Include(add => add.CityModel)
+                .Include(add => add.MunicipalityModel)
+                .Include(add => add.NeighborhoodModel)
+                .Include(add => add.NeighborhoodSectorModel)
+                .FirstOrDefaultAsync(add => add.Id == id);
+        }
+
         public async Task<AddressModel> FindOrCreate(AddressRequest request, int? agentAddressId = null)
         {
             AddressModel finded = await FindByStreetNameAndCity(request.StreetName!, request.CityId);

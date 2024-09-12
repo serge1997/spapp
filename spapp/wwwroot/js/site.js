@@ -19,4 +19,9 @@
         dropdownCssClass: 'increasezindex',
         width: '100%'
     });
+
+    $('#alert-btn-close').click(function () {
+        $('.alert_error').addClass('d-none')
+        $('#risk-observation').html("");
+    })
 })
