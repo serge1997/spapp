@@ -159,6 +159,23 @@ namespace spapp.Controllers
                 return Json(Results.StatusCode(500));
             }
         }
-        
+
+        [HttpGet]
+        [Route("/api/neighborhood-by-name")]
+        public async Task<JsonResult> GetByName([FromQuery] string name)
+        {
+            try
+            {
+                List<NeighborhoodModel> results = await _neighborhoodRepository
+                    .FindByNameAsync(name);
+
+                return Json(Results.Ok(NeighborhoodResponse.AsModelListResponse(results)));
+            }
+            catch (Exception ex)
+            {
+                return Json(Results.StatusCode(500));
+            }
+        }
+
     }
 }

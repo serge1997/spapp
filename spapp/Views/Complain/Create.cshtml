@@ -1,6 +1,6 @@
 ﻿@model VehicleModelView
 @{
-    ViewData["Title"] = "Enregistrer une nouvelle complainte";
+    ViewData["Title"] = "Enregistrer une nouvelle plainte";
 }
 <div class="container-fluid px-1 py-5 mx-auto">
     <div class="row">
@@ -55,7 +55,7 @@
                         <i class="bi bi-house"></i>
                         <h5 class="modal-title">Address du plaidoyant</h5>                     
                     </div>
-                    <div class="alert alert_error risk-area-alert-div d-none p-2 shadow">
+                    <div class="alert alert_error risk-area-alert-div d-none p-2 shadow col-md-6">
                         <button aria-hidden="true" data-dismiss="alert" id="alert-btn-close" class="close text-white" type="button">&times;</button>
                         <span class="text-white" id="risk-observation">
                         </span>
@@ -121,6 +121,6 @@
 </div>
 
 @section Scripts {
-    <script src="~/js/complain/create.js"></script>
     <script src="~/js/complain/create-require-map.js"></script>
+    <script src="~/js/complain/create.js"></script>
 }

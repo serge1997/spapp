@@ -44,6 +44,15 @@ namespace spapp.Main.Repositories.Neighborhood
             return finded;
         }
 
+        public async Task<List<NeighborhoodModel>> FindByNameAsync(string name)
+        {
+            return await _spappContextDb.Neighborhoods
+                .Include(nei => nei.City)
+                .Include(nei => nei.Municipality)
+                .Where(nei => nei.Name.Contains(name))
+                .ToListAsync();
+        }
+
         public async Task<NeighborhoodModel> UpdateAsync(NeighborhoodModel neighborhood)
         {
             NeighborhoodModel model = await FindNeighborhoodByIdAsync(neighborhood.Id);
