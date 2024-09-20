@@ -8,6 +8,14 @@
         this.handle(message, "error", timer);
     }
 
+    info(message, timer = 3000) {
+        this.handle(message, "info", timer);
+    }
+
+    warning(message, timer = 3000) {
+        this.handle(message, "warning", timer);
+    }
+
     handle(message, icon, timer) {
         const Toast = Swal.mixin({
             toast: true,
@@ -15,6 +23,10 @@
             showConfirmButton: false,
             timer: timer,
             timerProgressBar: true,
+            iconColor: 'white',
+            customClass: {
+                popup: 'colored-toast',
+            },
             didOpen: (toast) => {
                 toast.onmouseenter = Swal.stopTimer;
                 toast.onmouseleave = Swal.resumeTimer;

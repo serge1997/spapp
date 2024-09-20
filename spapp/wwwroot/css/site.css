@@ -94,3 +94,24 @@ button.close {
     position: relative;
     font-size: 18px;
 }
+
+.colored-toast{
+    color: #fff;
+}
+
+.colored-toast.swal2-icon-error {
+    background-color: #f27474 !important;
+}
+
+
+.colored-toast.swal2-icon-warning {
+     background-color: #f59e0b !important;
+ }
+
+.colored-toast.swal2-icon-info {
+    background-color: #3fc3ee !important;
+}
+
+.colored-toast.swal2-icon-question {
+    background-color: #87adbd !important;
+}

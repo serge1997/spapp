@@ -174,5 +174,23 @@ namespace spapp.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("/api/neighborhood-sector/find-by-name")]
+        public async Task<JsonResult> FilterByName([FromQuery] string? name)
+        {
+            try
+            {
+                List<NeighborhoodSectorModel> results = await _neighborhoodSectorRepository
+                    .FilterByName(name);
+
+                return Json(Results.Ok(NeighborhoodSectorResponse.AsModelListResponse(results)));
+            }
+            catch (Exception ex)
+            {
+                return Json(Results.StatusCode(500));
+            }
+        }
+
+
     }
 }

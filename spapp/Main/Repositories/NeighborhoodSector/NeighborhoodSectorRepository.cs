@@ -60,6 +60,16 @@ namespace spapp.Main.Repositories.NeighborhoodSector
                 .FirstOrDefault(sector => sector.Name.Equals(Name))!;
         }
 
+        public async Task<List<NeighborhoodSectorModel>> FilterByName(string? Name)
+        {
+            return await _spappContextDb.NeighborhoodSectors
+                .Include(sector => sector.Neighborhood)
+                .Include(sector => sector.Municipality)
+                    .ThenInclude(mun => mun.City)
+                .Where(sector => sector.Name.Contains(Name!))
+                .ToListAsync();
+        }
+
         public async Task<List<NeighborhoodSectorModel>> GetAllByNeighborhood(string[] Neighborhoods)
         {
             int[] ids = Neighborhoods.Select(int.Parse).ToArray();
