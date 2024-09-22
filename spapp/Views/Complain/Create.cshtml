@@ -30,10 +30,14 @@
                     <i class="bi bi-person"></i>
                     <h4 class="modal-title">Victime info</h4>
                 </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="ananime">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">Dénonce anonime ?</label>
+                </div>
                 <div class="row mb-3">
                     <div class="col-sm-6">
                         <label class="form-control-label">Nom du plaidoyant</label>
-                        <input type="text" class="form-control" placeholder="Nom"/>
+                        <input type="text" id="applicant-complain-fullname" class="form-control" placeholder="Nom" />
                     </div>
                     <div class="col-sm-6">
                         <label class="form-control-label">Num. de telephone</label>
@@ -62,7 +66,7 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <input type="text" id="applicant-complain-city" />
+                    <input type="hidden" id="applicant-complain-city" />
                     <div class="col-md-8">
                         <div class="row mb-3">
                             <div class="col-sm-6 autocomplete-applicant-municipality-parrent" style="position: relative;">

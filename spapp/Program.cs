@@ -1,10 +1,13 @@
 using spapp.Main.ModelsBuilder.Address;
 using spapp.Main.ModelsBuilder.AgentModelBuilder;
+using spapp.Main.ModelsBuilder.ComplainModelBuilder;
+using spapp.Main.ModelsBuilder.User;
 using spapp.Main.Repositories.Address;
 using spapp.Main.Repositories.Agent;
 using spapp.Main.Repositories.AgentGroup;
 using spapp.Main.Repositories.AgentRank;
 using spapp.Main.Repositories.City;
+using spapp.Main.Repositories.Complain;
 using spapp.Main.Repositories.ComplainType;
 using spapp.Main.Repositories.ComplainTypeCategory;
 using spapp.Main.Repositories.Municipality;
@@ -15,6 +18,7 @@ using spapp.Main.Repositories.PatrolMember;
 using spapp.Main.Repositories.PatrolMunicipality;
 using spapp.Main.Repositories.PatrolNeighborhood;
 using spapp.Main.Repositories.PatrolNeighborhoodSector;
+using spapp.Main.Repositories.User;
 using spapp.Main.Repositories.Vehicle;
 using spapp.Main.Repositories.VehicleBrand;
 using spapp.SpappContext;
@@ -44,6 +48,12 @@ builder.Services.AddScoped<IPatrolMunicipalityRepository, PatrolMunicipalityRepo
 builder.Services.AddScoped<IPatrolNeighborhoodRepository,  PatrolNeighborhoodRepository>();
 builder.Services.AddScoped<IPatrolNeighborhoodSectorRepository,  PatrolNeighborhoodSectorRepository>();
 builder.Services.AddScoped<IPatrolMemberRepository,  PatrolMemberRepository>();
+builder.Services.AddScoped<IUserRepository,  UserRepository>();
+builder.Services.AddScoped<IComplainRepository, ComplainRepository>();
+
+//builder
+builder.Services.AddScoped<IUserModelBuilder, UserModelBuilder>();
+builder.Services.AddScoped<IComplainModelBuilder, ComplainModelBuilder>();
 
 builder.Services.AddCors(options =>
 {

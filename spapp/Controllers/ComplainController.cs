@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using spapp.Http.Requests;
+using spapp.Main.Repositories.Complain;
+using spapp.Models;
 
 namespace spapp.Controllers
 {
-    public class ComplainController : Controller
+    public class ComplainController(IComplainRepository complainRepository) : Controller
     {
+        private readonly IComplainRepository _complainRepository = complainRepository;
 
         [HttpGet]
         [Route("/complain")]
@@ -17,6 +21,27 @@ namespace spapp.Controllers
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpPost]
+        [Route("/api/complain")]
+        public async Task<JsonResult> CreateAgentWebComplain([FromBody]ComplainRequest request)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return Json(Results.Ok(ModelState));
+                    //return Json(BadRequest(ModelState));
+                }
+
+                ComplaintModel complain = await _complainRepository.CreateWebAgentComplain(request);
+                return Json(Results.Ok(complain));
+            }
+            catch (Exception ex)
+            {
+                return Json(ex.ToString());
+            }
         }
     }
 }

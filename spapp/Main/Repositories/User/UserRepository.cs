@@ -18,7 +18,16 @@ namespace spapp.Main.Repositories.User
 
         public async Task<UserModel> CreateAsync(UserRequest userRequest)
         {
-            AddressModel address = await _addressRepository.FindOrCreate(userRequest.applicanAddress);
+
+            AddressModel address = await _addressRepository.FindOrCreate(
+                    new AddressRequest(
+                        userRequest.AddressStreetName,
+                        userRequest.AddressCityId,
+                        userRequest.MunicipalityId,
+                        userRequest.Neighborhood,
+                        userRequest.NeighborhoodSector)
+                    );
+
             UserModel user = _userModelBuilder
                 .AddPersonalData(
                     userRequest.FullName,
@@ -39,7 +48,7 @@ namespace spapp.Main.Repositories.User
                     userRequest.AddressComplement
                 )
                 .Build();
-
+     
             await _context.Users.AddAsync( user );
             await _context.SaveChangesAsync();
             return user;

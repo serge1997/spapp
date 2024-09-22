@@ -98,19 +98,21 @@
 
         const complainData = {
 
-            applicantRequest: {
-
-                applicanAddress: {
-                    StreetName: $('#applicant-complain-street-name').val(),
-                    CityId: $('#').attr('data-id'),
-                    MunicipalityId: $('#applicant-complain-municipality').attr('data-id'),
-                    NeighborhoodId: $('#applicant-complain-neighborhood').attr('data-id'),
-                    NeighborhoodSectorId: $('#applicant-complain-neighborhood').attr('data-id')
-                }
-            }
+            applicantFullname: $('#applicant-complain-fullname').val(),
+            applicantPhoneNumber: $('#applicant-complain-street-name').val(),
+            applicantAddressStreetName: "",
+            applicantCNINumber: "",
+            applicantAtestationNumber: "",
+            applicantHouseNumber: "",
+            applicantAddressComplement: "",
+            applicantAddressCityId: 1,
+            applicantAddressMunicipalityId: $('#applicant-complain-municipality').attr('data-id'),
+            applicantAddressNeighborhood: $('#applicant-complain-neighborhood').attr('data-id'),
+            applicantAddressNeighborhoodSector: $('#applicant-complain-neighborhood').attr('data-id')                     
         }
 
-        console.log(complainData);
+        ApiSpapp.post("complain", complainData)
+
     })
    
 })
