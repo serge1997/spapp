@@ -25,6 +25,10 @@ namespace spapp.SpappContext.ModelsMap
             builder.HasOne(add => add.NeighborhoodSectorModel)
                 .WithMany()
                 .HasForeignKey(add => add.NeighborhoodSectorId);
+
+            builder.HasMany(address => address.Users)
+                .WithOne(user => user.Address)
+                .HasForeignKey(user => user.AddressId);
         }
     }
 }

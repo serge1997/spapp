@@ -29,37 +29,38 @@
 
 
     setTimeout(() => {
-        mountAutoComplete('autocomplete-municipality-parrent', 'municipality', municipalities);
+        mountAutoComplete('autocomplete-applicant-municipality-parrent', 'applicant-complain-municipality', municipalities);
     }, 1000)
 
     //clean all this input when selected municipality 
-    $('#municipality').on('blur', function () {
-        $('#neighborhood').val("");
-        $('#neighborhood-sector').val("");
-        $('#street-name').val("");
+    $('#applicant-complain-municipality').on('blur', function () {
+        $('#applicant-complain-neighborhood').val("");
+        $('#applicant-complain-neighborhood-sector').val("");
+        $('#applicant-complain-street-name').val("");
     })
 
 
-    $('#street-name').on('input', function () {
+    $('#applicant-complain-street-name').on('input', function () {
         ApiSpapp.get(`address-by-streetname`, { streetname: $(this).val() })
             .then(async response => {
                 let addresses = await response.data.value;
-                mountAutoComplete('autocomplete-streetname-parrent', 'street-name', addresses);
+                mountAutoComplete('autocomplete-applicant-streetname-parrent', 'applicant-complain-street-name', addresses);
                 getAddressById();
             })
     })
     async function getAddressById() {
-        $('.autocomplete-streetname-parrent .autocomplete-li').click(function () {
-            let streetnameInput = $('#street-name');
+        $('.autocomplete-applicant-streetname-parrent .autocomplete-li').click(function () {
+            let streetnameInput = $('#applicant-complain-street-name');
             let addressId = streetnameInput.attr('data-id')
 
             ApiSpapp.get(`address-by-id/${addressId}`)
                 .then(async response => {
                     $('#risk-observation').html("");
                     let result = await response.data.value;
-                    $('#municipality').val(result.municipality);
-                    $('#neighborhood').val(result.neighborhood);
-                    $('#neighborhood-sector').val(result.neighborhoodSector);                
+                    $('#applicant-complain-municipality').val(result.municipality);
+                    $('#applicant-complain-neighborhood').val(result.neighborhood);
+                    $('#applicant-complain-neighborhood-sector').val(result.neighborhoodSector); 
+                    $('#applicant-complain-city').val(result.cityId)
 
                     if (result.isRiskedArea === true) {
                         let obsHtml = `<br>
@@ -91,5 +92,25 @@
                 toastSpApi.error(error.toString())
             })
     }
+
+    $('#create-complain-form').on('submit', function (e) {
+        e.preventDefault();
+
+        const complainData = {
+
+            applicantRequest: {
+
+                applicanAddress: {
+                    StreetName: $('#applicant-complain-street-name').val(),
+                    CityId: $('#').attr('data-id'),
+                    MunicipalityId: $('#applicant-complain-municipality').attr('data-id'),
+                    NeighborhoodId: $('#applicant-complain-neighborhood').attr('data-id'),
+                    NeighborhoodSectorId: $('#applicant-complain-neighborhood').attr('data-id')
+                }
+            }
+        }
+
+        console.log(complainData);
+    })
    
 })

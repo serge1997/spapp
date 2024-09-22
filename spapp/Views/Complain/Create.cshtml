@@ -24,7 +24,7 @@
                 <button class="btn border rounded-circle px-3 py-2 alert alert-secondary" id="form-address-btn">3</button>
             </div>
         </div>
-        <form class="row">
+        <form class="row" id="create-complain-form">
             <div class="row" id="form-victim-info">
                 <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
                     <i class="bi bi-person"></i>
@@ -62,39 +62,40 @@
                     </div>
                 </div>
                 <div class="row mb-3">
+                    <input type="text" id="applicant-complain-city" />
                     <div class="col-md-8">
                         <div class="row mb-3">
-                            <div class="col-sm-6 autocomplete-municipality-parrent" style="position: relative;">
+                            <div class="col-sm-6 autocomplete-applicant-municipality-parrent" style="position: relative;">
                                 <label class="form-control-label">Commune</label>
-                                <input type="text" id="municipality" class="form-control" placeholder="commune" />
-                                <div class="w-100 autocomplete-spapp" id="autocomplete-municipality">
+                                <input type="text" id="applicant-complain-municipality" class="form-control" placeholder="commune" />
+                                <div class="w-100 autocomplete-spapp">
                                 </div>
                             </div>
-                            <div class="col-sm-6 autocomplete-neighborhood-parrent" style="position: relative;">
+                            <div class="col-sm-6 autocomplete-applicant-neighborhood-parrent" style="position: relative;">
                                 <label class="form-control-label">Quartier</label>
-                                <input type="text" id="neighborhood" class="form-control" placeholder="Quartier" />
-                                <div class="w-100 autocomplete-spapp" id="autocomplete-neighborhood">                  
+                                <input type="text" id="applicant-complain-neighborhood" class="form-control" placeholder="Quartier" />
+                                <div class="w-100 autocomplete-spapp">                  
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-sm-6 autocomplete-neighborhood-sector-parrent" style="position: relative;">
+                            <div class="col-sm-6 autocomplete-applicant-neighborhood-sector-parrent" style="position: relative;">
                                 <label class="form-control-label">Secteur</label>
-                                <input type="text" id="neighborhood-sector" class="form-control" placeholder="secteur" />
-                                <div class="w-100 autocomplete-spapp" id="neighborhood-sector">
+                                <input type="text" id="applicant-complain-neighborhood-sector" class="form-control" placeholder="secteur" />
+                                <div class="w-100 autocomplete-spapp">
                                 </div>
                             </div>
-                            <div class="col-sm-6 autocomplete-streetname-parrent" style="position: relative;">
+                            <div class="col-sm-6 autocomplete-applicant-streetname-parrent" style="position: relative;">
                                 <label class="form-control-label">Rue</label>
-                                <input type="text" id="street-name" class="form-control" placeholder="rue" />
-                                <div class="w-100 autocomplete-spapp" id="autocomplete-streetname">
+                                <input type="text" id="applicant-complain-street-name" class="form-control" placeholder="rue" />
+                                <div class="w-100 autocomplete-spapp">
                                 </div>
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-sm-6">
                                 <label class="form-control-label">Complement</label>
-                                <input type="text" class="form-control" placeholder="complement" />
+                                <input type="text" id="applicant-complain-complement" class="form-control" placeholder="complement" />
                             </div>
                         </div>
                     </div>
@@ -110,14 +111,28 @@
                     <i class="bi bi-megaphone"></i>
                     <h4 class="modal-title">Plainte info</h4>
                 </div>
+                <div class="row mt-3">
+                    <div class="row mb-3">
+                        <div class="col-sm-6">
+                            <label class="form-control-label">Type de plainte </label>
+                            <select id="new_complain_type" class="single-select2-spapp"></select>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="form-control-label">Num. Attestation</label>
+                            <input type="text" class="form-control" placeholder="numero d'atestation" />
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="row d-none d-flex align-items-center gap-2" id="form-address-info">
                 <div class="col-md-10 p-2 mb-3 d-flex align-items-center gap-2">
                     <i class="bi bi-house"></i>
                     <h4 class="modal-title">Address</h4>
                 </div>
-                
-            </div>
+                <div class="row d-flex align-items-center gap-2 mt-3">
+                    <button class="btn form-btn-submit text-white">Enregistrer</button>
+                </div>
+            </div>   
         </form>
     </div>
 </div>
