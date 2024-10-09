@@ -27,6 +27,7 @@ namespace spapp.Controllers
         [Route("/api/complain")]
         public async Task<JsonResult> CreateAgentWebComplain([FromBody]ComplainRequest request)
         {
+            return Json(request);
             try
             {
                 if (!ModelState.IsValid)
@@ -40,7 +41,7 @@ namespace spapp.Controllers
             }
             catch (Exception ex)
             {
-                return Json(ex.ToString());
+                return Json(Results.Problem(ex.Message));
             }
         }
     }

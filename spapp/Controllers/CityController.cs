@@ -9,9 +9,13 @@ using System.Text.Json.Serialization;
 namespace spapp.Controllers
 {
   
-    public class CityController(ICityRepository cityRepository) : Controller
+    public class CityController(
+        ICityRepository cityRepository,
+        IConfiguration configuration
+        ) : Controller
     {
         private readonly ICityRepository _cityRepository = cityRepository;
+        private readonly IConfiguration _configuration = configuration;
 
 
         [HttpGet]
@@ -31,14 +35,15 @@ namespace spapp.Controllers
 
         [HttpPost]
         [Route("/ville/creer")]
-        public async Task<IActionResult> Create(CityModel city)
+        public async Task<IActionResult> Create(CityModel city, HttpClient httpClient)
         {
             try
             {
 
                 if (ModelState.IsValid)
-                {             
-                    await _cityRepository.CreateCityAsync(city);
+                {
+                    string ApiBaseUrl = _configuration.GetValue<string>("Api-Spapp:Local:BaseUri")!;
+                    var response = await _cityRepository.CreateCityAsync(city, ApiBaseUrl,httpClient);
                     TempData["SuccessMessage"] = $"{city.Name} enregistrée avec succées";
                     return RedirectToAction(nameof(Index));
                 }
@@ -46,7 +51,7 @@ namespace spapp.Controllers
             }
             catch(Exception ex)
             {
-                TempData["ErrorMessage"] = $"une erreure survenue (create city): {ex.Message}";
+                TempData["ErrorMessage"] = $"Erreure du service: {ex.Message}";
                 return RedirectToAction(nameof(Index));
             }
         }

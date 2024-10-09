@@ -19,6 +19,11 @@ namespace spapp.Main.Repositories.Complain
 
         public async Task<ComplaintModel> CreateWebAgentComplain(ComplainRequest complainRequest)
         {
+            if (complainRequest.IsAnonyme == false && string.IsNullOrEmpty(complainRequest.ApplicantFullname))
+            {
+                throw new Exception("Applicant name is required");
+            }
+
             await _userRepository.CreateAsync(
                        new UserRequest(
                            complainRequest.ApplicantFullname!,

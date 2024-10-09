@@ -6,7 +6,6 @@ namespace spapp.Http.Requests
 {
     public record ComplainRequest
     {
-        [RequiredIf("IsAnonyme", ErrorMessage = "Nome do requerente é obrigatório se não for anônimo.")]
         public string? ApplicantFullname;
         public string? ApplicantPhoneNumber;
         public string? ApplicantAddressStreetName;

@@ -27,7 +27,7 @@ namespace spapp.Http.FormValidation
 
             var propertyValue = (bool)property.GetValue(validationContext.ObjectInstance)!;
 
-            if (!propertyValue && string.IsNullOrEmpty(value as string))
+            if (propertyValue == false && string.IsNullOrEmpty(value as string))
             {
                 return new ValidationResult(ErrorMessage ?? $"{validationContext.DisplayName} é obrigatório.");
             }

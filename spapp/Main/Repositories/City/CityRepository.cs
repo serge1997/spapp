@@ -3,31 +3,36 @@ using Microsoft.EntityFrameworkCore;
 using spapp.Http.Requests;
 using spapp.Models;
 using spapp.SpappContext;
+using System.Text;
+using System.Text.Json;
 
 namespace spapp.Main.Repositories.City
 {
-    public class CityRepository(SpappContextDb spappContextDb) : ICityRepository
+    public class CityRepository(
+        SpappContextDb spappContextDb
+        ) : ICityRepository
     {
         private readonly SpappContextDb _spappContextDb = spappContextDb;
 
-        public async Task<CityModel> CreateCityAsync(CityModel city)
+        public async Task<HttpResponseMessage> CreateCityAsync(CityModel city, string url, HttpClient httpClient)
         {
-            BeforeSave(city.Name);
-            CityModel model = new()
-            {
-                Name = city.Name,
-                Region = city.Region,
-                District = city.District,
-                Population = city.Population,
-                Latitude = city.Latitude,
-                Longitude = city.Longitude,
-                Area = city.Area,
-                Created_at = DateTime.Now
-            };
+            using StringContent post = new(
+                JsonSerializer.Serialize(new
+                {
+                    name = city.Name,
+                    origin = "Agent spapp",
+                    region_id = 1
+                }),
+                Encoding.UTF8,
+                "application/json"
+                );
 
-            _spappContextDb.Cities.Add(model);
-            await _spappContextDb.SaveChangesAsync();
-            return city;
+            HttpResponseMessage response = await httpClient.PostAsync($"{url}/city", post);
+            if (response.IsSuccessStatusCode)
+            {
+                return response;
+            }
+            throw new Exception("Verifier les donnée informer pour la ville ou la ville existe déja");
         }
 
         public async Task<List<CityModel>> GetAllCitiesAsync()
