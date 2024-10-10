@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Primitives;
+using spapp.Helpers.Repository.Config;
 using spapp.Http.Requests;
 using spapp.Main.Repositories.City;
 using spapp.Models;
+using System.Net.Http;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -11,18 +13,19 @@ namespace spapp.Controllers
   
     public class CityController(
         ICityRepository cityRepository,
-        IConfiguration configuration
+        IConfigService configService
         ) : Controller
     {
         private readonly ICityRepository _cityRepository = cityRepository;
-        private readonly IConfiguration _configuration = configuration;
+        private readonly IConfigService _config = configService;
 
 
         [HttpGet]
         [Route("/ville")]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(HttpClient httpClient)
         {
-            List<CityModel> cities = await _cityRepository.GetAllCitiesAsync();
+            string ApiBaseUrl = _config.GetSpappApiBaseUrl();
+            List<CityModel>? cities = await _cityRepository.GetAllCitiesAsync(httpClient, ApiBaseUrl);
             return View(cities);
         }
 
@@ -42,9 +45,9 @@ namespace spapp.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    string ApiBaseUrl = _configuration.GetValue<string>("Api-Spapp:Local:BaseUri")!;
+                    string ApiBaseUrl = _config.GetSpappApiBaseUrl();
                     var response = await _cityRepository.CreateCityAsync(city, ApiBaseUrl,httpClient);
-                    TempData["SuccessMessage"] = $"{city.Name} enregistrée avec succées";
+                    TempData["SuccessMessage"] = $"{response!.Message}";
                     return RedirectToAction(nameof(Index));
                 }
                 return View(nameof(Create));
@@ -109,9 +112,10 @@ namespace spapp.Controllers
 
         [HttpGet]
         [Route("/api/city")]
-        public async Task<JsonResult> IndexApi()
+        public async Task<JsonResult> IndexApi(HttpClient httpClient)
         {
-            List<CityModel> cities = await _cityRepository.GetAllCitiesAsync();
+            string ApiBaseUrl = _config.GetSpappApiBaseUrl();
+            var cities = await _cityRepository.GetAllCitiesAsync(httpClient, ApiBaseUrl);
             return Json(Results.Ok(cities));
         }
     }

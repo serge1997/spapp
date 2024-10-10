@@ -27,11 +27,11 @@ namespace spapp.ModelViews
             }
         }
 
-        public async Task SetCities(ICityRepository cityRepository)
+        public async Task SetCities(ICityRepository cityRepository, HttpClient httpClient, string baseUrl)
         {
-            List<CityModel> cities = await cityRepository.GetAllCitiesAsync();
+            List<CityModel>? cities = await cityRepository.GetAllCitiesAsync(httpClient, baseUrl);
 
-            foreach(CityModel city in cities)
+            foreach(CityModel city in cities!)
             {
                 this.Cities.Add(city);
             }

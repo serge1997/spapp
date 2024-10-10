@@ -82,10 +82,10 @@ namespace spapp.Main.Repositories.Municipality
 
         }
 
-        public async Task<MunicipalityModelView> SetMunicipalityModelView(ICityRepository cityRepository)
+        public async Task<MunicipalityModelView> SetMunicipalityModelView(ICityRepository cityRepository, HttpClient httpClient, string baseUrl)
         {
             MunicipalityModelView instance = new();
-            instance.Cities = await cityRepository.GetAllCitiesAsync();
+            instance.Cities = await cityRepository.GetAllCitiesAsync(httpClient, baseUrl);
 
             return instance;
             

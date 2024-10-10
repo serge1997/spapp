@@ -13,6 +13,6 @@ namespace spapp.Main.Repositories.Agent
         Task<List<AgentModel>> GetAllAsync();
         Task<AgentModel> FindAsync(int Id);
         Task<AgentModel> UpdateAsync(UpdateAgentRequest request);
-        Task<AgentModelView> SetAgentModelView();
+        Task<AgentModelView> SetAgentModelView(HttpClient httpClient, string baseUrl);
     }
 }

@@ -14,7 +14,7 @@ namespace spapp.ModelViews
         public float? Latitude { get; set; }
         public float? Longitude { get; set; }
         public long? Population { get; set; }
-        public List<CityModel> Cities { get; set; } = new List<CityModel>();
+        public List<CityModel>? Cities { get; set; } = new List<CityModel>();
 
 
 

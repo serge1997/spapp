@@ -36,7 +36,7 @@ namespace spapp.ModelViews
         public int? ChilddrenQuantity { get; set; }
         public MaritalStatusEnum MaritalStatus { get; set; }
         public List<AgentRankModel> AgentRanks { get; set; } = [];
-        public List<CityModel> Citys { get; set; } = [];
+        public List<CityModel>? Citys { get; set; } = [];
         public AddressRequest? AddressRequest { get; set; }
         public AddressModel? Address {  get; set; }
     }

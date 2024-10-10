@@ -7,16 +7,19 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using spapp.Http.Services;
 using spapp.Http.Response;
+using spapp.Helpers.Repository.Config;
 
 namespace spapp.Controllers
 {
     public class MunicipalityController(
         ICityRepository cityRepository,
-        IMunicipalityRepository municipalityRepository
+        IMunicipalityRepository municipalityRepository,
+        IConfigService configService
         ) : Controller
     {
         private readonly ICityRepository _cityRepository = cityRepository;
         private readonly IMunicipalityRepository _municipalityRepository = municipalityRepository;
+        private readonly IConfigService _config = configService;
 
 
         [HttpGet]
@@ -39,15 +42,16 @@ namespace spapp.Controllers
 
         [HttpGet]
         [Route("/municipal/creer")]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(HttpClient httpClient)
         {
 
             try
             {
+                string ApiBaseUrl = _config.GetSpappApiBaseUrl();
                 MunicipalityModelView municipalityModelView = new();
-                List<CityModel> Cities = await _cityRepository.GetAllCitiesAsync();
+                List<CityModel>? Cities = await _cityRepository.GetAllCitiesAsync(httpClient, ApiBaseUrl);
 
-                foreach (CityModel city in Cities)
+                foreach (CityModel city in Cities!)
                 {
                     municipalityModelView.Cities.Add(city);
                 }
@@ -61,14 +65,15 @@ namespace spapp.Controllers
 
         [HttpPost]
         [Route("/municipal/creer")]
-        public async Task<IActionResult> Create(MunicipalityModelView municipalityModelView)
+        public async Task<IActionResult> Create(MunicipalityModelView municipalityModelView, HttpClient httpClient)
         {
             try
             {
                 if (!ModelState.IsValid)
                 {
+                    string ApiBaseUrl = _config.GetSpappApiBaseUrl();
                     MunicipalityModelView data = await _municipalityRepository
-                        .SetMunicipalityModelView(_cityRepository);
+                        .SetMunicipalityModelView(_cityRepository, httpClient, ApiBaseUrl);
                     return View(data);
                 }
                 await _municipalityRepository.CreateAsync(municipalityModelView);

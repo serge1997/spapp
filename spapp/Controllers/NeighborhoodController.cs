@@ -7,18 +7,21 @@ using spapp.Http.Services;
 using spapp.Models;
 using System.Text.Json;
 using spapp.Http.Response;
+using spapp.Helpers.Repository.Config;
 
 namespace spapp.Controllers
 {
     public class NeighborhoodController(
         ICityRepository cityRepository,
         IMunicipalityRepository municipalityRepository,
-        INeighborhoodRepository neighborhoodRepository
+        INeighborhoodRepository neighborhoodRepository,
+        IConfigService configService
         ) : Controller
     {
         private readonly ICityRepository _cityRepository = cityRepository;
         private readonly IMunicipalityRepository _municipalityRepository = municipalityRepository;
         private readonly INeighborhoodRepository _neighborhoodRepository = neighborhoodRepository;
+        private readonly IConfigService _config = configService;
 
 
 
@@ -33,12 +36,13 @@ namespace spapp.Controllers
 
         [HttpGet]
         [Route("/neighborhood/create")]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(HttpClient httpClient)
         {
             try
             {
+                string ApiBaseUrl = _config.GetSpappApiBaseUrl();
                 NeighborhoodModelView neighborhoodModelView = new();
-                await neighborhoodModelView.SetCities(_cityRepository);
+                await neighborhoodModelView.SetCities(_cityRepository, httpClient, ApiBaseUrl);
                 await neighborhoodModelView.SetMunicipalities(_municipalityRepository);
 
                 return View(neighborhoodModelView);

@@ -38,7 +38,7 @@ namespace spapp.SpappContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new CityModelMap());
+            //modelBuilder.ApplyConfiguration(new CityModelMap());
             modelBuilder.ApplyConfiguration(new MunicipalityModelMap());
             modelBuilder.ApplyConfiguration(new NeighborhoodModelMap());
             modelBuilder.ApplyConfiguration(new AgentGroupModelMap());

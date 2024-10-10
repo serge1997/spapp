@@ -1,3 +1,4 @@
+using spapp.Helpers.Repository.Config;
 using spapp.Main.ModelsBuilder.Address;
 using spapp.Main.ModelsBuilder.AgentModelBuilder;
 using spapp.Main.ModelsBuilder.ComplainModelBuilder;
@@ -50,6 +51,7 @@ builder.Services.AddScoped<IPatrolNeighborhoodSectorRepository,  PatrolNeighborh
 builder.Services.AddScoped<IPatrolMemberRepository,  PatrolMemberRepository>();
 builder.Services.AddScoped<IUserRepository,  UserRepository>();
 builder.Services.AddScoped<IComplainRepository, ComplainRepository>();
+builder.Services.AddSingleton<IConfigService,  ConfigService>();
 
 //builder
 builder.Services.AddScoped<IUserModelBuilder, UserModelBuilder>();

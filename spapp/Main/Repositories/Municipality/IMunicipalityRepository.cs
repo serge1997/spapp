@@ -13,7 +13,7 @@ namespace spapp.Main.Repositories.Municipality
         Task<MunicipalityModel> UpdateAsync(MunicipalityModel model);
         Task<MunicipalityModel> DeleteAsync(int Id);
         Task<List<MunicipalityModel>> GetMunicipalitiesByCityAsync(int Id);
-        Task<MunicipalityModelView> SetMunicipalityModelView(ICityRepository cityRepository);
+        Task<MunicipalityModelView> SetMunicipalityModelView(ICityRepository cityRepository, HttpClient httpClient, string baseUrl);
         void BeforeSave(string Name, int City);
     }
 }

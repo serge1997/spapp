@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using spapp.Helpers.Repository.Config;
 using spapp.Http.Requests;
 using spapp.Http.Response;
 using spapp.Main.Repositories.Agent;
@@ -10,11 +11,13 @@ namespace spapp.Controllers
 {
     public class AgentController(
         IAgentRepository agentRepository,
-        SpappContextDb context
+        SpappContextDb context,
+        IConfigService configService
     ) : Controller
     {
         private readonly IAgentRepository _agentRepository = agentRepository;        
         private readonly SpappContextDb _context = context;
+        private readonly IConfigService _config = configService;
 
         [HttpGet]
         [Route("/agent")]
@@ -36,12 +39,13 @@ namespace spapp.Controllers
 
         [HttpGet]
         [Route("/agent/create")]
-        public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create(HttpClient httpClient)
         {
             try
             {
+                string apiBaseUrl = _config.GetSpappApiBaseUrl();
                 AgentModelView agentModelView = await _agentRepository
-                    .SetAgentModelView();
+                    .SetAgentModelView(httpClient, apiBaseUrl);
 
                 return View(agentModelView);
             }
@@ -53,7 +57,7 @@ namespace spapp.Controllers
 
         [HttpPost]
         [Route("/agent/create")]
-        public async Task<IActionResult> Create(AgentModelView agentModelView)
+        public async Task<IActionResult> Create(AgentModelView agentModelView, HttpClient httpClient)
         {
             try
             {
@@ -61,8 +65,9 @@ namespace spapp.Controllers
 
                 if (!ModelState.IsValid)
                 {
+                    string apiBaseUrl = _config.GetSpappApiBaseUrl();
                     AgentModelView instance = await _agentRepository
-                        .SetAgentModelView();
+                        .SetAgentModelView(httpClient, apiBaseUrl);
 
                     TempData["ErrorMessage"] = $"Invalid some data. {ModelState.Values}";
                     return View(instance);
